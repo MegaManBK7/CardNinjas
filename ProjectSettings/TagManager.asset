@@ -28,6 +28,9 @@ TagManager:
   - Multiplayer Selected 1
   - Multiplayer Selected 2
   - Keyboard Button
+  - Fire
+  - sfx
+  - music
   layers:
   - Default
   - TransparentFX
