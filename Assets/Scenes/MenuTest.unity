@@ -2362,14 +2362,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 138073123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -717, y: 413, z: 0}
-  m_LocalScale: {x: 2.46153855, y: 2.46153855, z: 2.46153855}
+  m_LocalPosition: {x: -128.78125, y: 259.28125, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 777152243}
   - {fileID: 1611195561}
   - {fileID: 1855593965}
-  m_Father: {fileID: 1490062143}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &139579848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,10 +2663,10 @@ GameObject:
   - 224: {fileID: 152791790}
   - 222: {fileID: 152791794}
   - 114: {fileID: 152791793}
-  - 114: {fileID: 152791791}
   - 114: {fileID: 152791792}
+  - 114: {fileID: 152791791}
   m_Layer: 5
-  m_Name: Level7
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2698,7 +2698,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 152791789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -2709,19 +2709,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 47e26c4b4d75cf245af9eb4ba9b2b050, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &152791792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2769,7 +2764,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -2778,7 +2773,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 96ba790b551d63040985aa77350e6fa9,
+    m_HighlightedSprite: {fileID: 21300000, guid: ab5731a9f2d6c594391e57f85842a557,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -4419,10 +4414,10 @@ GameObject:
   - 224: {fileID: 310950928}
   - 222: {fileID: 310950932}
   - 114: {fileID: 310950931}
-  - 114: {fileID: 310950929}
   - 114: {fileID: 310950930}
+  - 114: {fileID: 310950929}
   m_Layer: 5
-  m_Name: Level12
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4454,7 +4449,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 310950927}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -4465,19 +4460,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 47e26c4b4d75cf245af9eb4ba9b2b050, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &310950930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4525,7 +4515,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -4534,7 +4524,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 96ba790b551d63040985aa77350e6fa9,
+    m_HighlightedSprite: {fileID: 21300000, guid: ab5731a9f2d6c594391e57f85842a557,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -5294,10 +5284,10 @@ GameObject:
   - 222: {fileID: 368067435}
   - 114: {fileID: 368067434}
   - 95: {fileID: 368067432}
-  - 114: {fileID: 368067431}
   - 114: {fileID: 368067433}
+  - 114: {fileID: 368067431}
   m_Layer: 5
-  m_Name: Level6
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5329,7 +5319,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 368067429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -5340,19 +5330,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 51a2d78af6af03f429dec17a5774913d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!95 &368067432
 Animator:
   serializedVersion: 3
@@ -5417,7 +5402,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -5426,7 +5411,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f687bb11eb2084a44b2c6b49beb873f2,
+    m_HighlightedSprite: {fileID: 21300000, guid: 8277ef3f233b737429ad86544cf14a38,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -5921,10 +5906,10 @@ GameObject:
   - 224: {fileID: 453952764}
   - 222: {fileID: 453952768}
   - 114: {fileID: 453952767}
-  - 114: {fileID: 453952765}
   - 114: {fileID: 453952766}
+  - 114: {fileID: 453952765}
   m_Layer: 5
-  m_Name: Level8
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5956,7 +5941,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 453952763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -5967,19 +5952,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 6fc6576074ee18f4ab72bf3c2e0f895a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &453952766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6027,7 +6007,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -6036,7 +6016,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b81a19b533ea80d42be84432cbba9b47,
+    m_HighlightedSprite: {fileID: 21300000, guid: 604d8a40383d54047826d165e0251bf9,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -8549,8 +8529,8 @@ GameObject:
   - 224: {fileID: 681055645}
   - 222: {fileID: 681055649}
   - 114: {fileID: 681055648}
-  - 114: {fileID: 681055646}
   - 114: {fileID: 681055647}
+  - 114: {fileID: 681055646}
   m_Layer: 5
   m_Name: Level4
   m_TagString: Untagged
@@ -8584,7 +8564,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 681055644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -8595,19 +8575,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: f61c9a4ff84d56b47968d19bd67f63b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &681055647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8655,7 +8630,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -8664,7 +8639,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: c8f03e373adac034693c6914224d592d,
+    m_HighlightedSprite: {fileID: 21300000, guid: 845cc3662a133c64b9e76f941c05b7be,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -9072,10 +9047,10 @@ GameObject:
   - 224: {fileID: 723759589}
   - 222: {fileID: 723759593}
   - 114: {fileID: 723759592}
-  - 114: {fileID: 723759590}
   - 114: {fileID: 723759591}
+  - 114: {fileID: 723759590}
   m_Layer: 5
-  m_Name: Level9
+  m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9107,7 +9082,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 723759588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -9118,19 +9093,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: f61c9a4ff84d56b47968d19bd67f63b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &723759591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9178,7 +9148,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -9187,7 +9157,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: c8f03e373adac034693c6914224d592d,
+    m_HighlightedSprite: {fileID: 21300000, guid: 845cc3662a133c64b9e76f941c05b7be,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -9479,7 +9449,7 @@ GameObject:
   - 114: {fileID: 777152245}
   - 114: {fileID: 777152244}
   m_Layer: 5
-  m_Name: Settings Panel
+  m_Name: Complete Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9776,8 +9746,8 @@ GameObject:
   - 224: {fileID: 798054313}
   - 222: {fileID: 798054317}
   - 114: {fileID: 798054316}
-  - 114: {fileID: 798054314}
   - 114: {fileID: 798054315}
+  - 114: {fileID: 798054314}
   m_Layer: 5
   m_Name: Level3
   m_TagString: Untagged
@@ -9811,7 +9781,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 798054312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -9822,19 +9792,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level 3
+  m_Sprite: {fileID: 21300000, guid: 6fc6576074ee18f4ab72bf3c2e0f895a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &798054315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9882,7 +9847,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -9891,7 +9856,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b81a19b533ea80d42be84432cbba9b47,
+    m_HighlightedSprite: {fileID: 21300000, guid: 604d8a40383d54047826d165e0251bf9,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -10109,8 +10074,8 @@ GameObject:
   - 224: {fileID: 815477883}
   - 222: {fileID: 815477887}
   - 114: {fileID: 815477886}
-  - 114: {fileID: 815477884}
   - 114: {fileID: 815477885}
+  - 114: {fileID: 815477884}
   m_Layer: 5
   m_Name: Level2
   m_TagString: Untagged
@@ -10144,7 +10109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 815477882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -10155,19 +10120,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level 2
+  m_Sprite: {fileID: 21300000, guid: 47e26c4b4d75cf245af9eb4ba9b2b050, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &815477885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10215,7 +10175,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -10224,7 +10184,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 96ba790b551d63040985aa77350e6fa9,
+    m_HighlightedSprite: {fileID: 21300000, guid: ab5731a9f2d6c594391e57f85842a557,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -15476,10 +15436,10 @@ GameObject:
   - 224: {fileID: 1286526914}
   - 222: {fileID: 1286526918}
   - 114: {fileID: 1286526917}
-  - 114: {fileID: 1286526915}
   - 114: {fileID: 1286526916}
+  - 114: {fileID: 1286526915}
   m_Layer: 5
-  m_Name: Level15
+  m_Name: Level5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15511,7 +15471,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1286526913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -15522,19 +15482,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 184bcc41c96b4d54394a1eadd024e01d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &1286526916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15582,7 +15537,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -15591,7 +15546,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 2fb74f9c93ee7b641a75bed512578e0e,
+    m_HighlightedSprite: {fileID: 21300000, guid: b2ae7cc919d54d34e8f5611328b71301,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -16263,8 +16218,8 @@ GameObject:
   - 222: {fileID: 1364582223}
   - 114: {fileID: 1364582222}
   - 95: {fileID: 1364582220}
-  - 114: {fileID: 1364582219}
   - 114: {fileID: 1364582221}
+  - 114: {fileID: 1364582219}
   m_Layer: 5
   m_Name: Level1
   m_TagString: Untagged
@@ -16298,7 +16253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1364582217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -16309,19 +16264,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level 1
+  m_Sprite: {fileID: 21300000, guid: 51a2d78af6af03f429dec17a5774913d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!95 &1364582220
 Animator:
   serializedVersion: 3
@@ -16386,7 +16336,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -16395,7 +16345,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f687bb11eb2084a44b2c6b49beb873f2,
+    m_HighlightedSprite: {fileID: 21300000, guid: 8277ef3f233b737429ad86544cf14a38,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -17611,10 +17561,10 @@ GameObject:
   - 222: {fileID: 1478226549}
   - 114: {fileID: 1478226548}
   - 95: {fileID: 1478226546}
-  - 114: {fileID: 1478226545}
   - 114: {fileID: 1478226547}
+  - 114: {fileID: 1478226545}
   m_Layer: 5
-  m_Name: Level11
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17646,7 +17596,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1478226543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -17657,19 +17607,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 51a2d78af6af03f429dec17a5774913d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!95 &1478226546
 Animator:
   serializedVersion: 3
@@ -17734,7 +17679,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -17743,7 +17688,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f687bb11eb2084a44b2c6b49beb873f2,
+    m_HighlightedSprite: {fileID: 21300000, guid: 8277ef3f233b737429ad86544cf14a38,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -17875,7 +17820,6 @@ RectTransform:
   - {fileID: 2117335467}
   - {fileID: 311859205}
   - {fileID: 1213541903}
-  - {fileID: 138073124}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -19152,8 +19096,8 @@ GameObject:
   - 224: {fileID: 1579772075}
   - 222: {fileID: 1579772079}
   - 114: {fileID: 1579772078}
-  - 114: {fileID: 1579772076}
   - 114: {fileID: 1579772077}
+  - 114: {fileID: 1579772076}
   m_Layer: 5
   m_Name: Level5
   m_TagString: Untagged
@@ -19187,7 +19131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579772074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -19198,19 +19142,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 184bcc41c96b4d54394a1eadd024e01d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &1579772077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19258,7 +19197,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -19267,7 +19206,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 2fb74f9c93ee7b641a75bed512578e0e,
+    m_HighlightedSprite: {fileID: 21300000, guid: b2ae7cc919d54d34e8f5611328b71301,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -19464,7 +19403,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1611195561}
   m_Layer: 5
-  m_Name: SettingsOnScreen
+  m_Name: OnScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19668,10 +19607,10 @@ GameObject:
   - 224: {fileID: 1654083474}
   - 222: {fileID: 1654083478}
   - 114: {fileID: 1654083477}
-  - 114: {fileID: 1654083475}
   - 114: {fileID: 1654083476}
+  - 114: {fileID: 1654083475}
   m_Layer: 5
-  m_Name: Level10
+  m_Name: Level5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19703,7 +19642,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654083473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -19714,19 +19653,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 184bcc41c96b4d54394a1eadd024e01d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &1654083476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19774,7 +19708,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -19783,7 +19717,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 2fb74f9c93ee7b641a75bed512578e0e,
+    m_HighlightedSprite: {fileID: 21300000, guid: b2ae7cc919d54d34e8f5611328b71301,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -20665,10 +20599,10 @@ GameObject:
   - 224: {fileID: 1769114269}
   - 222: {fileID: 1769114273}
   - 114: {fileID: 1769114272}
-  - 114: {fileID: 1769114270}
   - 114: {fileID: 1769114271}
+  - 114: {fileID: 1769114270}
   m_Layer: 5
-  m_Name: Level14
+  m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20700,7 +20634,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769114268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -20711,19 +20645,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: f61c9a4ff84d56b47968d19bd67f63b1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &1769114271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20771,7 +20700,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -20780,7 +20709,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: c8f03e373adac034693c6914224d592d,
+    m_HighlightedSprite: {fileID: 21300000, guid: 845cc3662a133c64b9e76f941c05b7be,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -20976,10 +20905,10 @@ GameObject:
   - 224: {fileID: 1780990494}
   - 222: {fileID: 1780990498}
   - 114: {fileID: 1780990497}
-  - 114: {fileID: 1780990495}
   - 114: {fileID: 1780990496}
+  - 114: {fileID: 1780990495}
   m_Layer: 5
-  m_Name: Level13
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21011,7 +20940,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1780990493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -21022,19 +20951,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Level X
+  m_Sprite: {fileID: 21300000, guid: 6fc6576074ee18f4ab72bf3c2e0f895a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &1780990496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21082,7 +21006,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: .760784388, g: .760784388, b: .760784388, a: 1}
     m_HighlightedColor: {r: .705882311, g: .00519031612, b: .00519031612, a: 1}
@@ -21091,7 +21015,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: .100000001
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b81a19b533ea80d42be84432cbba9b47,
+    m_HighlightedSprite: {fileID: 21300000, guid: 604d8a40383d54047826d165e0251bf9,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -21803,7 +21727,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1855593965}
   m_Layer: 5
-  m_Name: SettingsOffScreen
+  m_Name: OffScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
