@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace Assets.Scripts.Enemies
 {
@@ -64,7 +65,13 @@ namespace Assets.Scripts.Enemies
 				mechAnima.SetTrigger("Hurt");
 				turn=0;
 			}
-		}
-	
-	}
+
+            transform.position = currentNode.transform.position;
+        }
+
+        protected override void Render(bool render)
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
+        }
+    }
 }
