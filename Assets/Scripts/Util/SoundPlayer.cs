@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Util
 {
-    class SoundPlayer : MonoBehaviour
+    public class SoundPlayer : MonoBehaviour
     {
         public AudioClip[] song;
         public new AudioSource audio;

@@ -20,6 +20,9 @@ TagManager:
   - Hand
   - Hand 1
   - Hand 2
+  - Fire
+  - sfx
+  - music
   layers:
   - Default
   - TransparentFX
