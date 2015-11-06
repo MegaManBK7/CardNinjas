@@ -9208,7 +9208,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .0474332087, y: .111240961}
   m_AnchorMax: {x: .67900002, y: .888810277}
-  m_AnchoredPosition: {x: -4, y: 1}
+  m_AnchoredPosition: {x: -8, y: 1}
   m_SizeDelta: {x: -0, y: .150000006}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &869805843
@@ -12086,7 +12086,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .0474332087, y: .111240961}
   m_AnchorMax: {x: .67900002, y: .888810277}
-  m_AnchoredPosition: {x: 21.3382111, y: -.000914573669}
+  m_AnchoredPosition: {x: 19, y: -.000914573669}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1178841708
@@ -12504,7 +12504,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 1910003654}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 1
   m_Options:
     m_Options:
     - m_Text: '1280 x 720 '
@@ -14052,7 +14052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .95588237, g: .759083033, b: .759083033, a: 1}
+  m_Color: {r: .926470578, g: .926470578, b: .926470578, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15330,7 +15330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .992647052, g: .90506053, b: .90506053, a: 1}
+  m_Color: {r: .95588237, g: .95588237, b: .95588237, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -17469,7 +17469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .913725555, g: .733333349, b: .733333349, a: 1}
+  m_Color: {r: .867647052, g: .867647052, b: .867647052, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
