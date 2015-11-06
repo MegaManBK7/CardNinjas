@@ -2,28 +2,28 @@
 <library>
   <card name= "Regular Fan">
     <element>None</element>
-    <image></image>
+    <image>Cards/RegularFan</image>
     <type>Fan</type>
     <action range= "1" damage= "5" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you.</description>
   </card>
   <card name= "Wide Fan">
     <element>None</element>
-    <image></image>
+    <image>Cards/WideFan</image>
     <type>Fan</type>
     <action range= "3" damage= "5" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you and the tiles above and below.</description>
   </card>
   <card name= "Long Fan">
     <element>None</element>
-    <image></image>
+    <image>Cards/Long Fan</image>
     <type>Fan</type>
     <action range= "3" damage= "5" prefab= "Prefabs/SwordSlash">MeleeVertical</action>
     <description>A fan that hits 3 tiles in front of you.</description>
   </card>
   <card name= "Tonfa">
     <element>None</element>
-    <image></image>
+    <image>Cards/Tonfa</image>
     <type>Tonfa</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A wooden weapon that can attack and stun the enemy in front of you.</description>
@@ -44,28 +44,28 @@
   </card>
   <card name= "Katana">
     <element>None</element>
-    <image></image>
+    <image>Cards/Sword1</image>
     <type>SwordHori</type>
     <action range= "1" damage= "9" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A standard sword that hits the tile in front of you.</description>
   </card>
   <card name= "Curved Blade">
     <element>None</element>
-    <image></image>
+    <image>Cards/curvedSword</image>
     <type>SwordHori</type>
     <action range= "2" damage= "8" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A sword that hits the tile in front of you and the tile below.</description>
   </card>
   <card name= "Wide Sword">
     <element>None</element>
-    <image></image>
+    <image>Cards/WideSword</image>
     <type>SwordHori</type>
     <action range= "3" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A sword that hits the tile in front of you and the tiles above and below.</description>
   </card>
   <card name= "Kanobo">
     <element>None</element>
-    <image></image>
+    <image>Cards/Kanobo</image>
     <type>Kanobo</type>
     <action range= "1" damage= "10" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A studded mace that hits hard and stuns the enemy in front of you.</description>
@@ -79,14 +79,14 @@
   </card>
   <card name= "Bo Staff">
     <element>None</element>
-    <image></image>
+    <image>Cards/Bo Staff</image>
     <type>BoStaff</type>
     <action range= "2" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A staff that stuns 2 tiles in front of you.</description>
   </card>
   <card name= "Tremor">
     <element>None</element>
-    <image></image>
+    <image>Cards/Tremor</image>
     <type>HammerVert</type>
     <action range= "2" damage= "10" prefab= "Prefabs/Tremor">DestroyTile</action>
     <description>The earth swells two tiles in front of you and destroys the third tile.</description>
@@ -94,21 +94,21 @@
 
   <card name= "Single Bamboo Dart">
     <element>None</element>
-    <image></image>
+    <image>Cards/Single Dart</image>
     <type>ThrowLight</type>
     <action range= "1" damage= "0" prefab= "Prefabs/Sphere">Projectile</action>
     <description>Shoots a stun dart down the current row.</description>
   </card>
   <card name= "Double Bamboo Dart">
     <element>None</element>
-    <image></image>
+    <image>Cards/Two Darts</image>
     <type>ThrowLight</type>
     <action range= "2" damage= "0" prefab= "Prefabs/Sphere">Projectile</action>
     <description>Shoots a stun dart down the current row and row below.</description>
   </card>
   <card name= "Triple Bamboo Dart">
     <element>None</element>
-    <image></image>
+    <image>Cards/Three Darts</image>
     <type>ThrowLight</type>
     <action range= "3" damage= "0" prefab= "Prefabs/Sphere">Projectile</action>
     <description>Shoots a stun dart down all the rows.</description>
@@ -136,49 +136,49 @@
   </card>
   <card name= "Single Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/One Shuriken</image>
     <type>ThrowLight</type>
     <action range= "1" damage= "4" prefab= "Prefabs/5Star">Projectile</action>
     <description>Throws a shuriken in front of you.</description>
   </card>
   <card name= "Double Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/Two Shuriken</image>
     <type>ThrowLight</type>
     <action range= "2" damage= "4" prefab= "Prefabs/5Star">Projectile</action>
     <description>Throws a shuriken in the row front and below you.</description>
   </card>
   <card name= "Triple Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/Three Shuriken</image>
     <type>ThrowLight</type>
     <action range= "3" damage= "4" prefab= "Prefabs/5Star">Projectile</action>
     <description>Throws a shuriken in all the rows.</description>
   </card>
   <card name= "Single Sai">
     <element>None</element>
-    <image></image>
+    <image>Cards/Single Sai</image>
     <type>ThrowLight</type>
     <action range= "1" damage= "6" prefab= "Prefabs/Sai">Projectile</action>
     <description>Throws a sai dagger in front of you.</description>
   </card>
   <card name= "Double Sai">
     <element>None</element>
-    <image></image>
+    <image>Cards/Double Sai</image>
     <type>ThrowLight</type>
     <action range= "2" damage= "6" prefab= "Prefabs/Sai">Projectile</action>
     <description>Throws a sai dagger in the row front and below you.</description>
   </card>
   <card name= "Triple Sai">
     <element>None</element>
-    <image></image>
+    <image>Cards/Triple Sai</image>
     <type>ThrowLight</type>
     <action range= "3" damage= "6" prefab= "Prefabs/Sai">Projectile</action>
     <description>Throws a sai dagger in all the rows.</description>
   </card>
   <card name= "Naginata Throw">
     <element>None</element>
-    <image></image>
+    <image>Cartds/Throwing Spear</image>
     <type>ThrowMid</type>
     <action range= "9" damage= "9" prefab= "Prefabs/Spear">SpearAction</action>
     <description>A spear thrown at the tiles in front of you, piercing the first enemy and stopping at the second.</description>
@@ -229,21 +229,21 @@
   
   <card name= "Regular Heal">
     <element>None</element>
-    <image></image>
+    <image>Cards/Heal1</image>
     <type>ChiStationary</type>
     <action range= "1" damage= "10" prefab= "">Heal</action>
     <description>A basic Health restore.</description>
   </card>
   <card name= "Greater Heal">
     <element>None</element>
-    <image></image>
+    <image>Cards/Heal2</image>
     <type>ChiStationary</type>
     <action range= "1" damage= "25" prefab= "">Heal</action>
     <description>A medium Health restore.</description>
   </card>
   <card name= "Ultra Heal">
     <element>None</element>
-    <image></image>
+    <image>Cards/Heal3</image>
     <type>ChiStationary</type>
     <action range= "1" damage= "50" prefab= "">Heal</action>
     <description>A large Health restore.</description>
@@ -269,15 +269,6 @@
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
   </card>
-  
-  <card name= "Smoke">
-    <element>None</element>
-    <image></image>
-    <type>ChiStationary</type>
-    <action range= "9" damage= "0" prefab= "">Smoke</action>
-    <description>Obscures your movement.</description>
-  </card>
-
   <card name= "Oil Spill">
     <element>Water</element>
     <image></image>
