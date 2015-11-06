@@ -160,7 +160,7 @@ namespace Assets.Scripts.Player
                     {
                         render = !render;
                         renderTimer = 0;
-                        //GetComponent<Renderer>().enabled = render;
+                        GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
                     }
                     hit = false;
                     renderTimer += Time.deltaTime;
@@ -168,7 +168,7 @@ namespace Assets.Scripts.Player
                 }
                 else
                 {
-                    //GetComponent<Renderer>().enabled = true;
+                    GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
                     invun = false;
                 }
 
