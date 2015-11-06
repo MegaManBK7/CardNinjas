@@ -8,8 +8,11 @@ namespace Assets.Scripts.Player
 {
     public class Player : Character
     {
-        public delegate void NewSelectedCard(Card card);
+        public delegate void NewSelectedCard(Card card, int playerIndex);
         public static event NewSelectedCard NewSelect;
+
+        public delegate void HealthAction(float health, int playerIndex);
+        public static event HealthAction UpdateHealth;
 
         [SerializeField]
         private Animator anim;
@@ -340,7 +343,7 @@ namespace Assets.Scripts.Player
         private void CardUIEvent()
         {
             if (NewSelect != null)
-                NewSelect(hand.getCurrent()); //fire event to gui
+                NewSelect(hand.getCurrent(), playerNumber); //fire event to gui
         }
 
         public Hand Hand
@@ -416,6 +419,26 @@ namespace Assets.Scripts.Player
 
         private void Taunt()
         {
+        }
+
+        public override void TakeDamage(int damage, Util.Enums.Element incommingElement)
+        {
+            if (!invincible)
+            {
+                health = health - (int)(damage * Util.Elements.GetDamageMultiplier(element, incommingElement));
+                if (UpdateHealth != null) UpdateHealth(health, playerNumber);
+                if (health <= 0)
+                {
+                    currentNode.clearOccupied();
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+
+        public override void AddHealth(int health)
+        {
+            base.AddHealth(health);
+            if (UpdateHealth != null) UpdateHealth(this.health, playerNumber);
         }
     }
 }
