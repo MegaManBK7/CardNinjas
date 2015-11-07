@@ -4,12 +4,14 @@ using System.Collections;
 using Assets.Scripts.Util;
 
 public class MainMenuController : MonoBehaviour {
+	
+	public SoundPlayer sp;
 
 	public GameObject buttonParent;
 	public GameObject goalButtonParent;
 
-	private GameObject[] buttons;
-	private GameObject[] goalButtons;
+	public GameObject[] buttons;
+	public GameObject[] goalButtons;
 
 	// TODO: write custom editor for this script that allows you to specify if cards are needed
 	public GameObject cardParent;
@@ -68,7 +70,6 @@ public class MainMenuController : MonoBehaviour {
 	}
 
 	public void MoveButtons() {
-		Debug.Log(Input.GetAxis("Vertical"));
 		// TODO: function that lets me not have all this pointer switching stuff be hard coded twice.
 		// to lazy to fix right now and don't think it'll matter.
 
@@ -111,7 +112,6 @@ public class MainMenuController : MonoBehaviour {
 		}
 
 		// Play sound effect
-		AudioSource sfx = this.GetComponent<AudioSource>();
-		if (sfx) sfx.Play();
+		sp.PlaySong(1);
 	}
 }

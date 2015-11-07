@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Enemies
 {
@@ -10,6 +10,11 @@ namespace Assets.Scripts.Enemies
 
         protected override void RunAI()
         {
+        }
+
+        protected override void Render(bool render)
+        {
+            GetComponent<MeshRenderer>().enabled = render;
         }
     }
 }

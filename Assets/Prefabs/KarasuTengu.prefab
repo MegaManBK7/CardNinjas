@@ -887,7 +887,7 @@ GameObject:
   - 137: {fileID: 13705278}
   m_Layer: 0
   m_Name: Glove01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1007,9 +1007,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 461136}
   - 137: {fileID: 13774288}
+  - 65: {fileID: 6512566}
   m_Layer: 0
   m_Name: Glove02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4232,6 +4233,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &6512566
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140852}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0174874105, y: .00952941366, z: .00712394249}
+  m_Center: {x: -.0350000001, y: -.000224251533, z: .0400170311}
 --- !u!95 &9575436
 Animator:
   serializedVersion: 3
