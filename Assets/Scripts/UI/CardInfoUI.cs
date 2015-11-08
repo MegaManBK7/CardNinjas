@@ -44,7 +44,7 @@ namespace Assets.Scripts.UI
             thisPlayerIndex = ++playerIndex;
             player = GameObject.Find("Player " + playerIndex).GetComponent<Player.Player>();
             GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
-            for (int i = 0; i < gos.Length; i++)
+            for (int i = 0; i < MAX_HAND; i++)
             {
                 gos[i].tag = "Hand " + thisPlayerIndex.ToString();
                 hand[i] = gos[i].GetComponent<Image>();
