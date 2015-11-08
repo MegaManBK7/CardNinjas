@@ -185,7 +185,7 @@
   </card>
   
   <card name= "Single Fireball">
-    <element>Fire</element>
+    <element>Earth</element>
     <image>Cards/Fireball</image>
     <type>ChiAttack</type>
     <action range= "0" damage= "5" prefab= "Prefabs/Sphere">Fireball</action>
@@ -204,6 +204,27 @@
     <type>ChiAttack</type>
     <action range= "2" damage= "3" prefab= "Prefabs/Sphere">Fireball</action>
     <description>A fireball that scorches through 3 enemies.</description>
+  </card>
+  <card name= "Earth Throw">
+    <element>Earth</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "1" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
+    <description>Throws a chunk of rock in front of you.</description>
+  </card>
+  <card name= "Earth Swing">
+    <element>Earth</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "2" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
+    <description>Throws two chunks of rock in the row front and below you.</description>
+  </card>
+  <card name= "Earth Barrage">
+    <element>Earth</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "3" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
+    <description>Throws a chunk of rock in front of you.</description>
   </card>
   <card name= "Single Lightning Bolt">
     <element>Thunder</element>
