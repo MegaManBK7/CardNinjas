@@ -198,21 +198,21 @@
     <description>A spear thrown at the tiles in front of you, piercing the first enemy and stopping at the second.</description>
   </card>
   
-  <card name= "Single Fireball">
+  <card name= "Fireball">
     <element>Earth</element>
     <image>Cards/Fireball</image>
     <type>ChiAttack</type>
     <action range= "0" damage= "5" prefab= "Prefabs/Sphere">Fireball</action>
     <description>A fireball that scorches an enemy in front of you.</description>
   </card>
-  <card name= "Double Fireball">
+  <card name= "Blazing Fireball">
     <element>Fire</element>
     <image>Cards/Fireball</image>
     <type>ChiAttack</type>
     <action range= "1" damage= "4" prefab= "Prefabs/Sphere">Fireball</action>
     <description>A fireball that scorches through 2 enemies.</description>
   </card>
-  <card name= "Triple Fireball">
+  <card name= "Scorching Fireball">
     <element>Fire</element>
     <image>Cards/Fireball</image>
     <type>ChiAttack</type>
@@ -240,7 +240,7 @@
     <action range= "3" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
     <description>Throws a chunk of rock downs all the rows.</description>
   </card>
-  <card name= "Single Lightning Bolt">
+  <card name= "Lightning Bolt">
     <element>Thunder</element>
     <image></image>
     <type>ChiStationary</type>
@@ -261,7 +261,14 @@
     <action range= "3" damage= "3" prefab= "Prefabs/Lightning">Lightning</action>
     <description>3 random lightning strikes on the enemy field.</description>
   </card>
-  
+  <card name= "Lightning Strike">
+    <element>Thunder</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "0" damage= "2" prefab= "Prefabs/LightningStrike">Laser</action>
+    <description>A laser that strikes across the field.</description>
+  </card>
+
   <card name= "Regular Heal">
     <element>None</element>
     <image>Cards/Heal1</image>
