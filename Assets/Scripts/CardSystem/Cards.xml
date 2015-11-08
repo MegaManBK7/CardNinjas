@@ -224,7 +224,7 @@
     <image></image>
     <type>ChiAttack</type>
     <action range= "3" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
-    <description>Throws a chunk of rock in front of you.</description>
+    <description>Throws a chunk of rock downs all the rows.</description>
   </card>
   <card name= "Single Lightning Bolt">
     <element>Thunder</element>
