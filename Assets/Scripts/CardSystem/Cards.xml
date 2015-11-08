@@ -84,6 +84,20 @@
     <action range= "2" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A staff that stuns 2 tiles in front of you.</description>
   </card>
+  <card name= "Hammer Slam">
+    <element>None</element>
+    <image>Cards/Hammer</image>
+    <type>HammerVert</type>
+    <action range= "1" damage= "12" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <description>Slam the enemy in front of you.</description>
+  </card>
+  <card name= "Hammer Swing">
+    <element>None</element>
+    <image>Cards/Hammer</image>
+    <type>HammerHori</type>
+    <action range= "3" damage= "8" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <description>Slam enemies in the tile in front of you and the tiles above and below..</description>
+  </card>
   <card name= "Tremor">
     <element>None</element>
     <image>Cards/Tremor</image>
