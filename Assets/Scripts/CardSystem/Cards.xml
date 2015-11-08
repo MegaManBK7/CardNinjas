@@ -269,12 +269,19 @@
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
   </card>
+  <card name= "Tetsubishi">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "1" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws small caltrop traps that can stun the enemy.</description>
+  </card>
   <card name= "Oil Spill">
     <element>Water</element>
     <image></image>
     <type>SwordHori</type>
     <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
-    <description>Throw a little oil in front of you.</description>
+    <description>Throws some slippery oil in front of you.</description>
   </card>
   <card name= "Oil Splash">
     <element>Water</element>
