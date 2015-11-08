@@ -269,12 +269,27 @@
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
   </card>
-  <card name= "Tetsubishi">
+  
+  <card name= "Tetsubishi Drop">
     <element>None</element>
     <image></image>
     <type>SwordHori</type>
     <action range= "1" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
-    <description>Throws small caltrop traps that can stun the enemy.</description>
+    <description>Throws small caltrop traps that can stun the enemy in front of you.</description>
+  </card>
+  <card name= "Tetsubishi Spray">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws a cone of caltrop traps in front of you.</description>
+  </card>
+  <card name= "Tetsubishi Line">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws a line of caltrop traps in front of you.</description>
   </card>
   <card name= "Oil Spill">
     <element>Water</element>
