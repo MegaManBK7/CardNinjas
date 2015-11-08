@@ -249,7 +249,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(Kanobo);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.8f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
@@ -281,7 +281,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(BoStaff);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.5f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
