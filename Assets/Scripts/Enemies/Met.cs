@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Assets.Scripts.Grid;
+using System;
 
 namespace Assets.Scripts.Enemies
 {
@@ -14,6 +15,11 @@ namespace Assets.Scripts.Enemies
         protected override void Initialize()
         {
             player = FindObjectOfType<Player.Player>();
+        }
+
+        protected override void Render(bool render)
+        {
+            GetComponent<MeshRenderer>().enabled = render;
         }
 
         protected override void RunAI()

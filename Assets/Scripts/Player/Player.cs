@@ -8,8 +8,11 @@ namespace Assets.Scripts.Player
 {
     public class Player : Character
     {
-        public delegate void NewSelectedCard(Card card);
+        public delegate void NewSelectedCard(Card card, int playerIndex);
         public static event NewSelectedCard NewSelect;
+
+        public delegate void HealthAction(float health, int playerIndex);
+        public static event HealthAction UpdateHealth;
 
         [SerializeField]
         private Animator anim;
@@ -21,6 +24,18 @@ namespace Assets.Scripts.Player
         private GameObject Naginata;
         [SerializeField]
         private GameObject Hammer;
+        [SerializeField]
+        private GameObject Fan;
+        [SerializeField]
+        private GameObject Kanobo;
+        [SerializeField]
+        private GameObject Tanto;
+        [SerializeField]
+        private GameObject Wakizashi;
+        [SerializeField]
+        private GameObject Tonfa;
+        [SerializeField]
+        private GameObject BoStaff;
         [SerializeField]
         private Transform barrel;
         [SerializeField]
@@ -148,7 +163,7 @@ namespace Assets.Scripts.Player
                     {
                         render = !render;
                         renderTimer = 0;
-                        //GetComponent<Renderer>().enabled = render;
+                        GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
                     }
                     hit = false;
                     renderTimer += Time.deltaTime;
@@ -156,7 +171,7 @@ namespace Assets.Scripts.Player
                 }
                 else
                 {
-                    //GetComponent<Renderer>().enabled = true;
+                    GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
                     invun = false;
                 }
 
@@ -168,7 +183,7 @@ namespace Assets.Scripts.Player
                     case Enums.PlayerState.MoveEnding: MoveEnding(); break;
                     case Enums.PlayerState.Hit: Hit(); break;
                     case Enums.PlayerState.Dead: Dead(); break;
-                    case Enums.PlayerState.BasicAttack: CardAnim(); break;
+                    case Enums.PlayerState.BasicAttack: BasicAttack(); break;
                     case Enums.PlayerState.HoriSwingMid: CardAnim(); break;
                     case Enums.PlayerState.VertiSwingHeavy: CardAnim(); break;
                     case Enums.PlayerState.ThrowLight: CardAnim(); break;
@@ -210,9 +225,9 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(Naginata);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localRotation = weaponPoint.localRotation;
-                            weapon.transform.localScale = weaponPoint.localScale / 1.5f;
+                            weapon.transform.localScale = weaponPoint.localScale;
                             weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
                         else if (type == Enums.CardTypes.HammerHori || type == Enums.CardTypes.HammerVert)
                         {
@@ -221,6 +236,54 @@ namespace Assets.Scripts.Player
 							weapon.transform.localScale = weaponPoint.localScale;
 							weapon.transform.parent = weaponPoint;
 							weapon.transform.localEulerAngles = new Vector3(0,0,0);
+                        }
+                        else if (type == Enums.CardTypes.Fan)
+                        {
+                            weapon = Instantiate(Fan);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+                        }
+                        else if (type == Enums.CardTypes.Kanobo)
+                        {
+                            weapon = Instantiate(Kanobo);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale/.8f;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+                        }
+                        else if (type == Enums.CardTypes.Tanto)
+                        {
+                            weapon = Instantiate(Tanto);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+                        }
+                        else if (type == Enums.CardTypes.Wakizashi)
+                        {
+                            weapon = Instantiate(Wakizashi);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+                        }
+                        else if (type == Enums.CardTypes.Tonfa)
+                        {
+                            weapon = Instantiate(Tonfa);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+                        }
+                        else if (type == Enums.CardTypes.BoStaff)
+                        {
+                            weapon = Instantiate(BoStaff);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale/.5f;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
                         useCard = false;
                         hand.UseCurrent(this);
@@ -232,6 +295,7 @@ namespace Assets.Scripts.Player
                 {
                     basicAttack = false;
                     Weapons.Hitbox b = Instantiate(bullet);
+					AddElement.AddElementByEnum(b.gameObject,(Enums.Element)Random.Range(0,5),true);
                     b.Owner = this.gameObject;
                     b.transform.position = Direction == Enums.Direction.Left ? currentNode.Left.transform.position : currentNode.Right.transform.position;
                     b.CurrentNode = Direction == Enums.Direction.Left ? currentNode.Left : currentNode.Right;
@@ -279,7 +343,7 @@ namespace Assets.Scripts.Player
         private void CardUIEvent()
         {
             if (NewSelect != null)
-                NewSelect(hand.getCurrent()); //fire event to gui
+                NewSelect(hand.getCurrent(), playerNumber); //fire event to gui
         }
 
         public Hand Hand
@@ -355,6 +419,26 @@ namespace Assets.Scripts.Player
 
         private void Taunt()
         {
+        }
+
+        public override void TakeDamage(int damage, Util.Enums.Element incommingElement)
+        {
+            if (!invincible)
+            {
+                health = health - (int)(damage * Util.Elements.GetDamageMultiplier(element, incommingElement));
+                if (UpdateHealth != null) UpdateHealth(health, playerNumber);
+                if (health <= 0)
+                {
+                    currentNode.clearOccupied();
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+
+        public override void AddHealth(int health)
+        {
+            base.AddHealth(health);
+            if (UpdateHealth != null) UpdateHealth(this.health, playerNumber);
         }
     }
 }

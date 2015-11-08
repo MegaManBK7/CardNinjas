@@ -25,12 +25,14 @@ namespace Assets.Scripts.UI
         {
             Player.Player.NewSelect += UpdateCardInfo;
             CardSelector.CardSelectorDisabled += Show;
+            CardSelectorMultiplayer.CardSelectorDisabled += Show;
             SelectionTimer.TimerFinish += Hide;
         }
         void OnDisable()
         {
             Player.Player.NewSelect -= UpdateCardInfo;
             CardSelector.CardSelectorDisabled -= Show;
+            CardSelectorMultiplayer.CardSelectorDisabled -= Show;
             SelectionTimer.TimerFinish -= Hide;
         }
 
@@ -42,19 +44,20 @@ namespace Assets.Scripts.UI
             thisPlayerIndex = ++playerIndex;
             player = GameObject.Find("Player " + playerIndex).GetComponent<Player.Player>();
             GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
-            for (int i = 0; i < gos.Length; i++)
+            for (int i = 0; i < MAX_HAND; i++)
             {
                 gos[i].tag = "Hand " + thisPlayerIndex.ToString();
                 hand[i] = gos[i].GetComponent<Image>();
             }
-            currentCardName = GameObject.Find("Current Hand Card").GetComponent<Text>();
+            currentCardName = GameObject.Find("Current Hand Card " + thisPlayerIndex.ToString()).GetComponent<Text>();
 
             canvas = this.GetComponent<Canvas>();
             Hide();
         }
 
-        private void UpdateCardInfo(CardSystem.Card card)
+        private void UpdateCardInfo(CardSystem.Card card, int playerIndex)
         {
+            if (playerIndex != thisPlayerIndex) return;
             if (cards[cardToUse] == "")
             {
                 currentCardName.text = "None";
@@ -64,7 +67,7 @@ namespace Assets.Scripts.UI
                 currentCardName.text = cardToUse+1 >= MAX_HAND ? "None" : cards[cardToUse+1];
                 hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
                 hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
-                hand[cardToUse].color = new Color(128.0f / 255, 128.0f / 255, 128.0f / 255);
+                hand[cardToUse].color = CustomColor.Convert255(128.0f, 128.0f, 128.0f);
             }
             cardToUse++;
         }

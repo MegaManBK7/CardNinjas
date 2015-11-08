@@ -40,11 +40,15 @@ namespace Assets.Scripts.Managers
         {
             UI.CardSelector.CardSelectorEnabled += CardSelectorStateEnable;
             UI.CardSelector.CardSelectorDisabled += CardSelectorStateDisable;
+            UI.CardSelectorMultiplayer.CardSelectorEnabled += CardSelectorStateEnable;
+            UI.CardSelectorMultiplayer.CardSelectorDisabled += CardSelectorStateDisable;
         }
         void OnDisable()
         {
             UI.CardSelector.CardSelectorEnabled -= CardSelectorStateEnable;
             UI.CardSelector.CardSelectorDisabled -= CardSelectorStateDisable;
+            UI.CardSelectorMultiplayer.CardSelectorEnabled -= CardSelectorStateEnable;
+            UI.CardSelectorMultiplayer.CardSelectorDisabled -= CardSelectorStateDisable;
         }
     }
 }

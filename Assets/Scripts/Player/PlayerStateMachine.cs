@@ -6,13 +6,12 @@ namespace Assets.Scripts.Player
     class PlayerStateMachine
     {
         private Enums.PlayerState currState;
-        private static float hold = 0;//used for delays
-        private static bool die = false;
+        private float hold = 0;//used for delays
+        private bool die = false;
 
         public PlayerStateMachine()
         {
             currState = Enums.PlayerState.Idle;
-            //fill array with functions
         }
 
         public Enums.PlayerState update(bool hit, bool animDone, Enums.Direction direction, Enums.CardTypes type, bool handEmpty, int playerNumber)
@@ -64,6 +63,12 @@ namespace Assets.Scripts.Player
                     case Enums.CardTypes.ChiAttack: return Enums.PlayerState.ChiAttack;
                     case Enums.CardTypes.ChiStationary: return Enums.PlayerState.ChiStationary;
                     case Enums.CardTypes.Error: return Enums.PlayerState.ChiAttack;
+                    case Enums.CardTypes.Fan: return Enums.PlayerState.HoriSwingMid;
+                    case Enums.CardTypes.Kanobo: return Enums.PlayerState.HoriSwingMid;
+                    case Enums.CardTypes.Tanto: return Enums.PlayerState.HoriSwingMid;
+                    case Enums.CardTypes.Wakizashi: return Enums.PlayerState.HoriSwingMid;
+                    case Enums.CardTypes.Tonfa: return Enums.PlayerState.HoriSwingMid;
+                    case Enums.CardTypes.BoStaff: return Enums.PlayerState.HoriSwingMid;
                 }
             }
             if (CustomInput.BoolFreshPress(CustomInput.UserInput.Attack, playerNumber))

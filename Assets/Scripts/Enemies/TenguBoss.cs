@@ -77,6 +77,11 @@ namespace Assets.Scripts.Enemies
             }
         }
 
+        protected override void Render(bool render)
+        {
+            GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
+        }
+
         private void Intro()
         {
         }

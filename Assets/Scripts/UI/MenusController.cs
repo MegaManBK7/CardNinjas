@@ -88,12 +88,6 @@ public class MenusController : MonoBehaviour {
 		case CustomInput.UserInput.Down:
 			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
 			break;
-		case CustomInput.UserInput.Left:
-			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
-			break;
-		case CustomInput.UserInput.Right:
-			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
-			break;
 		}
 		EventSystem.current.SetSelectedGameObject(next);
 	}
