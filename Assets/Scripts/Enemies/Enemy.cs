@@ -45,8 +45,11 @@ namespace Assets.Scripts.Enemies
                     Render(render);
                     invulerability -= Time.deltaTime;
                 }
-                else
+                else if (render == false)
+                {
+                    render = true;
                     Render(true);
+                }
                 if (animDone)
                     animDone = false;
             }
