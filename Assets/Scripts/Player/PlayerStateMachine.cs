@@ -6,13 +6,12 @@ namespace Assets.Scripts.Player
     class PlayerStateMachine
     {
         private Enums.PlayerState currState;
-        private static float hold = 0;//used for delays
-        private static bool die = false;
+        private float hold = 0;//used for delays
+        private bool die = false;
 
         public PlayerStateMachine()
         {
             currState = Enums.PlayerState.Idle;
-            //fill array with functions
         }
 
         public Enums.PlayerState update(bool hit, bool animDone, Enums.Direction direction, Enums.CardTypes type, bool handEmpty, int playerNumber)
