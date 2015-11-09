@@ -432,6 +432,9 @@ namespace Assets.Scripts.Player
                     damageElement = hitbox.Element;
                 }
             }
+            Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
+            if (s != null)
+                Stun = true;
         }
 
         private void Idle()

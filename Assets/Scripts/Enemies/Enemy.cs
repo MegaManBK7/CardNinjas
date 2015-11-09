@@ -92,6 +92,9 @@ namespace Assets.Scripts.Enemies
                     invulerability = invulerabilityTime;
                 }
             }
+            Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
+            if (s != null)
+                Stun = true;
         }
     }
 }
