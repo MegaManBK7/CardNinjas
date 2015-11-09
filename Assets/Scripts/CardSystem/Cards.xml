@@ -1,52 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<library>
+<library><!--
   <card name= "Regular Fan">
     <element>None</element>
     <image>Cards/RegularFan</image>
     <type>Fan</type>
-    <action range= "1" damage= "5" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "5" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you.</description>
   </card>
   <card name= "Wide Fan">
     <element>None</element>
     <image>Cards/WideFan</image>
     <type>Fan</type>
-    <action range= "3" damage= "5" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "3" damage= "5" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you and the tiles above and below.</description>
   </card>
   <card name= "Long Fan">
     <element>None</element>
     <image>Cards/Long Fan</image>
     <type>Fan</type>
-    <action range= "3" damage= "5" prefab= "Prefabs/SwordSlash">MeleeVertical</action>
+    <action range= "3" damage= "5" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A fan that hits 3 tiles in front of you.</description>
   </card>
   <card name= "Tonfa">
     <element>None</element>
     <image>Cards/Tonfa</image>
     <type>Tonfa</type>
-    <action range= "1" damage= "6" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A wooden weapon that can attack and stun the enemy in front of you.</description>
   </card>
   <card name= "Tanto">
     <element>None</element>
     <image></image>
     <type>Tanto</type>
-    <action range= "1" damage= "6" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Wakizashi">
     <element>None</element>
     <image></image>
     <type>Wakizashi</type>
-    <action range= "1" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A medium sword that hits the tile in front of you.</description>
   </card>
   <card name= "Katana">
     <element>None</element>
     <image>Cards/Sword1</image>
     <type>SwordHori</type>
-    <action range= "1" damage= "9" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "9" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A standard sword that hits the tile in front of you.</description>
   </card>
   <card name= "Curved Blade">
@@ -59,7 +59,7 @@
   <card name= "Wide Sword">
     <element>None</element>
     <image>Cards/WideSword</image>
-    <type>SwordHori</type>
+    <type>WideSword</type>
     <action range= "3" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
     <description>A sword that hits the tile in front of you and the tiles above and below.</description>
   </card>
@@ -196,10 +196,17 @@
     <type>ThrowMid</type>
     <action range= "9" damage= "9" prefab= "Prefabs/Spear">SpearAction</action>
     <description>A spear thrown at the tiles in front of you, piercing the first enemy and stopping at the second.</description>
+  </card>-->
+  <card name= "Fuma Shuriken">
+    <element>None</element>
+    <image></image>
+    <type>ThrowMid</type>
+    <action range= "9" damage= "9" prefab= "Prefabs/FumaShuriken">SpearAction</action>
+    <description></description>
   </card>
-  
+  <!--
   <card name= "Fireball">
-    <element>Earth</element>
+    <element>Fire</element>
     <image>Cards/Fireball</image>
     <type>ChiAttack</type>
     <action range= "0" damage= "5" prefab= "Prefabs/Sphere">Fireball</action>
@@ -367,5 +374,5 @@
     <type>ChiAttack</type>
     <action range= "0" damage= "2" prefab= "Prefabs/Laser">Laser</action>
     <description>A laser that strikes across the field.</description>
-  </card>
+  </card>-->
 </library>

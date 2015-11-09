@@ -21,6 +21,8 @@ namespace Assets.Scripts.Player
         [SerializeField]
         private GameObject Katana;
         [SerializeField]
+        private GameObject WideSword;
+        [SerializeField]
         private GameObject Naginata;
         [SerializeField]
         private GameObject Hammer;
@@ -221,6 +223,15 @@ namespace Assets.Scripts.Player
 							weapon.transform.localEulerAngles = new Vector3(0,0,0);
 
                         }
+                        if (type == Enums.CardTypes.WideSword)
+                        {
+                            weapon = Instantiate(WideSword);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+
+                        }
                         else if (type == Enums.CardTypes.NaginataHori || type == Enums.CardTypes.NaginataVert)
                         {
                             weapon = Instantiate(Naginata);
@@ -273,7 +284,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(Tonfa);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.8f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
