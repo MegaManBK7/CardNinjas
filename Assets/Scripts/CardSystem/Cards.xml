@@ -1,111 +1,104 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<library>
+<library><!--
   <card name= "Regular Fan">
     <element>None</element>
     <image>Cards/RegularFan</image>
     <type>Fan</type>
-    <action range= "1" damage= "5" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you.</description>
   </card>
   <card name= "Wide Fan">
     <element>None</element>
     <image>Cards/WideFan</image>
     <type>Fan</type>
-    <action range= "3" damage= "5" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you and the tiles above and below.</description>
   </card>
   <card name= "Long Fan">
     <element>None</element>
     <image>Cards/Long Fan</image>
     <type>Fan</type>
-    <action range= "3" damage= "5" prefab= "Prefabs/SwordSlash">MeleeVertical</action>
+    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A fan that hits 3 tiles in front of you.</description>
   </card>
   <card name= "Tonfa">
     <element>None</element>
     <image>Cards/Tonfa</image>
     <type>Tonfa</type>
-    <action range= "1" damage= "6" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "5" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
     <description>A wooden weapon that can attack and stun the enemy in front of you.</description>
   </card>
   <card name= "Tanto">
     <element>None</element>
     <image></image>
     <type>Tanto</type>
-    <action range= "1" damage= "6" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Wakizashi">
     <element>None</element>
     <image></image>
     <type>Wakizashi</type>
-    <action range= "1" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A medium sword that hits the tile in front of you.</description>
   </card>
   <card name= "Katana">
     <element>None</element>
     <image>Cards/Sword1</image>
     <type>SwordHori</type>
-    <action range= "1" damage= "9" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "9" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A standard sword that hits the tile in front of you.</description>
   </card>
   <card name= "Curved Blade">
     <element>None</element>
     <image>Cards/curvedSword</image>
     <type>SwordHori</type>
-    <action range= "2" damage= "8" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "2" damage= "8" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A sword that hits the tile in front of you and the tile below.</description>
   </card>
   <card name= "Wide Sword">
     <element>None</element>
     <image>Cards/WideSword</image>
-    <type>SwordHori</type>
-    <action range= "3" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <type>WideSword</type>
+    <action range= "3" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A sword that hits the tile in front of you and the tiles above and below.</description>
   </card>
   <card name= "Kanobo">
     <element>None</element>
     <image>Cards/Kanobo</image>
     <type>Kanobo</type>
-    <action range= "1" damage= "10" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "10" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
     <description>A studded mace that hits hard and stuns the enemy in front of you.</description>
   </card>
   <card name= "Naginata">
     <element>None</element>
     <image>Cards/Spear</image>
     <type>NaginataHori</type>
-    <action range= "2" damage= "9" prefab= "Prefabs/SwordSlash">MeleeVertical</action>
+    <action range= "2" damage= "9" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A spear that hits 2 tiles in front of you.</description>
   </card>
   <card name= "Bo Staff">
     <element>None</element>
     <image>Cards/Bo Staff</image>
     <type>BoStaff</type>
-    <action range= "2" damage= "7" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "2" damage= "7" prefab= "Prefabs/SlashStun">MeleeVertical</action>
     <description>A staff that stuns 2 tiles in front of you.</description>
   </card>
   <card name= "Hammer Slam">
     <element>None</element>
     <image>Cards/Hammer</image>
     <type>HammerVert</type>
-    <action range= "1" damage= "12" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "1" damage= "11" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>Slam the enemy in front of you.</description>
   </card>
   <card name= "Hammer Swing">
     <element>None</element>
     <image>Cards/Hammer</image>
     <type>HammerHori</type>
-    <action range= "3" damage= "8" prefab= "Prefabs/SwordSlash">MeleeHorizontal</action>
+    <action range= "3" damage= "8" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>Slam enemies in the tile in front of you and the tiles above and below..</description>
   </card>
-  <card name= "Tremor">
-    <element>None</element>
-    <image>Cards/Tremor</image>
-    <type>HammerVert</type>
-    <action range= "2" damage= "10" prefab= "Prefabs/Tremor">DestroyTile</action>
-    <description>The earth swells two tiles in front of you and destroys the third tile.</description>
-  </card>
-
+  
   <card name= "Single Bamboo Dart">
     <element>None</element>
     <image>Cards/Single Dart</image>
@@ -196,10 +189,46 @@
     <type>ThrowMid</type>
     <action range= "9" damage= "9" prefab= "Prefabs/Spear">SpearAction</action>
     <description>A spear thrown at the tiles in front of you, piercing the first enemy and stopping at the second.</description>
+  </card>-->
+  <card name= "Fuma Shuriken">
+    <element>None</element>
+    <image></image>
+    <type>ThrowMid</type>
+    <action range= "1" damage= "9" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
+    <description></description>
+  </card><!--
+
+  <card name= "Tetsubishi Drop">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "1" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws small caltrop traps that can stun the enemy in front of you.</description>
+  </card>
+  <card name= "Tetsubishi Spray">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws a cone of caltrop traps in front of you.</description>
+  </card>
+  <card name= "Tetsubishi Line">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws a line of caltrop traps in front of you.</description>
+  </card>
+  <card name= "Hadouken">
+    <element>None</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "0" damage= "2" prefab= "Prefabs/Laser">Laser</action>
+    <description>Channels your chi into a special ninjutsu blast.</description>
   </card>
   
   <card name= "Fireball">
-    <element>Earth</element>
+    <element>Fire</element>
     <image>Cards/Fireball</image>
     <type>ChiAttack</type>
     <action range= "0" damage= "5" prefab= "Prefabs/Sphere">Fireball</action>
@@ -219,6 +248,7 @@
     <action range= "2" damage= "3" prefab= "Prefabs/Sphere">Fireball</action>
     <description>A fireball that scorches through 3 enemies.</description>
   </card>
+  
   <card name= "Earth Throw">
     <element>Earth</element>
     <image></image>
@@ -240,6 +270,43 @@
     <action range= "3" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
     <description>Throws a chunk of rock downs all the rows.</description>
   </card>
+  <card name= "Tremor">
+    <element>Earth</element>
+    <image>Cards/Tremor</image>
+    <type>HammerVert</type>
+    <action range= "2" damage= "10" prefab= "Prefabs/Tremor">DestroyTile</action>
+    <description>The earth swells two tiles in front of you and destroys the third tile.</description>
+  </card>
+  
+  <card name= "Oil Spill">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Throws some slippery oil in front of you.</description>
+  </card>
+  <card name= "Oil Splash">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "2" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Throws a cone of oil in front of you.</description>
+  </card>
+  <card name= "Oil Line">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "3" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Throws a line of oil three tiles forward.</description>
+  </card>
+  <card name= "Big Oil">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "4" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Cover half the enemy's field with oil.</description>
+  </card>
+  
   <card name= "Lightning Bolt">
     <element>Thunder</element>
     <image></image>
@@ -268,7 +335,7 @@
     <action range= "0" damage= "2" prefab= "Prefabs/LightningStrike">Laser</action>
     <description>A laser that strikes across the field.</description>
   </card>
-
+  
   <card name= "Regular Heal">
     <element>None</element>
     <image>Cards/Heal1</image>
@@ -310,62 +377,5 @@
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
-  </card>
-  
-  <card name= "Tetsubishi Drop">
-    <element>None</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "1" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
-    <description>Throws small caltrop traps that can stun the enemy in front of you.</description>
-  </card>
-  <card name= "Tetsubishi Spray">
-    <element>None</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
-    <description>Throws a cone of caltrop traps in front of you.</description>
-  </card>
-  <card name= "Tetsubishi Line">
-    <element>None</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
-    <description>Throws a line of caltrop traps in front of you.</description>
-  </card>
-  <card name= "Oil Spill">
-    <element>Water</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
-    <description>Throws some slippery oil in front of you.</description>
-  </card>
-  <card name= "Oil Splash">
-    <element>Water</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "2" damage= "1" prefab= "Prefabs/Oil">Oil</action>
-    <description>Throws a cone of oil in front of you.</description>
-  </card>
-  <card name= "Oil Line">
-    <element>Water</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "3" damage= "1" prefab= "Prefabs/Oil">Oil</action>
-    <description>Throws a line of oil three tiles forward.</description>
-  </card>
-  <card name= "Big Oil">
-    <element>Water</element>
-    <image></image>
-    <type>SwordHori</type>
-    <action range= "4" damage= "1" prefab= "Prefabs/Oil">Oil</action>
-    <description>Cover half the enemy's field with oil.</description>
-  </card>
-  <card name= "Laser">
-    <element>None</element>
-    <image></image>
-    <type>ChiAttack</type>
-    <action range= "0" damage= "2" prefab= "Prefabs/Laser">Laser</action>
-    <description>A laser that strikes across the field.</description>
-  </card>
+  </card>-->
 </library>
