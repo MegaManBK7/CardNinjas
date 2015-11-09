@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <library>
-  <!--Melee-->
+  <!--Normal Melee-->
   <card name= "Regular Fan">
     <element>None</element>
     <image>Cards/RegularFan</image>
     <type>Fan</type>
-    <action range= "1" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <action range= "1" damage= "5" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you.</description>
   </card>
   <card name= "Wide Fan">
     <element>None</element>
     <image>Cards/WideFan</image>
     <type>Fan</type>
-    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <action range= "3" damage= "5" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A fan that hits the tile in front of you and the tiles above and below.</description>
   </card>
   <card name= "Long Fan">
     <element>None</element>
     <image>Cards/Long Fan</image>
     <type>Fan</type>
-    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
+    <action range= "3" damage= "5" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A fan that hits 3 tiles in front of you.</description>
   </card>
   <card name= "Tonfa">
     <element>None</element>
     <image>Cards/Tonfa</image>
     <type>Tonfa</type>
-    <action range= "1" damage= "5" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A wooden weapon that can attack and stun the enemy in front of you.</description>
   </card>
   <card name= "Tanto">
@@ -82,14 +82,14 @@
     <element>None</element>
     <image>Cards/Bo Staff</image>
     <type>BoStaff</type>
-    <action range= "2" damage= "7" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
+    <action range= "2" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A staff that stuns 2 tiles in front of you.</description>
   </card>
   <card name= "Hammer Slam">
     <element>None</element>
     <image>Cards/Hammer</image>
     <type>HammerVert</type>
-    <action range= "1" damage= "11" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <action range= "1" damage= "12" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>Slam the enemy in front of you.</description>
   </card>
   <card name= "Hammer Swing">
@@ -100,7 +100,7 @@
     <description>Slam enemies in the tile in front of you and the tiles above and below..</description>
   </card>
 
-  <!--Ranged-->
+  <!--Normal Ranged-->
   <card name= "Single Bamboo Dart">
     <element>None</element>
     <image>Cards/Single Dart</image>
@@ -222,7 +222,7 @@
     <action range= "0" damage= "2" prefab= "Prefabs/Laser">Laser</action>
     <description>Channels your chi into a special ninjutsu blast.</description>
   </card>
-  
+
   <!--Fire-->
   <card name= "Fireball">
     <element>Fire</element>
@@ -245,7 +245,7 @@
     <action range= "2" damage= "3" prefab= "Prefabs/Sphere">Fireball</action>
     <description>A fireball that scorches through 3 enemies.</description>
   </card>
-  
+
   <!--Earth-->
   <card name= "Earth Throw">
     <element>Earth</element>
@@ -306,7 +306,7 @@
     <action range= "4" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Cover half the enemy's field with oil.</description>
   </card>
-  
+
   <!--Lightning-->
   <card name= "Lightning Bolt">
     <element>Thunder</element>
@@ -337,9 +337,6 @@
     <description>A laser that strikes across the field.</description>
   </card>
   
-  <!--Wood-->
-  
-
   <!--Miscellaneous-->
   <card name= "Regular Heal">
     <element>None</element>
