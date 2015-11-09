@@ -100,7 +100,6 @@ namespace Assets.Scripts.Weapons
 
         public virtual void Update()
         {
-            Debug.Log("hi");
             if (Managers.GameManager.State == Enums.GameStates.Battle)
             {
                 if (moveCompleted)
