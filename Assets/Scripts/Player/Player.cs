@@ -361,9 +361,71 @@ namespace Assets.Scripts.Player
             Weapons.Hitbox hitbox = col.gameObject.GetComponent<Weapons.Hitbox>();
             if (hitbox != null && !invun)
             {
-                hit = true;
-                damage = hitbox.Damage;
-                damageElement = hitbox.Element;
+                if (hitbox.Owner == this.gameObject)
+                    return;
+                if (hitbox.GetType() == typeof(Weapons.Projectiles.Tornado))
+                {
+                    if(hitbox.Direction == Enums.Direction.Left)
+                    {
+                        if (currentNode.panelAllowed(Util.Enums.Direction.Left, Type))
+                        {
+                            currentNode = currentNode.Left;
+                            transform.position = CurrentNode.transform.position;
+                        }
+                        else
+                        {
+                            if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type))
+                            {
+                                currentNode = currentNode.Up;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type))
+                            {
+                                currentNode = currentNode.Down;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (currentNode.panelAllowed(Util.Enums.Direction.Right, Type))
+                        {
+                            currentNode = currentNode.Right;
+                            transform.position = CurrentNode.transform.position;
+                        }
+                        else
+                        {
+                            if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type))
+                            {
+                                currentNode = currentNode.Up;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type))
+                            {
+                                currentNode = currentNode.Down;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    hit = true;
+                    damage = hitbox.Damage;
+                    damageElement = hitbox.Element;
+                }
             }
         }
 

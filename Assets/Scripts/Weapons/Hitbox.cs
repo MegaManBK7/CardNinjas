@@ -98,7 +98,7 @@ namespace Assets.Scripts.Weapons
             set { element = value; }
         }
 
-        void Update()
+        public virtual void Update()
         {
             if (Managers.GameManager.State == Enums.GameStates.Battle)
             {
@@ -183,7 +183,7 @@ namespace Assets.Scripts.Weapons
             }
         }
 
-        void OnTriggerEnter(Collider collider)
+        public virtual void OnTriggerEnter(Collider collider)
         {
             Hitbox h = collider.gameObject.GetComponent<Hitbox>();
             if (h != null)
