@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<library>
-  <!--Melee-->
+<library><!--
   <card name= "Regular Fan">
     <element>None</element>
     <image>Cards/RegularFan</image>
@@ -26,7 +25,7 @@
     <element>None</element>
     <image>Cards/Tonfa</image>
     <type>Tonfa</type>
-    <action range= "1" damage= "5" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <action range= "1" damage= "5" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
     <description>A wooden weapon that can attack and stun the enemy in front of you.</description>
   </card>
   <card name= "Tanto">
@@ -68,7 +67,7 @@
     <element>None</element>
     <image>Cards/Kanobo</image>
     <type>Kanobo</type>
-    <action range= "1" damage= "10" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <action range= "1" damage= "10" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
     <description>A studded mace that hits hard and stuns the enemy in front of you.</description>
   </card>
   <card name= "Naginata">
@@ -82,7 +81,7 @@
     <element>None</element>
     <image>Cards/Bo Staff</image>
     <type>BoStaff</type>
-    <action range= "2" damage= "7" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
+    <action range= "2" damage= "7" prefab= "Prefabs/SlashStun">MeleeVertical</action>
     <description>A staff that stuns 2 tiles in front of you.</description>
   </card>
   <card name= "Hammer Slam">
@@ -99,8 +98,7 @@
     <action range= "3" damage= "8" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>Slam enemies in the tile in front of you and the tiles above and below..</description>
   </card>
-
-  <!--Ranged-->
+  
   <card name= "Single Bamboo Dart">
     <element>None</element>
     <image>Cards/Single Dart</image>
@@ -191,9 +189,15 @@
     <type>ThrowMid</type>
     <action range= "9" damage= "9" prefab= "Prefabs/Spear">SpearAction</action>
     <description>A spear thrown at the tiles in front of you, piercing the first enemy and stopping at the second.</description>
-  </card>
+  </card>-->
+  <card name= "Fuma Shuriken">
+    <element>None</element>
+    <image></image>
+    <type>ThrowMid</type>
+    <action range= "1" damage= "9" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
+    <description></description>
+  </card><!--
 
-  <!--Normal Unique-->
   <card name= "Tetsubishi Drop">
     <element>None</element>
     <image></image>
@@ -223,7 +227,6 @@
     <description>Channels your chi into a special ninjutsu blast.</description>
   </card>
   
-  <!--Fire-->
   <card name= "Fireball">
     <element>Fire</element>
     <image>Cards/Fireball</image>
@@ -246,7 +249,6 @@
     <description>A fireball that scorches through 3 enemies.</description>
   </card>
   
-  <!--Earth-->
   <card name= "Earth Throw">
     <element>Earth</element>
     <image></image>
@@ -268,7 +270,6 @@
     <action range= "3" damage= "5" prefab= "Prefabs/Rock">Projectile</action>
     <description>Throws a chunk of rock downs all the rows.</description>
   </card>
-
   <card name= "Tremor">
     <element>Earth</element>
     <image>Cards/Tremor</image>
@@ -276,8 +277,7 @@
     <action range= "2" damage= "10" prefab= "Prefabs/Tremor">DestroyTile</action>
     <description>The earth swells two tiles in front of you and destroys the third tile.</description>
   </card>
-
-  <!--Water-->
+  
   <card name= "Oil Spill">
     <element>Water</element>
     <image></image>
@@ -307,7 +307,6 @@
     <description>Cover half the enemy's field with oil.</description>
   </card>
   
-  <!--Lightning-->
   <card name= "Lightning Bolt">
     <element>Thunder</element>
     <image></image>
@@ -337,10 +336,6 @@
     <description>A laser that strikes across the field.</description>
   </card>
   
-  <!--Wood-->
-  
-
-  <!--Miscellaneous-->
   <card name= "Regular Heal">
     <element>None</element>
     <image>Cards/Heal1</image>
@@ -382,5 +377,5 @@
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
-  </card>
+  </card>-->
 </library>
