@@ -45,8 +45,11 @@ namespace Assets.Scripts.Enemies
                     Render(render);
                     invulerability -= Time.deltaTime;
                 }
-                else
+                else if (!render)
+                {
+                    render = true;
                     Render(true);
+                }
                 if (animDone)
                     animDone = false;
             }
@@ -89,6 +92,9 @@ namespace Assets.Scripts.Enemies
                     invulerability = invulerabilityTime;
                 }
             }
+            Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
+            if (s != null)
+                Stun = true;
         }
     }
 }

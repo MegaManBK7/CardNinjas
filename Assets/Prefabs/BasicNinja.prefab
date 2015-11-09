@@ -4238,6 +4238,19 @@ MonoBehaviour:
   element: 0
   stunTime: 1
   anim: {fileID: 9546624}
+  body:
+  - {fileID: 13737014}
+  - {fileID: 13715364}
+  - {fileID: 13722554}
+  - {fileID: 13776518}
+  - {fileID: 13751690}
+  - {fileID: 13731532}
+  - {fileID: 13794016}
+  - {fileID: 13725460}
+  - {fileID: 13735108}
+  - {fileID: 13727116}
+  - {fileID: 13776782}
+  - {fileID: 13724326}
   bullet: {fileID: 11490780, guid: c17618ea2789c0943a2977d03acf5990, type: 2}
   Katana: {fileID: 115850, guid: a89935a83db070c4bbc8a6e2bfce347f, type: 2}
   Naginata: {fileID: 118990, guid: 450858e208396b846a87294d3bdc0087, type: 2}

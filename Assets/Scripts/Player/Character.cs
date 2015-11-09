@@ -30,6 +30,7 @@ namespace Assets.Scripts.Player
         public GridNode CurrentNode
         {
             get { return currentNode; }
+            set { currentNode = value; }
         }
 
         public Util.Enums.Direction Direction
