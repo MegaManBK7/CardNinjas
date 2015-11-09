@@ -4283,7 +4283,7 @@ MonoBehaviour:
   - {fileID: 13774718}
   - {fileID: 13792220}
   - {fileID: 13746760}
-  bullet: {fileID: 131416, guid: ea9caf517f393d040b907eef5331304d, type: 2}
+  bullet: {fileID: 173666, guid: 26be319050e8be74480faf43b652cd21, type: 2}
   holdPos: {x: 0, y: 0, z: 21.5100002}
 --- !u!136 &13638052
 CapsuleCollider:
@@ -4981,6 +4981,10 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 9575436}
+    - target: {fileID: 0}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 173666, guid: 26be319050e8be74480faf43b652cd21, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195066}
