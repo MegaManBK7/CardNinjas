@@ -17,6 +17,8 @@ namespace Assets.Scripts.Player
         [SerializeField]
         private Animator anim;
         [SerializeField]
+        private SkinnedMeshRenderer[] body;
+        [SerializeField]
         private Weapons.Hitbox bullet;
         [SerializeField]
         private GameObject Katana;
@@ -163,15 +165,18 @@ namespace Assets.Scripts.Player
                     {
                         render = !render;
                         renderTimer = 0;
-                        GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
+                        foreach (SkinnedMeshRenderer b in body)
+                            b.enabled = render;
                     }
                     hit = false;
                     renderTimer += Time.deltaTime;
                     invunTimer -= Time.deltaTime;
                 }
-                else
+                else if(!render || invun)
                 {
-                    GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+                    render = true;
+                    foreach(SkinnedMeshRenderer b in body)
+                        b.enabled = true;
                     invun = false;
                 }
 

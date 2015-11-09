@@ -8,6 +8,8 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private Animator anim;
         [SerializeField]
+        private SkinnedMeshRenderer[] body;
+        [SerializeField]
         private GameObject bullet;
         [SerializeField]
         private Vector3 holdPos;
@@ -79,7 +81,8 @@ namespace Assets.Scripts.Enemies
 
         protected override void Render(bool render)
         {
-            GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
+            foreach (SkinnedMeshRenderer b in body)
+                b.enabled = render;
         }
 
         private void Intro()
