@@ -19,7 +19,10 @@ namespace Assets.Scripts.Grid
         private bool occupied = false;
         private Character panelOwner;
         private Enums.FieldType type;
+        private Enums.FieldType prevType;
         private Vector2 position;
+        private float hold = 0;
+        private bool first = true;
 
         public GridNode Up
         {
@@ -67,6 +70,13 @@ namespace Assets.Scripts.Grid
         {
             get { return type; }
             set {
+                if (first)
+                {
+                    prevType = value;
+                    first = false;
+                }
+                else
+                    prevType = type;
                 type = value;
                 if (type == Enums.FieldType.Red)
                     GetComponent<Renderer>().material = red;
@@ -126,6 +136,27 @@ namespace Assets.Scripts.Grid
         {
             occupied = false;
             panelOwner = null;
+        }
+
+        void Update()
+        {
+            if(type != prevType)
+            {
+                hold += Time.deltaTime;
+                if(hold > 6f)
+                {
+                    type = prevType;
+                    if (type == Enums.FieldType.Red)
+                        GetComponent<Renderer>().material = red;
+                    else if (type == Enums.FieldType.Blue)
+                        GetComponent<Renderer>().material = blue;
+                    else if (type == Enums.FieldType.Destroyed)
+                        GetComponent<Renderer>().material = destroyed;
+                    else
+                        GetComponent<Renderer>().material = white;
+                    this.gameObject.tag = type.ToString();
+                }
+            }
         }
     }
 }
