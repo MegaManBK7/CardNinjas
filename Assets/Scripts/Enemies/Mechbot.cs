@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace Assets.Scripts.Enemies
 {
 	class Mechbot : Enemy {
 		[SerializeField]
 		private GameObject bullet;
-		
-		private Player.Player player;
+        [SerializeField]
+        private SkinnedMeshRenderer[] body;
+
+        private Player.Player player;
 		private float turn = 0;
 		public Animator	mechAnima;
 		
@@ -67,6 +70,11 @@ namespace Assets.Scripts.Enemies
 
             transform.position = currentNode.transform.position;
         }
-	    
-	}
+
+        protected override void Render(bool render)
+        {
+            foreach (SkinnedMeshRenderer b in body)
+                b.enabled = render;
+        }
+    }
 }

@@ -13,11 +13,11 @@ namespace Assets.Scripts.Player
         [SerializeField]
         protected int colStart = 1;
         [SerializeField]
-        private Util.Enums.Direction direction = Util.Enums.Direction.Left;
+        protected Util.Enums.Direction direction = Util.Enums.Direction.Left;
         [SerializeField]
         private Util.Enums.FieldType type = Util.Enums.FieldType.Red;
         [SerializeField]
-        private Util.Enums.Element element;
+        protected Util.Enums.Element element;
         [SerializeField]
         protected float stunTime = 1f;
 
@@ -30,6 +30,7 @@ namespace Assets.Scripts.Player
         public GridNode CurrentNode
         {
             get { return currentNode; }
+            set { currentNode = value; }
         }
 
         public Util.Enums.Direction Direction
@@ -83,10 +84,9 @@ namespace Assets.Scripts.Player
             }
         }
 
-        public void AddHealth(int health)
+        public virtual void AddHealth(int health)
         {
             this.health = Mathf.Clamp(this.health + health, 0, MAX_HEALTH);
-            Debug.Log("Healing by " + health.ToString() + " points. Health is " + this.health.ToString());
         }
     }
 }

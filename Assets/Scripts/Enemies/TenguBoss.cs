@@ -8,6 +8,8 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private Animator anim;
         [SerializeField]
+        private SkinnedMeshRenderer[] body;
+        [SerializeField]
         private GameObject bullet;
         [SerializeField]
         private Vector3 holdPos;
@@ -75,6 +77,12 @@ namespace Assets.Scripts.Enemies
                 case (int)TenguBossStateMachine.State.Return: Return(); break;
                 case (int)TenguBossStateMachine.State.Tornado: Tornado(); break;
             }
+        }
+
+        protected override void Render(bool render)
+        {
+            foreach (SkinnedMeshRenderer b in body)
+                b.enabled = render;
         }
 
         private void Intro()

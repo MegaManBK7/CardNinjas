@@ -6,7 +6,7 @@ namespace Assets.Scripts.Weapons.Projectiles
 {
     class GroundDestroyer : Hitbox
     {
-        void Update()
+        public override void Update()
         {
 
             if (Managers.GameManager.State == Enums.GameStates.Battle)

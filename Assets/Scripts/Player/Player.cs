@@ -8,15 +8,22 @@ namespace Assets.Scripts.Player
 {
     public class Player : Character
     {
-        public delegate void NewSelectedCard(Card card);
+        public delegate void NewSelectedCard(Card card, int playerIndex);
         public static event NewSelectedCard NewSelect;
+
+        public delegate void HealthAction(float health, int playerIndex);
+        public static event HealthAction UpdateHealth;
 
         [SerializeField]
         private Animator anim;
         [SerializeField]
+        private SkinnedMeshRenderer[] body;
+        [SerializeField]
         private Weapons.Hitbox bullet;
         [SerializeField]
         private GameObject Katana;
+        [SerializeField]
+        private GameObject WideSword;
         [SerializeField]
         private GameObject Naginata;
         [SerializeField]
@@ -160,15 +167,18 @@ namespace Assets.Scripts.Player
                     {
                         render = !render;
                         renderTimer = 0;
-                        //GetComponent<Renderer>().enabled = render;
+                        foreach (SkinnedMeshRenderer b in body)
+                            b.enabled = render;
                     }
                     hit = false;
                     renderTimer += Time.deltaTime;
                     invunTimer -= Time.deltaTime;
                 }
-                else
+                else if(!render || invun)
                 {
-                    //GetComponent<Renderer>().enabled = true;
+                    render = true;
+                    foreach(SkinnedMeshRenderer b in body)
+                        b.enabled = true;
                     invun = false;
                 }
 
@@ -218,6 +228,15 @@ namespace Assets.Scripts.Player
 							weapon.transform.localEulerAngles = new Vector3(0,0,0);
 
                         }
+                        if (type == Enums.CardTypes.WideSword)
+                        {
+                            weapon = Instantiate(WideSword);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
+
+                        }
                         else if (type == Enums.CardTypes.NaginataHori || type == Enums.CardTypes.NaginataVert)
                         {
                             weapon = Instantiate(Naginata);
@@ -246,7 +265,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(Kanobo);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.8f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
@@ -270,7 +289,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(Tonfa);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.8f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
@@ -278,7 +297,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(BoStaff);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.5f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
@@ -340,7 +359,7 @@ namespace Assets.Scripts.Player
         private void CardUIEvent()
         {
             if (NewSelect != null)
-                NewSelect(hand.getCurrent()); //fire event to gui
+                NewSelect(hand.getCurrent(), playerNumber); //fire event to gui
         }
 
         public Hand Hand
@@ -358,10 +377,75 @@ namespace Assets.Scripts.Player
             Weapons.Hitbox hitbox = col.gameObject.GetComponent<Weapons.Hitbox>();
             if (hitbox != null && !invun)
             {
-                hit = true;
-                damage = hitbox.Damage;
-                damageElement = hitbox.Element;
+                if (hitbox.Owner == this.gameObject)
+                    return;
+                if (hitbox.GetType() == typeof(Weapons.Projectiles.Tornado))
+                {
+                    if(hitbox.Direction == Enums.Direction.Left)
+                    {
+                        if (currentNode.panelAllowed(Util.Enums.Direction.Left, Type))
+                        {
+                            currentNode = currentNode.Left;
+                            transform.position = CurrentNode.transform.position;
+                        }
+                        else
+                        {
+                            if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type))
+                            {
+                                currentNode = currentNode.Up;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type))
+                            {
+                                currentNode = currentNode.Down;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (currentNode.panelAllowed(Util.Enums.Direction.Right, Type))
+                        {
+                            currentNode = currentNode.Right;
+                            transform.position = CurrentNode.transform.position;
+                        }
+                        else
+                        {
+                            if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type))
+                            {
+                                currentNode = currentNode.Up;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type))
+                            {
+                                currentNode = currentNode.Down;
+                                transform.position = CurrentNode.transform.position;
+                                hit = true;
+                                damage = hitbox.Damage;
+                                damageElement = hitbox.Element;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    hit = true;
+                    damage = hitbox.Damage;
+                    damageElement = hitbox.Element;
+                }
             }
+            Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
+            if (s != null)
+                Stun = true;
         }
 
         private void Idle()
@@ -416,6 +500,26 @@ namespace Assets.Scripts.Player
 
         private void Taunt()
         {
+        }
+
+        public override void TakeDamage(int damage, Util.Enums.Element incommingElement)
+        {
+            if (!invincible)
+            {
+                health = health - (int)(damage * Util.Elements.GetDamageMultiplier(element, incommingElement));
+                if (UpdateHealth != null) UpdateHealth(health, playerNumber);
+                if (health <= 0)
+                {
+                    currentNode.clearOccupied();
+                    Destroy(this.gameObject);
+                }
+            }
+        }
+
+        public override void AddHealth(int health)
+        {
+            base.AddHealth(health);
+            if (UpdateHealth != null) UpdateHealth(this.health, playerNumber);
         }
     }
 }

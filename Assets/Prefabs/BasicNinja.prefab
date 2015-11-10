@@ -4238,10 +4238,29 @@ MonoBehaviour:
   element: 0
   stunTime: 1
   anim: {fileID: 9546624}
+  body:
+  - {fileID: 13737014}
+  - {fileID: 13715364}
+  - {fileID: 13722554}
+  - {fileID: 13776518}
+  - {fileID: 13751690}
+  - {fileID: 13731532}
+  - {fileID: 13794016}
+  - {fileID: 13725460}
+  - {fileID: 13735108}
+  - {fileID: 13727116}
+  - {fileID: 13776782}
+  - {fileID: 13724326}
   bullet: {fileID: 11490780, guid: c17618ea2789c0943a2977d03acf5990, type: 2}
-  Katana: {fileID: 100000, guid: baeb8e22b0f12d84e9dda8dbbcd3babc, type: 3}
-  Naginata: {fileID: 100000, guid: 69ee3d4fd94ad39438fb34f0ad756863, type: 3}
+  Katana: {fileID: 115850, guid: a89935a83db070c4bbc8a6e2bfce347f, type: 2}
+  Naginata: {fileID: 118990, guid: 450858e208396b846a87294d3bdc0087, type: 2}
   Hammer: {fileID: 118704, guid: e11ebf88e37711641bc4c3518ba81c50, type: 2}
+  Fan: {fileID: 187306, guid: 428c1232b0f06a6468089f2acd24ec97, type: 2}
+  Kanobo: {fileID: 166836, guid: e6513395658abfd49a46599279a00e78, type: 2}
+  Tanto: {fileID: 199424, guid: aa878d3589981cb49969fb2c66769338, type: 2}
+  Wakizashi: {fileID: 145624, guid: ae549fcb8d9f5504590e2b43a25399a8, type: 2}
+  Tonfa: {fileID: 175978, guid: bf2de2eadf804054a8b58e49084c12d8, type: 2}
+  BoStaff: {fileID: 127456, guid: 78d71dab9c582c742b2008439f73ca5c, type: 2}
   barrel: {fileID: 443406}
   playerNumber: 1
   weaponPoint: {fileID: 421640}

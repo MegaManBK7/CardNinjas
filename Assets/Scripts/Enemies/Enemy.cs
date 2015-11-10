@@ -7,11 +7,15 @@ namespace Assets.Scripts.Enemies
     {
         protected abstract void Initialize();
         protected abstract void RunAI();
+        protected abstract void Render(bool render);
 
         protected bool hit = false;
         protected bool animDone = false;
         private bool paused = false;
         private float animSpeed = 0;
+        private float invulerability = 0;
+        private float invulerabilityTime = 1f;
+        private bool render = true;
 
         void Start()
         {
@@ -35,18 +39,19 @@ namespace Assets.Scripts.Enemies
                 RunAI();
                 if (hit)
                     hit = false;
+                if (invulerability > 0)
+                {
+                    render = !render;
+                    Render(render);
+                    invulerability -= Time.deltaTime;
+                }
+                else if (!render)
+                {
+                    render = true;
+                    Render(true);
+                }
                 if (animDone)
                     animDone = false;
-                //if (invulerability > 0)
-                //{
-                //    render = !render;
-                //    GetComponent<Renderer>().enabled = render;
-                //    damage = 0;
-                //    beingHit = false;
-                //    invulerability -= Time.deltaTime;
-                //}
-                //else
-                //    GetComponent<Renderer>().enabled = true;
             }
             else
             {
@@ -80,9 +85,16 @@ namespace Assets.Scripts.Enemies
             Weapons.Hitbox hitbox = col.gameObject.GetComponent<Weapons.Hitbox>();
             if (hitbox != null)
             {
-                hit = true;
-                TakeDamage(hitbox.Damage, hitbox.Element);
+                if (invulerability <= 0)
+                {
+                    hit = true;
+                    TakeDamage(hitbox.Damage, hitbox.Element);
+                    invulerability = invulerabilityTime;
+                }
             }
+            Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
+            if (s != null)
+                Stun = true;
         }
     }
 }

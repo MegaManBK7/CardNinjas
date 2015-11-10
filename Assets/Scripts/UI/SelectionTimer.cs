@@ -8,6 +8,7 @@ namespace Assets.Scripts.UI
     {
         public float timeToSelect = 10f;
         private float timer = 0;
+        private bool shouldFire = false;
 
         private float xScale = 1f;
 
@@ -22,10 +23,16 @@ namespace Assets.Scripts.UI
         void OnEnable()
         {
             CardSelector.CardSelectorDisabled += Show;
+            CardSelectorMultiplayer.CardSelectorDisabled += Show;
+            BoosterPackSelectorMultiplayer.PacksSelected += Show;
+            BoosterPackSelectorMultiplayer.PacksDeselected += Hide;
         }
         void OnDisable()
         {
             CardSelector.CardSelectorDisabled -= Show;
+            CardSelectorMultiplayer.CardSelectorDisabled -= Show;
+            BoosterPackSelectorMultiplayer.PacksSelected -= Show;
+            BoosterPackSelectorMultiplayer.PacksDeselected -= Hide;
         }
         #endregion
 
@@ -48,6 +55,7 @@ namespace Assets.Scripts.UI
 
                 if (timer >= timeToSelect)
                 {
+                    shouldFire = true;
                     Hide();
                 }
             }
@@ -62,7 +70,8 @@ namespace Assets.Scripts.UI
         {
             timer = 0f;
             canvas.enabled = false;
-            if (TimerFinish != null) TimerFinish();
+            if (TimerFinish != null && shouldFire) TimerFinish();
+            shouldFire = false;
         }
     }
 }
