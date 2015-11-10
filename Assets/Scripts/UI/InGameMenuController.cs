@@ -34,8 +34,10 @@ public class InGameMenuController : MonoBehaviour {
 				this.BringUpPause();
 		}
 
-		if (hideBehaviour.OnScreenPos.position == hideBehaviour.transform.position && hideBehaviour.OnScreen)
+		if (hideBehaviour.OnScreenPos.position == hideBehaviour.transform.position && hideBehaviour.OnScreen) {
 			Time.timeScale = 0.00000001f;
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel)) this.DismissDialog();
+		}
 	}
 	#endregion
 
