@@ -36,19 +36,19 @@
     <action range= "3" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A sword that hits the tile in front of you and the tiles above and below.</description>
   </card>
-  <card name= "Enkindled Kanobo">
-    <element>Fire</element>
-    <image>Cards/Kanobo</image>
-    <type>Kanobo</type>
-    <action range= "1" damage= "10" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
-    <description>A studded mace that hits hard and stuns the enemy in front of you.</description>
-  </card>
   <card name= "Searing Naginata">
     <element>Fire</element>
     <image>Cards/Spear</image>
     <type>NaginataHori</type>
     <action range= "2" damage= "9" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A spear that hits 2 tiles in front of you.</description>
+  </card>
+  <card name= "Enkindled Kanobo">
+    <element>Fire</element>
+    <image>Cards/Kanobo</image>
+    <type>Kanobo</type>
+    <action range= "1" damage= "10" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
+    <description>A studded mace that hits hard and stuns the enemy in front of you.</description>
   </card>
 
   <!--Ranged-->
@@ -125,21 +125,21 @@
 
   <!--Unique-->
   <card name= "Ignite Tile">
-    <element>None</element>
+    <element>Fire</element>
     <image></image>
     <type>SwordHori</type>
     <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Throws small caltrop traps that can stun the enemy in front of you.</description>
   </card>
   <card name= "Cone of Flames">
-    <element>None</element>
+    <element>Fire</element>
     <image></image>
     <type>SwordHori</type>
     <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
     <description>Throws a cone of caltrop traps in front of you.</description>
   </card>
   <card name= "Line of Fire">
-    <element>None</element>
+    <element>Fire</element>
     <image></image>
     <type>SwordHori</type>
     <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>

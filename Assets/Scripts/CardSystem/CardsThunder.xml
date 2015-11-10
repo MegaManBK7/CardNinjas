@@ -1,10 +1,169 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <library>
-  <card name= "Regular Heal">
-    <element>None</element>
-    <image>Cards/Heal1</image>
+  <!--Melee-->
+  <card name= "Tanto">
+    <element>Thunder</element>
+    <image></image>
+    <type>Tanto</type>
+    <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A short sword that hits the tile in front of you.</description>
+  </card>
+  <card name= "Wakizashi">
+    <element>Thunder</element>
+    <image></image>
+    <type>Wakizashi</type>
+    <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A medium sword that hits the tile in front of you.</description>
+  </card>
+  <card name= "Katana">
+    <element>Thunder</element>
+    <image>Cards/Sword1</image>
+    <type>SwordHori</type>
+    <action range= "1" damage= "9" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A standard sword that hits the tile in front of you.</description>
+  </card>
+  <card name= "Curved Blade">
+    <element>Thunder</element>
+    <image>Cards/curvedSword</image>
+    <type>SwordHori</type>
+    <action range= "2" damage= "8" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A sword that hits the tile in front of you and the tile below.</description>
+  </card>
+  <card name= "Wide Sword">
+    <element>Thunder</element>
+    <image>Cards/WideSword</image>
+    <type>WideSword</type>
+    <action range= "3" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A sword that hits the tile in front of you and the tiles above and below.</description>
+  </card>
+  <card name= "Naginata">
+    <element>Thunder</element>
+    <image>Cards/Spear</image>
+    <type>NaginataHori</type>
+    <action range= "2" damage= "9" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
+    <description>A spear that hits 2 tiles in front of you.</description>
+  </card>
+  <card name= "Regular Fan">
+    <element>Thunder</element>
+    <image>Cards/RegularFan</image>
+    <type>Fan</type>
+    <action range= "1" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A fan that hits the tile in front of you.</description>
+  </card>
+  <card name= "Wide Fan">
+    <element>Thunder</element>
+    <image>Cards/WideFan</image>
+    <type>Fan</type>
+    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A fan that hits the tile in front of you and the tiles above and below.</description>
+  </card>
+  <card name= "Long Fan">
+    <element>Thunder</element>
+    <image>Cards/Long Fan</image>
+    <type>Fan</type>
+    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
+    <description>A fan that hits 3 tiles in front of you.</description>
+  </card>
+
+  <!--Ranged-->
+  <card name= "Single Kunai">
+    <element>Thunder</element>
+    <image>Cards/Kunai1</image>
+    <type>ThrowLight</type>
+    <action range= "1" damage= "2" prefab= "Prefabs/Kunai">Projectile</action>
+    <description>Throws a kunai in front of you.</description>
+  </card>
+  <card name= "Double Kunai">
+    <element>Thunder</element>
+    <image>Cards/Kunai2</image>
+    <type>ThrowLight</type>
+    <action range= "2" damage= "2" prefab= "Prefabs/Kunai">Projectile</action>
+    <description>Throws a kunai in the row front and below you.</description>
+  </card>
+  <card name= "Triple Kunai">
+    <element>Thunder</element>
+    <image>Cards/Kunai3</image>
+    <type>ThrowLight</type>
+    <action range= "3" damage= "2" prefab= "Prefabs/Kunai">Projectile</action>
+    <description>Throws a kunai in all three rows.</description>
+  </card>
+  <card name= "Single Shuriken">
+    <element>Thunder</element>
+    <image>Cards/One Shuriken</image>
+    <type>ThrowLight</type>
+    <action range= "1" damage= "4" prefab= "Prefabs/5Star">Projectile</action>
+    <description>Throws a shuriken in front of you.</description>
+  </card>
+  <card name= "Double Shuriken">
+    <element>Thunder</element>
+    <image>Cards/Two Shuriken</image>
+    <type>ThrowLight</type>
+    <action range= "2" damage= "4" prefab= "Prefabs/5Star">Projectile</action>
+    <description>Throws a shuriken in the row front and below you.</description>
+  </card>
+  <card name= "Triple Shuriken">
+    <element>Thunder</element>
+    <image>Cards/Three Shuriken</image>
+    <type>ThrowLight</type>
+    <action range= "3" damage= "4" prefab= "Prefabs/5Star">Projectile</action>
+    <description>Throws a shuriken in all the rows.</description>
+  </card>
+  <card name= "Single Sai">
+    <element>Thunder</element>
+    <image>Cards/Single Sai</image>
+    <type>ThrowLight</type>
+    <action range= "1" damage= "5" prefab= "Prefabs/Sai">Projectile</action>
+    <description>Throws a sai dagger in front of you.</description>
+  </card>
+  <card name= "Double Sai">
+    <element>Thunder</element>
+    <image>Cards/Double Sai</image>
+    <type>ThrowLight</type>
+    <action range= "2" damage= "5" prefab= "Prefabs/Sai">Projectile</action>
+    <description>Throws a sai dagger in the row front and below you.</description>
+  </card>
+  <card name= "Triple Sai">
+    <element>Thunder</element>
+    <image>Cards/Triple Sai</image>
+    <type>ThrowLight</type>
+    <action range= "3" damage= "5" prefab= "Prefabs/Sai">Projectile</action>
+    <description>Throws a sai dagger in all the rows.</description>
+  </card>
+  <card name= "Naginata Throw">
+    <element>Thunder</element>
+    <image>Cards/Throwing Spear</image>
+    <type>ThrowMid</type>
+    <action range= "9" damage= "9" prefab= "Prefabs/Spear">SpearAction</action>
+    <description>A spear thrown at the tiles in front of you, piercing the first enemy and stopping at the second.</description>
+  </card>
+
+  <!--Unique-->
+  <card name= "Lightning Bolt">
+    <element>Thunder</element>
+    <image></image>
     <type>ChiStationary</type>
-    <action range= "1" damage= "10" prefab= "">Heal</action>
-    <description>A basic Health restore.</description>
+    <action range= "1" damage= "5" prefab= "Prefabs/Lightning">Lightning</action>
+    <description>A random lightning strike on the enemy field.</description>
+  </card>
+  <card name= "Double Lightning Bolt">
+    <element>Thunder</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "2" damage= "4" prefab= "Prefabs/Lightning">Lightning</action>
+    <description>2 random lightning strikes on the enemy field.</description>
+  </card>
+  <card name= "Triple Lightning Bolt">
+    <element>Thunder</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "3" damage= "3" prefab= "Prefabs/Lightning">Lightning</action>
+    <description>3 random lightning strikes on the enemy field.</description>
+  </card>
+  <card name= "Lightning Strike">
+    <element>Thunder</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "0" damage= "2" prefab= "Prefabs/LightningStrike">Laser</action>
+    <description>A laser that strikes across the field.</description>
   </card>
 </library>
