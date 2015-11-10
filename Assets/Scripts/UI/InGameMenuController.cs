@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Assets.Scripts.Util;
 
 public class InGameMenuController : MonoBehaviour {
 
@@ -23,10 +24,22 @@ public class InGameMenuController : MonoBehaviour {
 	private EventSystem es = EventSystem.current;
 	private UIHideBehaviour hideBehaviour;
 
+	#region Monobehaviour
 	public void Start() {
 		hideBehaviour = GetComponent<UIHideBehaviour>();
 	}
 
+	public void Update() {
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Pause)) {
+			if (hideBehaviour.OnScreen)
+				this.DismissDialog();
+			else
+				this.BringUpPause();
+		}
+	}
+	#endregion
+
+	#region MenuControls
 	public void BringUpP2Win() {
 		Win.SetActive(false);
 		Lose.SetActive(false);
@@ -90,4 +103,5 @@ public class InGameMenuController : MonoBehaviour {
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
 	}
+	#endregion
 }
