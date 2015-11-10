@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<library>
+  <card name= "Regular Heal">
+    <element>None</element>
+    <image>Cards/Heal1</image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "10" prefab= "">Heal</action>
+    <description>A basic Health restore.</description>
+  </card>
+</library>
