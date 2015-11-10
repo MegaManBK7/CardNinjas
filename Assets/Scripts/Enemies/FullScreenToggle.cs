@@ -18,8 +18,7 @@ public class FullScreenToggle : MonoBehaviour {
 	}
 
 	public void FullscreenUpdate() {
-		Debug.Log("go");
-		Screen.fullScreen = toggle.isOn;
+		Screen.SetResolution(Screen.resolutions[Screen.resolutions.Length].width, Screen.resolutions[Screen.resolutions.Length].width, toggle.isOn);
 	}
 
 
