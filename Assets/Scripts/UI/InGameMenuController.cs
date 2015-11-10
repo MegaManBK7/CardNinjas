@@ -21,13 +21,10 @@ public class InGameMenuController : MonoBehaviour {
 	public GameObject P2Win;
 	public GameObject P2WinSelect;
 
-	private EventSystem es = EventSystem.current;
-	private UIHideBehaviour hideBehaviour;
+	public EventSystem es;
+	public UIHideBehaviour hideBehaviour;
 
 	#region Monobehaviour
-	public void Start() {
-		hideBehaviour = GetComponent<UIHideBehaviour>();
-	}
 
 	public void Update() {
 		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Pause)) {
@@ -36,6 +33,9 @@ public class InGameMenuController : MonoBehaviour {
 			else
 				this.BringUpPause();
 		}
+
+		if (hideBehaviour.OnScreenPos.position == hideBehaviour.transform.position)
+			Time.timeScale = 0;
 	}
 	#endregion
 
@@ -102,6 +102,7 @@ public class InGameMenuController : MonoBehaviour {
 
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
+		Time.timeScale = 1;
 	}
 	#endregion
 }
