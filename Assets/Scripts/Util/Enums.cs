@@ -3,7 +3,11 @@
     public class Enums
     {
         public enum Direction { Up, Down, Left, Right, None };
-        public enum CardTypes { SwordVert, SwordHori, WideSword, NaginataVert, NaginataHori, HammerVert, HammerHori, ThrowLight, ThrowMid, Shoot, ChiAttack, ChiStationary, Error, Fan, Kanobo, Tanto, Wakizashi, Tonfa, BoStaff };
+        public enum CardTypes
+        {
+            SwordVert, SwordHori, WideSword, NaginataVert, NaginataHori, HammerVert, HammerHori, ThrowLight,
+            ThrowMid, Shoot, ChiAttack, ChiStationary, Fan, Kanobo, Tanto, Wakizashi, Tonfa, BoStaff, Error
+        };
         public enum FieldType { Blue, Red, Destroyed };
         public enum PlayerState
         {
