@@ -7,13 +7,13 @@ using UnityEngine.EventSystems;
 public class FullScreenToggle : MonoBehaviour {
 
 	public Toggle toggle;
+	public bool isToggleOn;
 
 	public Resolution lastResolution;
 	public ConfirmationDialogController CDC;
 
 	// Use this for initialization
 	void Start () {
-		toggle.onValueChanged.AddListener (delegate {FullscreenUpdate ();});
 		toggle.isOn = Screen.fullScreen;
 	}
 	
@@ -24,13 +24,25 @@ public class FullScreenToggle : MonoBehaviour {
 	public void FullscreenUpdate() {
 		lastResolution = Screen.currentResolution;
 		Screen.fullScreen = toggle.isOn;
-		Screen.SetResolution(Screen.resolutions[Screen.resolutions.Length-1].width, Screen.resolutions[Screen.resolutions.Length-1].width, toggle.isOn);
 		
 		CDC.BringUpKeep();
-		CDC.ConfirmKeepAction = ChangeResolutionBack;
+		CDC.Go = this.ChangeResolutionBack;
+	}
+
+	public void FlipToggle() {
+		this.toggle.isOn = !this.toggle.isOn;
 	}
 
 	public void ChangeResolutionBack() {
 		Screen.SetResolution(lastResolution.width, lastResolution.height, Screen.fullScreen);
+		Debug.Log(CDC.PreviousSelected);
+
+		//  What the hell unity
+		//if (this.toggle.isOn) this.toggle.isOn = false;
+		//if(this.toggle.isOn == false) this.toggle.isOn = true;
+		//this.toggle.isOn = !this.toggle.isOn;
+		//this.FlipToggle();
+
+		Debug.Log(CDC.PreviousSelected);
 	}
 }

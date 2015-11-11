@@ -21,8 +21,10 @@ public class ConfirmationDialogController : MonoBehaviour {
 	public EventSystem es;
 	public UIHideBehaviour hideBehaviour;
 
-	public Action ConfirmKeepAction;
-	public float Timer = 3.0f;
+	public delegate void ConfirmKeepAction();
+	public ConfirmKeepAction Go;
+	public float Timer = 5.0f;
+	public Action NotConfirmKeepAction;
 
 	public GameObject PreviousSelected;
 	#endregion
@@ -35,10 +37,10 @@ public class ConfirmationDialogController : MonoBehaviour {
 				this.DismissDialog();
 		}
 
-		if (Keep.activeSelf || this.hideBehaviour.OnScreen) {
+		if (Keep.activeSelf && this.hideBehaviour.OnScreen) {
 			Timer -= Time.deltaTime;
 			if (Timer < 0.0f) {
-				if (ConfirmKeepAction != null) ConfirmKeepAction();
+				if (Go != null) Go();
 				this.DismissDialog();
 			}
 		}
@@ -67,16 +69,20 @@ public class ConfirmationDialogController : MonoBehaviour {
 	}
 
 	public void DismissDialog() {
+		if(NotConfirmKeepAction != null) NotConfirmKeepAction();
+
 		hideBehaviour.OnScreen = false;
-		this.Timer = 3.0f;
-		this.ConfirmKeepAction = null;
+		this.Timer = 5.0f;
+		this.Go = null;
+		this.NotConfirmKeepAction = null;
 		es.SetSelectedGameObject(PreviousSelected);
+		this.PreviousSelected = null;
 	}
 	#endregion
 
 	#region Button Action Calls
 	public void ButtonActionCall() {
-		if (ConfirmKeepAction != null) ConfirmKeepAction();
+		if (Go != null) Go();
 		this.DismissDialog();
 	}
 	#endregion

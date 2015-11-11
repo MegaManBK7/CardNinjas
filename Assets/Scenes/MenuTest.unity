@@ -8054,6 +8054,7 @@ MonoBehaviour:
   es: {fileID: 2005829462}
   hideBehaviour: {fileID: 436183902}
   Timer: 5
+  PreviousSelected: {fileID: 0}
 --- !u!1 &573812369
 GameObject:
   m_ObjectHideFlags: 0
@@ -16084,6 +16085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CDC: {fileID: 572048698}
+  lastOption: 0
   notFirstTime: 0
 --- !u!1 &1212094543
 GameObject:

@@ -8,6 +8,7 @@ public class ResolutionChange : MonoBehaviour {
 	public ConfirmationDialogController CDC;
 
 	public Resolution lastResolution;
+	public int lastOption;
 
 	public bool notFirstTime = false;
 
@@ -32,11 +33,13 @@ public class ResolutionChange : MonoBehaviour {
 	}
 
 	public void SetResolution() {
+		Debug.Log(this.dropdown.value);
 		if (notFirstTime) {
 			lastResolution = Screen.currentResolution;
+			lastOption = dropdown.value;
 			Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
 			CDC.BringUpKeep();
-			CDC.ConfirmKeepAction = ChangeResolutionBack;
+			CDC.Go = ChangeResolutionBack;
 		}
 		else {
 			notFirstTime = true;
@@ -45,5 +48,6 @@ public class ResolutionChange : MonoBehaviour {
 
 	public void ChangeResolutionBack() {
 		Screen.SetResolution(lastResolution.width, lastResolution.height, Screen.fullScreen);
+		//this.dropdown.value = this.lastOption;
 	}
 }
