@@ -538,7 +538,10 @@ namespace Assets.Scripts.Player
                 if (health <= 0)
                 {
                     currentNode.clearOccupied();
-                    Destroy(this.gameObject);
+                    if (playerNumber == 1)
+                        Managers.GameManager.Player1Lose = true;
+                    else
+                        Managers.GameManager.Player1Win = true;
                 }
             }
         }
