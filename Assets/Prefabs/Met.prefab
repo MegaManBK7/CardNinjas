@@ -155,6 +155,7 @@ MonoBehaviour:
   element: 0
   stunTime: 1
   bullet: {fileID: 131416, guid: ea9caf517f393d040b907eef5331304d, type: 2}
+  body: {fileID: 2328892}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

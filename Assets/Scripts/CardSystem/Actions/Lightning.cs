@@ -25,10 +25,6 @@ namespace Assets.Scripts.CardSystem.Actions
                     else
                         repeater = false;
                 }
-                foreach(GridNode node in strikenNodes)
-                {
-                    spawnObjectUsingPrefabAsModel(damage, 9, .2f, false, Util.Enums.Direction.None, 10, 0, true, node, actor);
-                }
             }
             if (actor.Direction == Util.Enums.Direction.Right)
             {
@@ -43,10 +39,10 @@ namespace Assets.Scripts.CardSystem.Actions
                     else
                         repeater = false;
                 }
-                foreach (GridNode node in strikenNodes)
-                {
-                    spawnObjectUsingPrefabAsModel(damage, 9, .2f, false, Util.Enums.Direction.None, 10, 0, true, node, actor);
-                }
+            }
+            foreach (GridNode node in strikenNodes)
+            {
+                spawnObjectUsingPrefabAsModel(damage, 9, .2f, false, Util.Enums.Direction.None, 10, 0, true, node, actor);
             }
         }
     }

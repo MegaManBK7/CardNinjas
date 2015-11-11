@@ -110,10 +110,10 @@ namespace Assets.Scripts.UI
                     DrawPossibleSelections();
                 }
 
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard0, 1)) SelectCard(0);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard1, 1)) SelectCard(1);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard2, 1)) SelectCard(2);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard3, 1)) SelectCard(3);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard0, thisPlayerIndex)) SelectCard(0);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard1, thisPlayerIndex)) SelectCard(1);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard2, thisPlayerIndex)) SelectCard(2);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard3, thisPlayerIndex)) SelectCard(3);
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard4, thisPlayerIndex)) SelectCard(4);
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard5, thisPlayerIndex)) SelectCard(5);
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.PickCard6, thisPlayerIndex)) SelectCard(6);
