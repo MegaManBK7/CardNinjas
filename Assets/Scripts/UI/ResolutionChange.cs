@@ -24,7 +24,8 @@ public class ResolutionChange : MonoBehaviour {
 			Dropdown.OptionData opt = new Dropdown.OptionData();
 			opt.text = res.ToString();
 			dropdown.options.Add(opt);
-			if (Screen.currentResolution.ToString() == res.ToString()) dropdown.value = i;
+			if (Screen.currentResolution.ToString() == res.ToString()) 
+				dropdown.gameObject.transform.GetChild(0).GetComponent<Text>().text = res.ToString();
 			i++;
 		}
 
