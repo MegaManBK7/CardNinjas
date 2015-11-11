@@ -9,6 +9,7 @@ namespace Assets.Scripts.CardSystem.Actions
         {
             Weapons.Projectiles.BackNForth temp = MonoBehaviour.Instantiate(prefab).GetComponent<Weapons.Projectiles.BackNForth>();
             temp.Damage = damage;
+            temp.TimesCanPierce = range - 1;
             temp.Owner = actor.gameObject;
             Util.AddElement.AddElementByEnum(temp.gameObject, element, true);
             if (actor.Direction == Util.Enums.Direction.Left)

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<library><!--
+<library>
   <card name= "Regular Fan">
     <element>None</element>
     <image>Cards/RegularFan</image>
@@ -98,7 +98,7 @@
     <action range= "3" damage= "8" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>Slam enemies in the tile in front of you and the tiles above and below..</description>
   </card>
-  
+
   <card name= "Single Bamboo Dart">
     <element>None</element>
     <image>Cards/Single Dart</image>
@@ -196,8 +196,7 @@
     <type>ThrowMid</type>
     <action range= "1" damage= "9" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
     <description></description>
-  </card><!--
-
+  </card>
   <card name= "Tetsubishi Drop">
     <element>None</element>
     <image></image>
@@ -331,9 +330,30 @@
   <card name= "Lightning Strike">
     <element>Thunder</element>
     <image></image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "4" prefab= "Prefabs/Lightning">LightStrike</action>
+    <description>A strike of lightning two spaces ahead.</description>
+  </card>
+  <card name= "Lightning Cross">
+    <element>Thunder</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "4" damage= "2" prefab= "Prefabs/Lightning">LightStrike</action>
+    <description>A + shaped barrage of lightning.</description>
+  </card>
+  <card name= "Lightning X">
+    <element>Thunder</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "5" damage= "2" prefab= "Prefabs/Lightning">LightStrike</action>
+    <description>An X shaped barrage of lightning.</description>
+  </card>
+  <card name= "Lightning Shot">
+    <element>Thunder</element>
+    <image></image>
     <type>ChiAttack</type>
     <action range= "0" damage= "2" prefab= "Prefabs/LightningStrike">Laser</action>
-    <description>A laser that strikes across the field.</description>
+    <description>A thunderous laser that strikes across the field.</description>
   </card>
   
   <card name= "Regular Heal">
@@ -377,5 +397,89 @@
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
-  </card>-->
+  </card>
+  <card name= "Tetsubishi Drop">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "1" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws small caltrop traps that can stun the enemy in front of you.</description>
+  </card>
+  <card name= "Tetsubishi Spray">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws a cone of caltrop traps in front of you.</description>
+  </card>
+  <card name= "Tetsubishi Line">
+    <element>None</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <description>Throws a line of caltrop traps in front of you.</description>
+  </card>
+  <card name= "Oil Spill">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Throws some slippery oil in front of you.</description>
+  </card>
+  <card name= "Oil Splash">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "2" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Throws a cone of oil in front of you.</description>
+  </card>
+  <card name= "Oil Line">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "3" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Throws a line of oil three tiles forward.</description>
+  </card>
+  <card name= "Big Oil">
+    <element>Water</element>
+    <image></image>
+    <type>SwordHori</type>
+    <action range= "4" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <description>Cover half the enemy's field with oil.</description>
+  </card>
+  <card name= "Laser">
+    <element>None</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "0" damage= "2" prefab= "Prefabs/Laser">Laser</action>
+    <description>A laser that strikes across the field.</description>
+  </card>
+  <card name= "Bamboo Sneak">
+    <element>Wood</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "3" prefab= "Prefabs/Bamboo">Bamboo</action>
+    <description>A bamboo strike on the enemy's furthest panel.</description>
+  </card>
+  <card name= "Panel Grab">
+    <element>None</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "0" prefab= "">PanelSteal</action>
+    <description>Steals a nearby enemy panel.</description>
+  </card>
+  <card name= "Line Grab">
+    <element>None</element>
+    <image></image>
+    <type>ChiStationary</type>
+    <action range= "3" damage= "0" prefab= "">PanelSteal</action>
+    <description>Steals the closest line of enemy panels.</description>
+  </card>
+  <card name= "Tree Growth">
+    <element>Wood</element>
+    <image></image>
+    <type>ChiAttack</type>
+    <action range= "3" damage= "2" prefab= "Prefabs/Tree">GrowTree</action>
+    <description>Grow a tree three spaces in front of you.</description>
+  </card>
 </library>

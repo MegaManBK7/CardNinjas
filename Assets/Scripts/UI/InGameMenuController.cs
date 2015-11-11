@@ -4,8 +4,14 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Assets.Scripts.Util;
 
+/// <summary>
+/// In game menu controller.
+/// </summary>
+/// <remarks>Handles activating and deactivating pause and game-end screens.</remarks>
 public class InGameMenuController : MonoBehaviour {
 
+	// In Game Menu GameObjects
+	#region public members
 	public GameObject Pause;
 	public GameObject PauseSelect;
 
@@ -23,9 +29,10 @@ public class InGameMenuController : MonoBehaviour {
 
 	public EventSystem es;
 	public UIHideBehaviour hideBehaviour;
+	#endregion
 
 	#region Monobehaviour
-
+ 
 	public void Update() {
 		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Pause)) {
 			if (hideBehaviour.OnScreen)
@@ -42,6 +49,9 @@ public class InGameMenuController : MonoBehaviour {
 	#endregion
 
 	#region MenuControls
+	/// <summary>
+	/// Brings up p2 wins window.
+	/// </summary>
 	public void BringUpP2Win() {
 		Win.SetActive(false);
 		Lose.SetActive(false);
@@ -54,6 +64,9 @@ public class InGameMenuController : MonoBehaviour {
 		es.SetSelectedGameObject(P2WinSelect);
 	}
 
+	/// <summary>
+	/// Brings up p1 wins window.
+	/// </summary>
 	public void BringUpP1Win() {
 		Win.SetActive(false);
 		Lose.SetActive(false);
@@ -66,6 +79,9 @@ public class InGameMenuController : MonoBehaviour {
 		es.SetSelectedGameObject(P1WinSelect);
 	}
 
+	/// <summary>
+	/// Brings up Single Player lose window.
+	/// </summary>
 	public void BringUpLose() {
 		Win.SetActive(false);
 		Pause.SetActive(false);
@@ -78,6 +94,9 @@ public class InGameMenuController : MonoBehaviour {
 		es.SetSelectedGameObject(LoseSelect);
 	}
 
+	/// <summary>
+	/// Brings up Single Player win window.
+	/// </summary>
 	public void BringUpWin() {
 		Pause.SetActive(false);
 		Lose.SetActive(false);
@@ -90,6 +109,9 @@ public class InGameMenuController : MonoBehaviour {
 		es.SetSelectedGameObject(WinSelect);
 	}
 
+	/// <summary>
+	/// Brings up pause window.
+	/// </summary>
 	public void BringUpPause() {
 		Win.SetActive(false);
 		Lose.SetActive(false);
@@ -102,6 +124,9 @@ public class InGameMenuController : MonoBehaviour {
 		es.SetSelectedGameObject(PauseSelect);
 	}
 
+	/// <summary>
+	/// Dismisses the current in game dialog.
+	/// </summary>
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
 		Time.timeScale = 1;
