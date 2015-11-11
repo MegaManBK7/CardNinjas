@@ -6,6 +6,9 @@ namespace Assets.Scripts.Weapons.Projectiles
 {
     class BackNForth : Hitbox
     {
+        [SerializeField]
+        protected int bouncesAllowed;
+
         private int bounceCount = 0;
 
         public override void Update()
@@ -21,7 +24,7 @@ namespace Assets.Scripts.Weapons.Projectiles
                                 target = currentNode.Left;
                             else
                             {
-                                if (bounceCount > 0)
+                                if (bounceCount >= bouncesAllowed)
                                 {
                                     dead = true;
                                 }
@@ -35,7 +38,7 @@ namespace Assets.Scripts.Weapons.Projectiles
                                 target = currentNode.Right;
                             else
                             {
-                                if (bounceCount > 0)
+                                if (bounceCount >= bouncesAllowed)
                                 {
                                     dead = true;
                                 }

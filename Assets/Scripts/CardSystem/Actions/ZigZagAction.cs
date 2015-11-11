@@ -3,11 +3,11 @@ using Assets.Scripts.Player;
 
 namespace Assets.Scripts.CardSystem.Actions
 {
-    class BackNForthAction : Action
+    class ZigZagAction : Action
     {
         public override void useCard(Character actor)
         {
-            Weapons.Projectiles.BackNForth temp = MonoBehaviour.Instantiate(prefab).GetComponent<Weapons.Projectiles.BackNForth>();
+            Weapons.Projectiles.ZigZag temp = MonoBehaviour.Instantiate(prefab).GetComponent<Weapons.Projectiles.ZigZag>();
             temp.Damage = damage;
             temp.TimesCanPierce = range - 1;
             temp.Owner = actor.gameObject;
