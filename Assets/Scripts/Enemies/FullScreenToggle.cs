@@ -37,15 +37,7 @@ public class FullScreenToggle : MonoBehaviour {
 	}
 
 	public void ChangeResolutionBack() {
-		Debug.Log(CDC.PreviousSelected);
-
-		//  What the hell unity
-		//if (this.toggle.isOn) this.toggle.isOn = false;
-		//if(this.toggle.isOn == false) this.toggle.isOn = true;
-		//this.toggle.isOn = !this.toggle.isOn;
 		this.FlipToggle();
 		Screen.SetResolution(lastResolution.width, lastResolution.height, this.toggle.isOn);
-
-		Debug.Log(CDC.PreviousSelected);
 	}
 }

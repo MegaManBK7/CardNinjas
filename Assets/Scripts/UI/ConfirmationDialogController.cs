@@ -67,6 +67,7 @@ public class ConfirmationDialogController : MonoBehaviour {
 
 		PreviousSelected = es.currentSelectedGameObject;
 		es.SetSelectedGameObject(KeepSelect);
+		Debug.Log("current after keep: " + es.currentSelectedGameObject);
 	}
 
 	public void DismissDialog() {

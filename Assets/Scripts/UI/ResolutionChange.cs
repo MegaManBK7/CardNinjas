@@ -10,14 +10,14 @@ public class ResolutionChange : MonoBehaviour {
 	public ConfirmationDialogController CDC;
 
 	public Resolution lastResolution;
-	public int lastOption;
+	public string lastOption;
 
 	public bool notFirstTime = false;
 
 	public Selectable Quality;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		dropdown = GetComponent<Dropdown>();
 		int i = 0;
 		foreach (Resolution res in Screen.resolutions) {
@@ -33,31 +33,40 @@ public class ResolutionChange : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {		
-		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept) && EventSystem.current.currentSelectedGameObject == this.gameObject) {
+	void Update () {
+		Debug.Log(EventSystem.current.currentSelectedGameObject);
+		if (this.gameObject.transform.childCount == 5 ) {
+			Debug.Log("Explicit");
 			Navigation customNav = new Navigation();
 			customNav.mode = Navigation.Mode.Automatic;
+			dropdown.navigation = customNav;
+		}
+		else if (!this.CDC.hideBehaviour.OnScreen) {
+			Debug.Log("Specific");
+			Navigation customNav = new Navigation();
+			customNav.mode = Navigation.Mode.Explicit;
+			customNav.selectOnDown = Quality;
 			dropdown.navigation = customNav;
 		}
 	}
 
 	public void SetResolution() {
-		Debug.Log(this.dropdown.value);
-		EventSystem.current.SetSelectedGameObject(this.gameObject);
-		Navigation customNav = new Navigation();
-		customNav.mode = Navigation.Mode.Explicit;
-		customNav.selectOnDown = Quality;
-		dropdown.navigation = customNav;
+		if (EventSystem.current.currentSelectedGameObject.transform.IsChildOf(this.gameObject.transform) || EventSystem.current.currentSelectedGameObject == this.gameObject) {
+			Debug.Log("Resolution set");
+			EventSystem.current.SetSelectedGameObject(this.gameObject);
 
-		lastResolution = Screen.currentResolution;
-		lastOption = dropdown.value;
-		Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
-		CDC.BringUpKeep();
-		CDC.Go = ChangeResolutionBack;
+			lastResolution = Screen.currentResolution;
+			lastOption = dropdown.options[dropdown.value].text;
+			Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
+			CDC.BringUpKeep();
+			Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
+			CDC.Go = ChangeResolutionBack;
+			Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
+		}
 	}
 
 	public void ChangeResolutionBack() {
 		Screen.SetResolution(lastResolution.width, lastResolution.height, Screen.fullScreen);
-		//this.dropdown.value = this.lastOption;
+		dropdown.gameObject.transform.GetChild(0).GetComponent<Text>().text = lastOption;
 	}
 }
