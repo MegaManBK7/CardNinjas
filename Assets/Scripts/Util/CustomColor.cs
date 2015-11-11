@@ -22,5 +22,24 @@ namespace Assets.Scripts.Util
             a = Mathf.Clamp(a, 0f, MAX_RGBVal);
             return new Color((r / MAX_RGBVal), (g / MAX_RGBVal), (b / MAX_RGBVal), (a / MAX_RGBVal));
         }
+
+        public static Color ColorFromElement(Enums.Element element)
+        {
+            switch (element)
+            {
+                case Enums.Element.Fire:
+                    return Convert255(175.0f, 30.0f, 30.0f);
+                case Enums.Element.Water:
+                    return Convert255(30.0f, 30.0f, 175.0f);
+                case Enums.Element.Thunder:
+                    return Convert255(225.0f, 225.0f, 30.0f);
+                case Enums.Element.Earth:
+                    return Convert255(85.0f, 50.0f, 15.0f);
+                case Enums.Element.Wood:
+                    return Convert255(30.0f, 175.0f, 30.0f);
+                default:
+                    return Convert255(128.0f, 128.0f, 128.0f);
+            }
+        }
     }
 }
