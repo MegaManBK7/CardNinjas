@@ -709,7 +709,10 @@ MonoBehaviour:
   direction: 2
   type: 1
   element: 0
+  stunTime: 1
   bullet: {fileID: 184562, guid: b0dcee4b3a24b4846ae16358774447b3, type: 2}
+  body:
+  - {fileID: 13711030}
   mechAnima: {fileID: 9576214}
 --- !u!137 &13711030
 SkinnedMeshRenderer:

@@ -17,9 +17,13 @@ namespace Assets.Scripts.Player
         [SerializeField]
         private Animator anim;
         [SerializeField]
+        private SkinnedMeshRenderer[] body;
+        [SerializeField]
         private Weapons.Hitbox bullet;
         [SerializeField]
         private GameObject Katana;
+        [SerializeField]
+        private GameObject WideSword;
         [SerializeField]
         private GameObject Naginata;
         [SerializeField]
@@ -163,15 +167,18 @@ namespace Assets.Scripts.Player
                     {
                         render = !render;
                         renderTimer = 0;
-                        GetComponentInChildren<SkinnedMeshRenderer>().enabled = render;
+                        foreach (SkinnedMeshRenderer b in body)
+                            b.enabled = render;
                     }
                     hit = false;
                     renderTimer += Time.deltaTime;
                     invunTimer -= Time.deltaTime;
                 }
-                else
+                else if(!render || invun)
                 {
-                    GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+                    render = true;
+                    foreach(SkinnedMeshRenderer b in body)
+                        b.enabled = true;
                     invun = false;
                 }
 
@@ -219,6 +226,15 @@ namespace Assets.Scripts.Player
 							weapon.transform.localScale = weaponPoint.localScale;
                             weapon.transform.parent = weaponPoint;
 							weapon.transform.localEulerAngles = new Vector3(0,0,0);
+
+                        }
+                        if (type == Enums.CardTypes.WideSword)
+                        {
+                            weapon = Instantiate(WideSword);
+                            weapon.transform.position = weaponPoint.position;
+                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.parent = weaponPoint;
+                            weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
 
                         }
                         else if (type == Enums.CardTypes.NaginataHori || type == Enums.CardTypes.NaginataVert)
@@ -273,7 +289,7 @@ namespace Assets.Scripts.Player
                         {
                             weapon = Instantiate(Tonfa);
                             weapon.transform.position = weaponPoint.position;
-                            weapon.transform.localScale = weaponPoint.localScale;
+                            weapon.transform.localScale = weaponPoint.localScale/.8f;
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
@@ -427,6 +443,9 @@ namespace Assets.Scripts.Player
                     damageElement = hitbox.Element;
                 }
             }
+            Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
+            if (s != null)
+                Stun = true;
         }
 
         private void Idle()

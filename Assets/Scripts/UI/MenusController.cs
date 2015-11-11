@@ -27,15 +27,14 @@ public class MenusController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.B) && (Settings.OnScreen || LevelSelect1.OnScreen)) {
+		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (Settings.OnScreen || LevelSelect1.OnScreen))
 			GoToMainMenu();
-		}
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) Navigate(CustomInput.UserInput.Accept);
 
-		Debug.Log(Input.GetKeyDown(KeyCode.DownArrow));
-		if (Input.GetKeyDown(KeyCode.UpArrow)) Navigate(CustomInput.UserInput.Up);
-		if (Input.GetKeyDown(KeyCode.DownArrow)) Navigate(CustomInput.UserInput.Down);
-		if (Input.GetKeyDown(KeyCode.RightArrow)) Navigate(CustomInput.UserInput.Right);
-		if (Input.GetKeyDown(KeyCode.LeftArrow)) Navigate(CustomInput.UserInput.Left);
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) Navigate(CustomInput.UserInput.Up);
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) Navigate(CustomInput.UserInput.Down);
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) Navigate(CustomInput.UserInput.Right);
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) Navigate(CustomInput.UserInput.Left);
 	}
 
 
@@ -73,6 +72,7 @@ public class MenusController : MonoBehaviour {
 		LevelSelect1.OnScreen = true;
 		LevelSelect2.OnScreen = true;
 		EventSystem.current.SetSelectedGameObject(LevelSelected);
+		Debug.Log(EventSystem.current.currentSelectedGameObject);
 	}
 
 	#region NAVIGATION
@@ -88,6 +88,10 @@ public class MenusController : MonoBehaviour {
 		case CustomInput.UserInput.Down:
 			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
 			break;
+		case CustomInput.UserInput.Accept:
+			var pointer = new PointerEventData(EventSystem.current);
+			ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
+			return;
 		}
 		EventSystem.current.SetSelectedGameObject(next);
 	}

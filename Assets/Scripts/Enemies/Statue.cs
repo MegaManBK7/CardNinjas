@@ -4,6 +4,9 @@ namespace Assets.Scripts.Enemies
 {
     class Statue : Enemy
     {
+        [SerializeField]
+        private MeshRenderer body;
+
         protected override void Initialize()
         {
         }
@@ -14,7 +17,7 @@ namespace Assets.Scripts.Enemies
 
         protected override void Render(bool render)
         {
-            GetComponent<MeshRenderer>().enabled = render;
+            body.enabled = render;
         }
     }
 }

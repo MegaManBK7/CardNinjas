@@ -8,6 +8,8 @@ namespace Assets.Scripts.Enemies
     {
         [SerializeField]
         private GameObject bullet;
+        [SerializeField]
+        private MeshRenderer body;
 
         private Player.Player player;
         private float turn = 0;
@@ -19,7 +21,7 @@ namespace Assets.Scripts.Enemies
 
         protected override void Render(bool render)
         {
-            GetComponent<MeshRenderer>().enabled = render;
+            body.enabled = render;
         }
 
         protected override void RunAI()
