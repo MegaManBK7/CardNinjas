@@ -1888,7 +1888,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121776}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 680.268372, y: 122.627426, z: -895.412231}
+  m_LocalPosition: {x: -.278453827, y: -1.20000005, z: -4.3070755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 443880}
@@ -2680,7 +2680,10 @@ MonoBehaviour:
   mdec: 2
   turn: 0
   anim: {fileID: 9577784}
-  turnIsEnded: 0
+  shouldAttack: 0
+  attackStyle: 0
+  meleeHitbox: {fileID: 11400000, guid: ee1e34cc0f4207642875a22e586a2615, type: 2}
+  meleeEffect: {fileID: 170866, guid: 26cd10ac777fa4741b3e6e52d3f42eb6, type: 2}
 --- !u!137 &13721936
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
