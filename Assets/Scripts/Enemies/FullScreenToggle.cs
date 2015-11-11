@@ -11,6 +11,7 @@ public class FullScreenToggle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		toggle.onValueChanged.AddListener (delegate {FullscreenUpdate ();});
+		toggle.isOn = Screen.fullScreen;
 	}
 	
 	// Update is called once per frame
@@ -18,6 +19,7 @@ public class FullScreenToggle : MonoBehaviour {
 	}
 
 	public void FullscreenUpdate() {
+		Screen.fullScreen = toggle.isOn;
 		Screen.SetResolution(Screen.resolutions[Screen.resolutions.Length].width, Screen.resolutions[Screen.resolutions.Length].width, toggle.isOn);
 	}
 
