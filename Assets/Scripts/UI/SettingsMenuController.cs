@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Assets.Scripts.Util;
 
 public class SettingsMenuController : MonoBehaviour {
 
@@ -21,7 +22,8 @@ public class SettingsMenuController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (!Settings.activeInHierarchy))
+		   ChangeToSettings();
 	}
 	
 	// Update is called once per frame
