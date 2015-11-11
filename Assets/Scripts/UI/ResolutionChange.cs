@@ -22,10 +22,10 @@ public class ResolutionChange : MonoBehaviour {
 		int i = 0;
 		foreach (Resolution res in Screen.resolutions) {
 			Dropdown.OptionData opt = new Dropdown.OptionData();
-			opt.text = res.ToString();
+			opt.text = res.ToString().Split('@')[0];
 			dropdown.options.Add(opt);
 			if (Screen.currentResolution.ToString() == res.ToString()) 
-				dropdown.gameObject.transform.GetChild(0).GetComponent<Text>().text = res.ToString();
+				dropdown.gameObject.transform.GetChild(0).GetComponent<Text>().text = res.ToString().Split('@')[0];
 			i++;
 		}
 
@@ -52,16 +52,16 @@ public class ResolutionChange : MonoBehaviour {
 
 	public void SetResolution() {
 		if (EventSystem.current.currentSelectedGameObject.transform.IsChildOf(this.gameObject.transform) || EventSystem.current.currentSelectedGameObject == this.gameObject) {
-			Debug.Log("Resolution set");
+			//Debug.Log("Resolution set");
 			EventSystem.current.SetSelectedGameObject(this.gameObject);
 
 			lastResolution = Screen.currentResolution;
 			lastOption = dropdown.options[dropdown.value].text;
 			Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
 			CDC.BringUpKeep();
-			Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
+			//Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
 			CDC.Go = ChangeResolutionBack;
-			Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
+			//Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
 		}
 	}
 

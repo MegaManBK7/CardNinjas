@@ -14,6 +14,7 @@ public class MenusController : MonoBehaviour {
 
 	public UIHideBehaviour Settings;
 	public GameObject SettingsSelected;
+	public SettingsMenuController SettingsController;
 
 	public UIHideBehaviour LevelSelect1;
 	public UIHideBehaviour LevelSelect2;
@@ -27,7 +28,7 @@ public class MenusController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (Settings.OnScreen || LevelSelect1.OnScreen))
+		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (Settings.OnScreen && SettingsController.Settings.activeInHierarchy || LevelSelect1.OnScreen))
 			GoToMainMenu();
 		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) Navigate(CustomInput.UserInput.Accept);
 
