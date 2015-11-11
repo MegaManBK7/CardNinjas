@@ -19,14 +19,17 @@ public class FullScreenToggle : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	}
 
 	public void FullscreenUpdate() {
-		lastResolution = Screen.currentResolution;
-		Screen.fullScreen = toggle.isOn;
-		
-		CDC.BringUpKeep();
-		CDC.Go = this.ChangeResolutionBack;
+		if (EventSystem.current.currentSelectedGameObject == this.gameObject) {
+			lastResolution = Screen.currentResolution;
+			Screen.fullScreen = toggle.isOn;
+			
+			CDC.BringUpKeep();
+			CDC.Go = this.ChangeResolutionBack;
+		}
 	}
 
 	public void FlipToggle() {
@@ -41,7 +44,7 @@ public class FullScreenToggle : MonoBehaviour {
 		//if (this.toggle.isOn) this.toggle.isOn = false;
 		//if(this.toggle.isOn == false) this.toggle.isOn = true;
 		//this.toggle.isOn = !this.toggle.isOn;
-		//this.FlipToggle();
+		this.FlipToggle();
 
 		Debug.Log(CDC.PreviousSelected);
 	}

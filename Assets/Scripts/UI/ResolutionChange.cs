@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using Assets.Scripts.Util;
 
 public class ResolutionChange : MonoBehaviour {
 
@@ -11,6 +13,8 @@ public class ResolutionChange : MonoBehaviour {
 	public int lastOption;
 
 	public bool notFirstTime = false;
+
+	public Selectable Quality;
 
 	// Use this for initialization
 	void Awake () {
@@ -28,22 +32,27 @@ public class ResolutionChange : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () {		
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept) && EventSystem.current.currentSelectedGameObject == this.gameObject) {
+			Navigation customNav = new Navigation();
+			customNav.mode = Navigation.Mode.Automatic;
+			dropdown.navigation = customNav;
+		}
 	}
 
 	public void SetResolution() {
 		Debug.Log(this.dropdown.value);
-		if (notFirstTime) {
-			lastResolution = Screen.currentResolution;
-			lastOption = dropdown.value;
-			Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
-			CDC.BringUpKeep();
-			CDC.Go = ChangeResolutionBack;
-		}
-		else {
-			notFirstTime = true;
-		}
+		EventSystem.current.SetSelectedGameObject(this.gameObject);
+		Navigation customNav = new Navigation();
+		customNav.mode = Navigation.Mode.Explicit;
+		customNav.selectOnDown = Quality;
+		dropdown.navigation = customNav;
+
+		lastResolution = Screen.currentResolution;
+		lastOption = dropdown.value;
+		Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
+		CDC.BringUpKeep();
+		CDC.Go = ChangeResolutionBack;
 	}
 
 	public void ChangeResolutionBack() {

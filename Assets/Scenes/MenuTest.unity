@@ -2516,7 +2516,18 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129674886}
+        m_MethodName: FullscreenUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -2532,6 +2543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggle: {fileID: 129674885}
+  isToggleOn: 0
   CDC: {fileID: 572048698}
 --- !u!1 &138073123
 GameObject:
@@ -16087,6 +16099,7 @@ MonoBehaviour:
   CDC: {fileID: 572048698}
   lastOption: 0
   notFirstTime: 0
+  Quality: {fileID: 214146065}
 --- !u!1 &1212094543
 GameObject:
   m_ObjectHideFlags: 0

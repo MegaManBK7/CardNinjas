@@ -59,6 +59,7 @@ public class ConfirmationDialogController : MonoBehaviour {
 	}
 
 	public void BringUpKeep() {
+		Debug.Log ("KeepDialog");
 		Confirmation.SetActive(false);
 		Keep.SetActive(true);
 		
