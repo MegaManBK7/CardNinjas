@@ -75,7 +75,6 @@ public class MenusController : MonoBehaviour {
 		LevelSelect1.OnScreen = true;
 		LevelSelect2.OnScreen = true;
 		EventSystem.current.SetSelectedGameObject(LevelSelected);
-		Debug.Log(EventSystem.current.currentSelectedGameObject);
 	}
 
 	#region NAVIGATION
@@ -112,7 +111,6 @@ public class MenusController : MonoBehaviour {
 			return;
 		}
 		EventSystem.current.SetSelectedGameObject(next);
-		Debug.Log("Postnav: " + next);
 	}
 	#endregion
 }

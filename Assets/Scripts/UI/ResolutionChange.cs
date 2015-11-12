@@ -33,15 +33,12 @@ public class ResolutionChange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(EventSystem.current.currentSelectedGameObject);
 		if (this.gameObject.transform.childCount == 5 ) {
-			Debug.Log("Explicit");
 			Navigation customNav = new Navigation();
 			customNav.mode = Navigation.Mode.Automatic;
 			dropdown.navigation = customNav;
 		}
 		else if (!this.CDC.hideBehaviour.OnScreen) {
-			Debug.Log("Specific");
 			Navigation customNav = new Navigation();
 			customNav.mode = Navigation.Mode.Explicit;
 			customNav.selectOnDown = Quality;
@@ -59,9 +56,9 @@ public class ResolutionChange : MonoBehaviour {
 			Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
 			Camera.main.ResetAspect();
 			CDC.BringUpKeep();
-			Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
+			//Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
 			CDC.Go = ChangeResolutionBack;
-			Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
+			//Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
 		}
 	}
 

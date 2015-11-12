@@ -59,7 +59,7 @@ public class ConfirmationDialogController : MonoBehaviour {
 	}
 
 	public void BringUpKeep() {
-		Debug.Log ("KeepDialog");
+		//Debug.Log ("KeepDialog");
 		Confirmation.SetActive(false);
 		Keep.SetActive(true);
 		
@@ -67,7 +67,7 @@ public class ConfirmationDialogController : MonoBehaviour {
 
 		PreviousSelected = es.currentSelectedGameObject;
 		es.SetSelectedGameObject(KeepSelect);
-		Debug.Log("current after keep: " + es.currentSelectedGameObject);
+		//Debug.Log("current after keep: " + es.currentSelectedGameObject);
 	}
 
 	public void DismissDialog() {
