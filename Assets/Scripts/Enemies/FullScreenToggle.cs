@@ -26,6 +26,7 @@ public class FullScreenToggle : MonoBehaviour {
 		if (EventSystem.current.currentSelectedGameObject == this.gameObject) {
 			lastResolution = Screen.currentResolution;
 			Screen.fullScreen = toggle.isOn;
+			Camera.main.ResetAspect();
 			
 			CDC.BringUpKeep();
 			CDC.Go = this.ChangeResolutionBack;
@@ -39,5 +40,6 @@ public class FullScreenToggle : MonoBehaviour {
 	public void ChangeResolutionBack() {
 		this.FlipToggle();
 		Screen.SetResolution(lastResolution.width, lastResolution.height, this.toggle.isOn);
+		Camera.main.ResetAspect();
 	}
 }

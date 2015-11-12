@@ -15,7 +15,6 @@ public class ResolutionChange : MonoBehaviour {
 	public bool notFirstTime = false;
 
 	public Selectable Quality;
-
 	// Use this for initialization
 	void Start () {
 		dropdown = GetComponent<Dropdown>();
@@ -58,15 +57,17 @@ public class ResolutionChange : MonoBehaviour {
 			lastResolution = Screen.currentResolution;
 			lastOption = dropdown.options[dropdown.value].text;
 			Screen.SetResolution(Screen.resolutions[this.dropdown.value].width, Screen.resolutions[this.dropdown.value].height, Screen.fullScreen);
+			Camera.main.ResetAspect();
 			CDC.BringUpKeep();
-			//Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
+			Debug.Log("current after set: " + EventSystem.current.currentSelectedGameObject);
 			CDC.Go = ChangeResolutionBack;
-			//Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
+			Debug.Log("current after callback set: " + EventSystem.current.currentSelectedGameObject);
 		}
 	}
 
 	public void ChangeResolutionBack() {
 		Screen.SetResolution(lastResolution.width, lastResolution.height, Screen.fullScreen);
+		Camera.main.ResetAspect();
 		dropdown.gameObject.transform.GetChild(0).GetComponent<Text>().text = lastOption;
 	}
 }

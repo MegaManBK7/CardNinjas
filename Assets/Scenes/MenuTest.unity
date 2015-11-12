@@ -15901,6 +15901,8 @@ MonoBehaviour:
   LevelSelect1: {fileID: 2056606100}
   LevelSelect2: {fileID: 139579850}
   LevelSelected: {fileID: 453952763}
+  No: {fileID: 1429516042}
+  isNew: 0
 --- !u!1 &1213646592
 GameObject:
   m_ObjectHideFlags: 0

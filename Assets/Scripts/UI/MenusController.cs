@@ -20,6 +20,8 @@ public class MenusController : MonoBehaviour {
 	public UIHideBehaviour LevelSelect2;
 	public GameObject LevelSelected;
 
+	public GameObject No;
+	public bool isNew;
 
 	// Use this for initialization
 	void Start () {
@@ -81,6 +83,9 @@ public class MenusController : MonoBehaviour {
 	{
 		GameObject next = EventSystem.current.currentSelectedGameObject;
 
+		// Prevent the edge case of selecting a dropdown element
+
+
 		switch(direction)
 		{
 		case CustomInput.UserInput.Up:
@@ -97,10 +102,17 @@ public class MenusController : MonoBehaviour {
 			break;
 		case CustomInput.UserInput.Accept:
 			var pointer = new PointerEventData(EventSystem.current);
+			Toggle tempTog = next.GetComponent<Toggle>();
+			bool isNew = true;
+			if (tempTog) isNew = !tempTog.isOn;
 			ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
+			if (next.transform.parent.parent.parent.gameObject.GetComponent<ScrollRect>() != null && isNew) {
+				EventSystem.current.SetSelectedGameObject(No);
+			}
 			return;
 		}
 		EventSystem.current.SetSelectedGameObject(next);
+		Debug.Log("Postnav: " + next);
 	}
 	#endregion
 }
