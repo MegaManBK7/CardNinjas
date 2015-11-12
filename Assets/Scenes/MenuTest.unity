@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 114716529}
-  sp: {fileID: 643758824}
+  isSfx: 1
 --- !u!1 &114777612
 GameObject:
   m_ObjectHideFlags: 0
@@ -9112,7 +9112,7 @@ MonoBehaviour:
   song:
   - {fileID: 8300000, guid: bb3c170879c237f48b01e88f4656e031, type: 3}
   - {fileID: 8300000, guid: e48eb771e33faf048aee5ea761b9a9c4, type: 3}
-  audio: {fileID: 0}
+  audio: {fileID: 643758826}
   SFX: 1
   playOnLoad: 0
   loop: 0
@@ -20860,7 +20860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1501527623}
-  sp: {fileID: 2131615068}
+  isSfx: 0
 --- !u!1 &1525448673
 GameObject:
   m_ObjectHideFlags: 0
@@ -24644,7 +24644,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ff154ed485a67d649915f72d2e289663, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9fdd845f6e9e63840bdcb1c120956fd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26828,7 +26828,7 @@ MonoBehaviour:
   song:
   - {fileID: 8300000, guid: bb3c170879c237f48b01e88f4656e031, type: 3}
   - {fileID: 8300000, guid: e48eb771e33faf048aee5ea761b9a9c4, type: 3}
-  audio: {fileID: 0}
+  audio: {fileID: 2131615070}
   SFX: 0
   playOnLoad: 0
   loop: 0
