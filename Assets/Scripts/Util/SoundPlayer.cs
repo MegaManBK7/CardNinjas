@@ -14,7 +14,7 @@ namespace Assets.Scripts.Util
         public bool dontDestroy;
 
         void Start()
-        {
+		{
             audio = GetComponent<AudioSource>();
             if (playOnLoad)
                 PlaySong(0);

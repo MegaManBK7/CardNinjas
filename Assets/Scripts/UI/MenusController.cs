@@ -25,7 +25,8 @@ public class MenusController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		Managers.GameManager.SFXVol = 1;
+		Managers.GameManager.MusicVol = 1;
 	}
 	
 	// Update is called once per frame

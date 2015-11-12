@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Assets.Scripts.Util;
+using Assets.Scripts.Managers;
 
 /// <summary>
 /// In game menu controller.
@@ -29,6 +30,8 @@ public class InGameMenuController : MonoBehaviour {
 
 	public EventSystem es;
 	public UIHideBehaviour hideBehaviour;
+
+	public bool IsMultiplayer;
 	#endregion
 
 	#region Monobehaviour
@@ -42,8 +45,25 @@ public class InGameMenuController : MonoBehaviour {
 		}
 
 		if (hideBehaviour.OnScreenPos.position == hideBehaviour.transform.position && hideBehaviour.OnScreen) {
-			Time.timeScale = 0.00000001f;
+			GameManager.Pause = true;
 			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel)) this.DismissDialog();
+		}
+
+		if (this.IsMultiplayer) {
+			if (GameManager.Player1Win) {
+				this.BringUpWin();
+			}
+			else if (GameManager.Player1Lose) {
+				this.BringUpLose();
+			}
+		}
+		else {
+			if (GameManager.Player1Win) {
+				this.BringUpP1Win();
+			}
+			else if (GameManager.Player1Lose) {
+				this.BringUpP2Win();
+			}
 		}
 	}
 	#endregion
@@ -129,7 +149,7 @@ public class InGameMenuController : MonoBehaviour {
 	/// </summary>
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
-		Time.timeScale = 1;
+		GameManager.Pause = false;
 	}
 	#endregion
 }
