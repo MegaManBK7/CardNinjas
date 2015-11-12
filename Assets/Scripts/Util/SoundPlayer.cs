@@ -15,9 +15,6 @@ namespace Assets.Scripts.Util
 
         void Start()
 		{
-			Managers.GameManager.SFXVol = 1;
-			Managers.GameManager.MusicVol = 1;
-
             audio = GetComponent<AudioSource>();
             if (playOnLoad)
                 PlaySong(0);
