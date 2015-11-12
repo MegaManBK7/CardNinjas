@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<library><!--
+<library>
   <card name= "Regular Fan">
     <element>None</element>
     <image>Cards/RegularFan</image>
@@ -98,7 +98,7 @@
     <action range= "3" damage= "8" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>Slam enemies in the tile in front of you and the tiles above and below..</description>
   </card>
-  
+
   <card name= "Single Bamboo Dart">
     <element>None</element>
     <image>Cards/Single Dart</image>
@@ -196,8 +196,7 @@
     <type>ThrowMid</type>
     <action range= "1" damage= "9" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
     <description></description>
-  </card><!--
-
+  </card>
   <card name= "Tetsubishi Drop">
     <element>None</element>
     <image></image>
@@ -377,5 +376,5 @@
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
-  </card>-->
+  </card>
 </library>
