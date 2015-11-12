@@ -58,13 +58,13 @@ public class MainMenuController : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < buttons.Length; i++) {
 			buttons[i].transform.position = Vector3.MoveTowards(buttons[i].transform.position, 
-                                            goalButtons[i].transform.position, Time.deltaTime * 500.0f);
+                                            goalButtons[i].transform.position, Time.deltaTime * 1000.0f);
 		}
 
 		if (cardParent) {
 			for (int i = 0; i < cards.Length; i++) {
 				cards[i].transform.position = Vector3.MoveTowards(cards[i].transform.position, 
-				                              goalCards[i].transform.position, Time.deltaTime * 500.0f);
+				                              goalCards[i].transform.position, Time.deltaTime * 1000.0f);
 			}
 		}
 	}
