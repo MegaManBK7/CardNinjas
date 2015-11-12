@@ -30,7 +30,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: 0
       data:
         first:
           name: _Metallic
@@ -38,7 +38,7 @@ Material:
       data:
         first:
           name: _RimPower
-        second: 3
+        second: .5
       data:
         first:
           name: _Amount
@@ -47,4 +47,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .588, g: .588, b: .588, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}

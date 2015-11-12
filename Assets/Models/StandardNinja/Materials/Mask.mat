@@ -134,7 +134,7 @@ Material:
       data:
         first:
           name: _Amount
-        second: .000500000024
+        second: .00079999998
     m_Colors:
       data:
         first:
