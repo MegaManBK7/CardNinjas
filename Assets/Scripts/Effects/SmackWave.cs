@@ -2,15 +2,14 @@
 using System.Collections;
 
 public class SmackWave : MonoBehaviour {
+	[SerializeField]
+	private float scaleFactor = 1;
 
 	[SerializeField]
-	public float scaleFactor = 1;
+	private float deathThreshold = .01f;
 
 	[SerializeField]
-	public float deathThreshold = .01f;
-
-	[SerializeField]
-	public bool terminateSelf = true;
+	private bool terminateSelf = true;
 
 	// Use this for initialization
 	void Start () {

@@ -23,11 +23,12 @@ namespace Assets.Scripts.Enemies
 		private bool isHurt = false;
 
 		[SerializeField]
-		public int tornadoTimerMax = 4;
+		private int tornadoTimerMax = 4;
 
 		[SerializeField]
-		public Tornado tornado;
+		private Tornado tornado;
 
+		[SerializeField]
 		private Player.Player player;
 
 		protected override void Initialize()

@@ -22,10 +22,12 @@ namespace Assets.Scripts.Enemies
         private attackType attackStyle = attackType.Melee;
 
 		[SerializeField]
-		public int stepTurn = 3;
+		private int stepTurn = 3;
 
-        public Hitbox meleeHitbox;
-        public GameObject meleeEffect;
+		[SerializeField]
+		private Hitbox meleeHitbox;
+		[SerializeField]
+		private GameObject meleeEffect;
 
         private Player.Player player;
 
