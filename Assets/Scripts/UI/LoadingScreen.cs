@@ -134,6 +134,7 @@ namespace Assets.Scripts.UI
 		public static string LevelToLoad
 		{
 			set { levelToLoad = value; }
+			get { return levelToLoad; }
 		}
 	}
 }

@@ -187,7 +187,7 @@ namespace Assets.Scripts.UI
             DontDestroyOnLoad(newDeck);
 
 			// Load loading screen, correct level should already be stored from Main Menu
-			Application.LoadLevel(0);
+			LoadingScreen.instance.LoadLevel(LoadingScreen.LevelToLoad);
         }
 
         public int LastSelected
