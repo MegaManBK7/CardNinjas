@@ -13,6 +13,8 @@ public class MainMenuController : MonoBehaviour {
 	public GameObject[] buttons;
 	public GameObject[] goalButtons;
 
+	public bool isCredits;
+
 	// TODO: write custom editor for this script that allows you to specify if cards are needed
 	public GameObject cardParent;
 	public GameObject goalCardParent;
@@ -64,7 +66,8 @@ public class MainMenuController : MonoBehaviour {
 		if (cardParent) {
 			for (int i = 0; i < cards.Length; i++) {
 				cards[i].transform.position = Vector3.MoveTowards(cards[i].transform.position, 
-				                              goalCards[i].transform.position, Time.deltaTime * 1000.0f);
+				                                                  goalCards[i].transform.position, Time.deltaTime * 1000.0f);
+				cards[i].transform.eulerAngles = goalCards[i].transform.eulerAngles;
 			}
 		}
 	}
@@ -74,7 +77,7 @@ public class MainMenuController : MonoBehaviour {
 		// to lazy to fix right now and don't think it'll matter.
 
 		// Reassign all button references to proper place after navigation, then cards if applicable
-		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) {
+		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Down) || this.isCredits && CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) {
 			GameObject temp = buttons[0];
 			for (int i = 1; i < buttons.Length; i++) {
 				buttons[i-1] = buttons[i];
@@ -92,7 +95,7 @@ public class MainMenuController : MonoBehaviour {
 				cards[cards.Length-1] = tempCard;
 			}
 		}
-		else if(CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) {
+		else if(CustomInput.BoolFreshPress(CustomInput.UserInput.Up) || this.isCredits && CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) {
 			GameObject temp = buttons[buttons.Length-1];
 			for (int i = buttons.Length-2; i >= 0; i--) {
 				buttons[i+1] = buttons[i];
