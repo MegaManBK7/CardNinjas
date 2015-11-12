@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Assets.Scripts.Util;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Assets.Scripts.Managers;
 
 public class MenusController : MonoBehaviour {
 
@@ -25,8 +26,8 @@ public class MenusController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Managers.GameManager.SFXVol = 1;
-		Managers.GameManager.MusicVol = 1;
+		GameManager.SFXVol = 1;
+		GameManager.MusicVol = 1;
 	}
 	
 	// Update is called once per frame
