@@ -16,8 +16,8 @@ public class SliderFix1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (CustomInput.BoolHeld(CustomInput.UserInput.Right)) Navigate(CustomInput.UserInput.Right);
-		if (CustomInput.BoolHeld(CustomInput.UserInput.Left)) Navigate(CustomInput.UserInput.Left);
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) Navigate(CustomInput.UserInput.Right);
+		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) Navigate(CustomInput.UserInput.Left);
 	}
 
 	#region NAVIGATION
