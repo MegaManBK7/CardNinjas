@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Assets.Scripts.Weapons;
+using System.Collections.Generic;
 
 namespace Assets.Scripts.Enemies
 {
@@ -20,9 +21,13 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private attackType attackStyle = attackType.Melee;
 
+		[SerializeField]
+		private int stepTurn = 3;
 
-        public Hitbox meleeHitbox;
-        public GameObject meleeEffect;
+		[SerializeField]
+		private Hitbox meleeHitbox;
+		[SerializeField]
+		private GameObject meleeEffect;
 
         private Player.Player player;
 
@@ -35,7 +40,8 @@ namespace Assets.Scripts.Enemies
 
             transform.position = currentNode.transform.position;
             player = FindObjectOfType<Player.Player>();
-        }
+            stepTurn = Random.Range(1, 4);
+		}
 
         protected override void RunAI()
         {
@@ -48,11 +54,11 @@ namespace Assets.Scripts.Enemies
                 }
                 else if (currentNode.Type != Type)
                 {
-                    returnToField();
+                    randoMove();
                 }
                 else
                 {
-                    if (turn < 3)
+                    if (turn < stepTurn)
                     {
                         changeSpot();
                     }
@@ -61,7 +67,8 @@ namespace Assets.Scripts.Enemies
                         stepToPlayer();
                         shouldAttack = true;
                         turn = 0;
-                    }
+                        stepTurn = Random.Range(2, 4);
+					}
                 }
             }
 
@@ -91,7 +98,7 @@ namespace Assets.Scripts.Enemies
             if (mdec == Util.Enums.Direction.Up)
             {
                 //If we're randomly going up
-                if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type))
+                if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type) || !currentNode.Up.Occupied)
                 {
                     currentNode.clearOccupied();//Say we aren't here
                     currentNode = currentNode.Up;//Say we're there
@@ -99,36 +106,58 @@ namespace Assets.Scripts.Enemies
                 }
             }
 
-            else if (currentNode.panelAllowed(Util.Enums.Direction.Right, Type))
+            else if (currentNode.panelAllowed(Util.Enums.Direction.Right, Type) || !currentNode.Up.Occupied)
             {
                 currentNode.clearOccupied();//Say we aren't here
                 currentNode = currentNode.Right;//Say we're there
                 currentNode.Owner = (this);//Tell the place we own it.
             }
 
-            else if (currentNode.panelAllowed(Util.Enums.Direction.Left, Type))
+            else if (currentNode.panelAllowed(Util.Enums.Direction.Left, Type) || !currentNode.Up.Occupied)
             {
                 currentNode.clearOccupied();//Say we aren't here
                 currentNode = currentNode.Left;//Say we're there
                 currentNode.Owner = (this);//Tell the place we own it.
             }
 
-            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type))
+            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type) || !currentNode.Up.Occupied)
             {
-                //If we're randomly going down
-                if (currentNode.Up.Occupied == false)
-                {
                     currentNode.clearOccupied();//Say we aren't here
                     currentNode = currentNode.Down;//Say we're there
-                    currentNode.Owner = (this);//Tell the place we own it.
-                }
+                    currentNode.Owner = (this);//Tell the place we own it.  
             }
             anim.SetTrigger("MoveEndTrigger");
             transform.position = currentNode.transform.position;
             turn++;
         }
 
-        public void stepToPlayer()
+		public void randoMove()
+		{
+			GameObject[] tiles = GameObject.FindGameObjectsWithTag("Blue");
+			List<Grid.GridNode> usableTiles = new List<Grid.GridNode>();
+			Grid.GridNode n;
+			foreach (GameObject g in tiles)
+			{
+				n = g.GetComponent<Grid.GridNode>();
+				if (!n.Occupied)
+					usableTiles.Add(n);
+			}
+			int tile = usableTiles.Count > 0 ? Random.Range(0, usableTiles.Count - 1) : -1;
+			if (tile == -1)
+			{
+
+			}
+			else
+			{
+				currentNode.clearOccupied();
+				currentNode = usableTiles[tile];
+				currentNode.Owner = (this);
+				transform.position = currentNode.transform.position;
+			}
+			anim.SetTrigger("MoveEndTrigger");
+		}
+
+		public void stepToPlayer()
         {
 
             currentNode = player.CurrentNode.Right;
