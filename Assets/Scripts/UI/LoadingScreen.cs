@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Managers;
 using Assets.Scripts.CardSystem;
 using Assets.Scripts.Util;
 
@@ -21,7 +19,9 @@ namespace Assets.Scripts.UI
 
 		private Canvas win;
 
+        [SerializeField]
         private Text cardName, type, damage, range, description;
+        [SerializeField]
         private Image image, cardBase;
 
         private float vel, counter, turnStep = 0.75f, smoothTime = 0.1f;
@@ -43,15 +43,6 @@ namespace Assets.Scripts.UI
 			{
 				Destroy(this.gameObject);
 			}
-
-            cardName = GameObject.Find("RCard Name").GetComponent<Text>();
-            type = GameObject.Find("RCard Type").GetComponent<Text>();
-            damage = GameObject.Find("RCard Damage").GetComponent<Text>();
-            range = GameObject.Find("RCard Range").GetComponent<Text>();
-            description = GameObject.Find("RCard Description").GetComponent<Text>();
-
-            image = GameObject.Find("RCard Image").GetComponent<Image>();
-            cardBase = GameObject.Find("Random Card").GetComponent<Image>();
 
             win = this.GetComponent<Canvas>();
             loadingCard = GameObject.Find("Loading Card").transform;

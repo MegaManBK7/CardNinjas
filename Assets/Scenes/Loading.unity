@@ -1302,6 +1302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac1e9b522129c84cae40e4dc794a79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToDestroy:
-  - {fileID: 2053012992}
-  - {fileID: 1398322116}
+  cardName: {fileID: 606962720}
+  type: {fileID: 210314227}
+  damage: {fileID: 1279710044}
+  range: {fileID: 692424663}
+  description: {fileID: 1813428137}
+  image: {fileID: 442183125}
+  cardBase: {fileID: 1715897046}
