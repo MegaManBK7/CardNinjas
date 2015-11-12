@@ -21,6 +21,8 @@ namespace Assets.Scripts.Player
         [SerializeField]
         private Weapons.Hitbox bullet;
         [SerializeField]
+        private SoundPlayer sfx;
+        [SerializeField]
         private GameObject Katana;
         [SerializeField]
         private GameObject WideSword;
@@ -301,6 +303,30 @@ namespace Assets.Scripts.Player
                             weapon.transform.parent = weaponPoint;
                             weapon.transform.localEulerAngles = new Vector3(0, 0, 0);
                         }
+                        int sfxNumber = 0;
+                        switch(type)
+                        {
+                            case Enums.CardTypes.SwordVert:  
+                            case Enums.CardTypes.SwordHori: 
+                            case Enums.CardTypes.WideSword: 
+                            case Enums.CardTypes.NaginataVert: 
+                            case Enums.CardTypes.NaginataHori: 
+                            case Enums.CardTypes.HammerVert: 
+                            case Enums.CardTypes.HammerHori: 
+                            case Enums.CardTypes.Fan:
+                            case Enums.CardTypes.Kanobo: 
+                            case Enums.CardTypes.Tanto: 
+                            case Enums.CardTypes.Wakizashi: 
+                            case Enums.CardTypes.Tonfa: 
+                            case Enums.CardTypes.BoStaff: sfxNumber = 0; break;
+                            case Enums.CardTypes.ThrowLight:
+                            case Enums.CardTypes.ThrowMid: 
+                            case Enums.CardTypes.Shoot: sfxNumber = 2; break;
+                            case Enums.CardTypes.ChiAttack:
+                            case Enums.CardTypes.ChiStationary: sfxNumber = 3; break;
+                            default: break;
+                        }
+                        sfx.PlaySong(sfxNumber);
                         useCard = false;
                         hand.UseCurrent(this);
                         CardUIEvent();
@@ -316,6 +342,7 @@ namespace Assets.Scripts.Player
                     b.transform.position = Direction == Enums.Direction.Left ? currentNode.Left.transform.position : currentNode.Right.transform.position;
                     b.CurrentNode = Direction == Enums.Direction.Left ? currentNode.Left : currentNode.Right;
                     b.Direction = Direction;
+                    sfx.PlaySong(2);
                 }
 
                 if (damage > 0 && takeDamage)
@@ -511,7 +538,10 @@ namespace Assets.Scripts.Player
                 if (health <= 0)
                 {
                     currentNode.clearOccupied();
-                    Destroy(this.gameObject);
+                    if (playerNumber == 1)
+                        Managers.GameManager.Player1Lose = true;
+                    else
+                        Managers.GameManager.Player1Win = true;
                 }
             }
         }

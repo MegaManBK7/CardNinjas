@@ -58,13 +58,13 @@ public class MainMenuController : MonoBehaviour {
 	void Update () {
 		for (int i = 0; i < buttons.Length; i++) {
 			buttons[i].transform.position = Vector3.MoveTowards(buttons[i].transform.position, 
-                                            goalButtons[i].transform.position, Time.deltaTime * 500.0f);
+                                            goalButtons[i].transform.position, Time.deltaTime * 1000.0f);
 		}
 
 		if (cardParent) {
 			for (int i = 0; i < cards.Length; i++) {
 				cards[i].transform.position = Vector3.MoveTowards(cards[i].transform.position, 
-				                              goalCards[i].transform.position, Time.deltaTime * 500.0f);
+				                              goalCards[i].transform.position, Time.deltaTime * 1000.0f);
 			}
 		}
 	}
@@ -74,7 +74,7 @@ public class MainMenuController : MonoBehaviour {
 		// to lazy to fix right now and don't think it'll matter.
 
 		// Reassign all button references to proper place after navigation, then cards if applicable
-		if(Input.GetKeyDown(KeyCode.DownArrow)) {
+		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) {
 			GameObject temp = buttons[0];
 			for (int i = 1; i < buttons.Length; i++) {
 				buttons[i-1] = buttons[i];
@@ -92,7 +92,7 @@ public class MainMenuController : MonoBehaviour {
 				cards[cards.Length-1] = tempCard;
 			}
 		}
-		else if(Input.GetKeyDown(KeyCode.UpArrow)) {
+		else if(CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) {
 			GameObject temp = buttons[buttons.Length-1];
 			for (int i = buttons.Length-2; i >= 0; i--) {
 				buttons[i+1] = buttons[i];

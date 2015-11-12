@@ -14,12 +14,16 @@ namespace Assets.Scripts.Util
         public bool dontDestroy;
 
         void Start()
-        {
+		{
             audio = GetComponent<AudioSource>();
             if (playOnLoad)
                 PlaySong(0);
             if (dontDestroy)
                 DontDestroyOnLoad(this.gameObject);
+            if (SFX)
+                audio.volume = Managers.GameManager.SFXVol;
+            else
+                audio.volume = Managers.GameManager.MusicVol;
         }
 
         void Update()

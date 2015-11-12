@@ -14,6 +14,11 @@ public class UILevelSwitch : MonoBehaviour {
 	}
 
 	public void LevelSwitch(int level) {
+		Debug.Log(level);
 		Application.LoadLevel(level);
+	}
+
+	public void ReloadLevel() {
+		LevelSwitch(Application.loadedLevel);
 	}
 }
