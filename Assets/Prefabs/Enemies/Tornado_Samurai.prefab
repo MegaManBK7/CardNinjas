@@ -2132,11 +2132,20 @@ MonoBehaviour:
   colStart: 1
   direction: 2
   type: 1
-  element: 0
+  element: 3
   stunTime: 1
   bullet: {fileID: 108762, guid: c1c891e6aa736b74588b2c9c457c7cc4, type: 2}
-  body: []
-  sfx: {fileID: 0}
+  body:
+  - {fileID: 13712518}
+  - {fileID: 13792740}
+  - {fileID: 13705660}
+  - {fileID: 13756122}
+  - {fileID: 13727576}
+  - {fileID: 13747792}
+  - {fileID: 13731756}
+  - {fileID: 13754476}
+  - {fileID: 13730600}
+  sfx: {fileID: 11450870}
   mechAnima: {fileID: 9503836}
 --- !u!114 &11450870
 MonoBehaviour:
@@ -2149,9 +2158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0ee834234a6cb4eaa2e5377e395ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: []
-  audio: {fileID: 0}
-  SFX: 0
+  song:
+  - {fileID: 8300000, guid: a910ed78a656c5d44848f4813898e0f0, type: 3}
+  audio: {fileID: 8243242}
+  SFX: 1
   playOnLoad: 0
   loop: 0
   intro: 0
@@ -2514,6 +2524,14 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: song.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: body.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: bullet
       value: 
       objectReference: {fileID: 108762, guid: c1c891e6aa736b74588b2c9c457c7cc4, type: 2}
@@ -2521,6 +2539,22 @@ Prefab:
       propertyPath: mechAnima
       value: 
       objectReference: {fileID: 9503836}
+    - target: {fileID: 0}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8243242}
+    - target: {fileID: 0}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 11450870}
+    - target: {fileID: 0}
+      propertyPath: element
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SFX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 159346}

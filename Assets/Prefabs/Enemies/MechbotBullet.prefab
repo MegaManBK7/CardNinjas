@@ -90,6 +90,7 @@ MonoBehaviour:
   speed: 5
   timesCanPierce: 0
   isFlying: 1
+  element: 0
 --- !u!198 &19867576
 ParticleSystem:
   m_ObjectHideFlags: 1

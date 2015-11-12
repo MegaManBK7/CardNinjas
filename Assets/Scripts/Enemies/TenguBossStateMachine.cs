@@ -6,7 +6,7 @@ namespace Assets.Scripts.Enemies
     {
         public enum State
         {
-            Intro = 0, Wait, Move, TeleportPrep, WaitToAppear, Attack, Return, Tornado
+            Intro = 0, Wait, Move, TeleportPrep, WaitToAppear, Attack, Return, Tornado, Summon
         };
 
         private State currState;
@@ -21,18 +21,19 @@ namespace Assets.Scripts.Enemies
             Random.seed = System.DateTime.Today.Millisecond;
         }
 
-        public int Run(bool animDone, bool waitTime, bool moveFailed)
+        public int Run(bool animDone, bool waitTime, bool moveFailed, bool full)
         {
             switch (currState)
             {
                 case State.Intro: currState = Intro(animDone); break;
-                case State.Wait: currState = Wait(moveFailed); break;
+                case State.Wait: currState = Wait(moveFailed, full); break;
                 case State.Move: currState = Move(animDone, moveFailed); break;
                 case State.TeleportPrep: currState = TeleportPrep(animDone); break;
                 case State.WaitToAppear: currState = WaitToAppear(animDone, waitTime); break;
                 case State.Attack: currState = Attack(animDone); break;
                 case State.Return: currState = Return(animDone); break;
                 case State.Tornado: currState = Tornado(animDone); break;
+                case State.Summon: currState = Summon(animDone); break;
             }
             return (int)currState;
         }
@@ -44,17 +45,18 @@ namespace Assets.Scripts.Enemies
             return State.Intro;
         }
 
-        private State Wait(bool moveFailed)
+        private State Wait(bool moveFailed, bool full)
         {
             hold += Time.deltaTime;
             if (hold > 1.5f)
             {
                 hold = 0;
                 float r = Random.Range(0f, 1f);
-                Debug.Log(r);
-                if (r < .25f)
+                if (r < .15f && !full)
+                    return State.Summon;
+                if (r < .40f)
                     return State.Tornado;
-                if (r < .5f || moveFailed)
+                if (r < .65f || moveFailed)
                     return State.TeleportPrep;
                 return State.Move;
             }
@@ -112,6 +114,13 @@ namespace Assets.Scripts.Enemies
             if (animDone)
                 return State.Wait;
             return State.Tornado;
+        }
+
+        private State Summon(bool animDone)
+        {
+            if (animDone)
+                return State.Wait;
+            return State.Summon;
         }
     }
 }

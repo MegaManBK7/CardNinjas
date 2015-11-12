@@ -55,7 +55,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.84900236, y: 1.88125229, z: 3.21122837}
+  m_Size: {x: 1.5, y: 1, z: 3.21122837}
   m_Center: {x: -.0319750309, y: -.0185928345, z: 1.25198603}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -70,12 +70,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   distance: 3
-  deathTime: 3
+  deathTime: .200000003
   piercing: 1
   direction: 4
   speed: 20
   timesCanPierce: 2
   isFlying: 1
+  element: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -94,6 +95,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathTime
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
