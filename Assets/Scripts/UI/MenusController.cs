@@ -20,6 +20,8 @@ public class MenusController : MonoBehaviour {
 	public UIHideBehaviour LevelSelect2;
 	public GameObject LevelSelected;
 
+	public GameObject No;
+	public bool isNew;
 
 	// Use this for initialization
 	void Start () {
@@ -73,13 +75,15 @@ public class MenusController : MonoBehaviour {
 		LevelSelect1.OnScreen = true;
 		LevelSelect2.OnScreen = true;
 		EventSystem.current.SetSelectedGameObject(LevelSelected);
-		Debug.Log(EventSystem.current.currentSelectedGameObject);
 	}
 
 	#region NAVIGATION
 	private void Navigate(CustomInput.UserInput direction)
 	{
 		GameObject next = EventSystem.current.currentSelectedGameObject;
+
+		// Prevent the edge case of selecting a dropdown element
+
 
 		switch(direction)
 		{
@@ -89,9 +93,21 @@ public class MenusController : MonoBehaviour {
 		case CustomInput.UserInput.Down:
 			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
 			break;
+		case CustomInput.UserInput.Left:
+			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
+			break;
+		case CustomInput.UserInput.Right:
+			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
+			break;
 		case CustomInput.UserInput.Accept:
 			var pointer = new PointerEventData(EventSystem.current);
+			Toggle tempTog = next.GetComponent<Toggle>();
+			bool isNew = true;
+			if (tempTog) isNew = !tempTog.isOn;
 			ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
+			if (next.transform.parent.parent.parent.gameObject.GetComponent<ScrollRect>() != null && isNew) {
+				EventSystem.current.SetSelectedGameObject(No);
+			}
 			return;
 		}
 		EventSystem.current.SetSelectedGameObject(next);
