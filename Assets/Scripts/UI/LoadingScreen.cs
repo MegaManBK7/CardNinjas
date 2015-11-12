@@ -110,7 +110,9 @@ namespace Assets.Scripts.UI
         }
 
         public void LoadLevel(string level)
-        {
+		{
+			win.enabled = true;
+			timer = 0;
             LevelToLoad = level;
             if (BeginLoadLevel != null) BeginLoadLevel();
             async = Application.LoadLevelAsync(level);
