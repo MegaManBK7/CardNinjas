@@ -121,7 +121,7 @@ GameObject:
   - 114: {fileID: 11476890}
   - 82: {fileID: 8226950}
   m_Layer: 0
-  m_Name: Swinging_Samurai
+  m_Name: ChargingStab_Samurai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1562,7 +1562,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112476}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -2.6500001, y: .839999974, z: 5.57000017}
+  m_LocalPosition: {x: 5.77820587, y: -1.20000005, z: -1.94555306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457654}
@@ -2127,9 +2127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0ee834234a6cb4eaa2e5377e395ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: []
-  audio: {fileID: 0}
-  SFX: 0
+  song:
+  - {fileID: 8300000, guid: 5ebe1a07a395d5c44a13bd45fc79e8b8, type: 3}
+  audio: {fileID: 8226950}
+  SFX: 1
   playOnLoad: 0
   loop: 0
   intro: 0
@@ -2143,7 +2144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 112476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26d7c2edb16ebc5409520661e7f61891, type: 3}
+  m_Script: {fileID: 11500000, guid: fb80c26be341467458af401e0c83986a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
@@ -2151,11 +2152,11 @@ MonoBehaviour:
   colStart: 1
   direction: 2
   type: 1
-  element: 0
+  element: 2
   stunTime: 1
-  bullet: {fileID: 137496, guid: fb3d2e1ccb68b704695a8cd1711de21e, type: 2}
+  bullet: {fileID: 160770, guid: c18ccf783d9857842a1b09bdf8942056, type: 2}
   body: []
-  sfx: {fileID: 0}
+  sfx: {fileID: 11476890}
   mechAnima: {fileID: 9551836}
 --- !u!137 &13704868
 SkinnedMeshRenderer:
@@ -2167,7 +2168,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8bc0a83e1d4bfc94f982a2057c4e33ad, type: 2}
+  - {fileID: 2100000, guid: af3d538fb1367e548be2f244b421e0e4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2292,7 +2293,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0eec543ce589d894fbde9f4c1d8b70f1, type: 2}
+  - {fileID: 2100000, guid: 34cfd47061597084494d446a78bdb166, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2512,7 +2513,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: song.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: element
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 11476890}
+    - target: {fileID: 0}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8226950}
+    - target: {fileID: 0}
+      propertyPath: SFX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112476}

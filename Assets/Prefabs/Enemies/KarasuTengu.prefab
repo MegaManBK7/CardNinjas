@@ -885,8 +885,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 494756}
   - 137: {fileID: 13705278}
-  - 65: {fileID: 6587454}
-  - 54: {fileID: 5445618}
   m_Layer: 0
   m_Name: Glove01
   m_TagString: Enemy
@@ -1009,8 +1007,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 461136}
   - 137: {fileID: 13774288}
-  - 65: {fileID: 6512566}
-  - 54: {fileID: 5463210}
   m_Layer: 0
   m_Name: Glove02
   m_TagString: Enemy
@@ -2128,6 +2124,8 @@ GameObject:
   - 54: {fileID: 5466944}
   - 136: {fileID: 13638052}
   - 114: {fileID: 11438486}
+  - 114: {fileID: 11481452}
+  - 82: {fileID: 8207184}
   m_Layer: 0
   m_Name: KarasuTengu
   m_TagString: Enemy
@@ -4221,36 +4219,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 443410}
   m_RootOrder: 1
---- !u!54 &5445618
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137856}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!54 &5463210
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140852}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!54 &5466944
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -4266,30 +4234,76 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &6512566
-BoxCollider:
+--- !u!82 &8207184
+AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 195066}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: .0174874105, y: .00952941366, z: .00712394249}
-  m_Center: {x: -.0350000001, y: -.000224251533, z: .0400170311}
---- !u!65 &6587454
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 137856}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: .0174874105, y: .00952941366, z: .00712394249}
-  m_Center: {x: .0350000001, y: -.000224251533, z: .0400170311}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9575436
 Animator:
   serializedVersion: 3
@@ -4323,11 +4337,57 @@ MonoBehaviour:
   colStart: 1
   direction: 2
   type: 1
-  element: 0
+  element: 2
   stunTime: 1
   anim: {fileID: 9575436}
-  bullet: {fileID: 131416, guid: ea9caf517f393d040b907eef5331304d, type: 2}
+  body:
+  - {fileID: 13767394}
+  - {fileID: 13736776}
+  - {fileID: 13702180}
+  - {fileID: 13727876}
+  - {fileID: 13701920}
+  - {fileID: 13705278}
+  - {fileID: 13774288}
+  - {fileID: 13757204}
+  - {fileID: 13783902}
+  - {fileID: 13788866}
+  - {fileID: 13760250}
+  - {fileID: 13774718}
+  - {fileID: 13792220}
+  - {fileID: 13746760}
+  bullet: {fileID: 173666, guid: 26be319050e8be74480faf43b652cd21, type: 2}
   holdPos: {x: 0, y: 0, z: 21.5100002}
+  minions:
+  - {fileID: 11452832, guid: 9b0cc05f5da26794eaf1c109079e9e9f, type: 2}
+  - {fileID: 11486848, guid: b57b12feb33cd7c4492c6b836ca8d49a, type: 2}
+  - {fileID: 11495296, guid: 72d0d158b9ad7f5419b51d211addfe41, type: 2}
+  - {fileID: 11486848, guid: ec0f71c95225bde458b92af57805a573, type: 2}
+  - {fileID: 11433400, guid: 2b0f09f11df9d2e4096ab7e8874bc225, type: 2}
+  meleeHitbox: {fileID: 11400000, guid: ee1e34cc0f4207642875a22e586a2615, type: 2}
+  meleeEffect: {fileID: 170866, guid: 26cd10ac777fa4741b3e6e52d3f42eb6, type: 2}
+  sfx: {fileID: 0}
+--- !u!114 &11481452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0ee834234a6cb4eaa2e5377e395ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song:
+  - {fileID: 8300000, guid: a910ed78a656c5d44848f4813898e0f0, type: 3}
+  - {fileID: 8300000, guid: 5ebe1a07a395d5c44a13bd45fc79e8b8, type: 3}
+  - {fileID: 8300000, guid: b17727dd37b01d74ca861bf63c700ece, type: 3}
+  audio: {fileID: 8207184}
+  SFX: 1
+  playOnLoad: 0
+  loop: 0
+  intro: 0
+  loopSong: 0
+  dontDestroy: 0
 --- !u!136 &13638052
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5021,9 +5081,21 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: song.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: anim
       value: 
       objectReference: {fileID: 9575436}
+    - target: {fileID: 0}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 8207184}
+    - target: {fileID: 0}
+      propertyPath: SFX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195066}
