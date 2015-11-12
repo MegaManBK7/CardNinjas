@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.UI;
 
 public class UILevelSwitch : MonoBehaviour {
 
@@ -20,5 +21,9 @@ public class UILevelSwitch : MonoBehaviour {
 
 	public void ReloadLevel() {
 		LevelSwitch(Application.loadedLevel);
+	}
+
+	public void SetLoadingLevel(string _level) {
+		LoadingScreen.LevelToLoad = _level;
 	}
 }

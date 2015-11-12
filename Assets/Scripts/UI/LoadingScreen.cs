@@ -12,7 +12,7 @@ namespace Assets.Scripts.UI
         public static event LoadingAction BeginLoadLevel, FinishedLoading;
 
 		public static LoadingScreen instance;
-		private static string levelToLoad = "Testing";
+		private static string levelToLoad = "MenuTest";
 
 		private Transform loadingCard, randomCard, activeCard;
         private const float START_Y_ROT = -90, TURN_AMOUNT = 180;
