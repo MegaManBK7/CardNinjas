@@ -354,7 +354,7 @@ namespace Assets.Scripts.Player
                     b.Direction = Direction;
                     if (playerNumber == 2)
                     {
-                        Transform model = b.GetComponentInChildren<Transform>();
+                        Transform model = b.transform.GetChild(0);
                         model.localScale = new Vector3(model.localScale.x, -model.localScale.y, model.localScale.z);
                     }
                     sfx.PlaySong(2);
