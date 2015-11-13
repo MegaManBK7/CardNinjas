@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd8dcf9c6f2fa74998bae472fbcebcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 10
   rowStart: 1
   colStart: 4
   direction: 2
@@ -178,6 +178,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: colStart
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
