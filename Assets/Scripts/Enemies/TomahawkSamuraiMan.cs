@@ -17,6 +17,7 @@ namespace Assets.Scripts.Enemies
         public Animator mechAnima;
         bool Attacking;
         bool ResetingPosition;
+        bool Hop;
 
         protected override void Initialize()
         {
@@ -27,7 +28,18 @@ namespace Assets.Scripts.Enemies
 
         protected override void RunAI()
         {
+            if (Attacking && mechAnima.GetCurrentAnimatorClipInfo(0).Length > 0 && mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("SamuraiHorizontalSlash"))
+            {
+                Attacking = false;
+                mechAnima.SetBool("Attack", false);
+            }
+            if (Hop && mechAnima.GetCurrentAnimatorClipInfo(0).Length > 0 && (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("MoveBegin") || (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("MoveEnd"))))
+            {
+                Hop = false;
+                mechAnima.SetBool("Hop", false);
+                transform.position = currentNode.transform.position;
 
+            }
             //We change turns each second
             turn += Time.deltaTime;
             if (!hit)
@@ -36,7 +48,6 @@ namespace Assets.Scripts.Enemies
                 {
 
                     mechAnima.SetBool("Hurt", false);
-                    mechAnima.SetBool("Attack", false);
                     turn = 0;
 
                     if (currentNode.Left.Type == Util.Enums.FieldType.Blue)
@@ -46,17 +57,23 @@ namespace Assets.Scripts.Enemies
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Left;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         } else if(currentNode.Left.Down != null && !currentNode.Left.Down.Occupied && !currentNode.Down.Occupied)
                         {
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Down;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         }
                         else if(currentNode.Left.Up != null && !currentNode.Left.Up.Occupied && !currentNode.Up.Occupied)
                         {
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Up;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         }
                     }
                     //If player is above us
@@ -68,7 +85,8 @@ namespace Assets.Scripts.Enemies
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Up;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
-
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         }
                     }
                     //If player is above us
@@ -80,6 +98,8 @@ namespace Assets.Scripts.Enemies
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Down;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         }
                     }
                     //If they are in front of us, ATTACK!.
@@ -88,6 +108,7 @@ namespace Assets.Scripts.Enemies
                         AnimatorClipInfo[] temp = mechAnima.GetCurrentAnimatorClipInfo(0);
                         if (temp.Length > 0 && temp[0].clip.name.Equals("SamuraiWait1"))
                         {
+                            Attacking = true;
                             mechAnima.SetBool("Attack", true);
                             sfx.PlaySong(0);
                             Weapons.Hitbox b = Instantiate(bullet).GetComponent<Weapons.Hitbox>();
@@ -95,7 +116,6 @@ namespace Assets.Scripts.Enemies
                             b.CurrentNode = currentNode.Left;
                         }
                     }
-                    transform.position = currentNode.transform.position;
                 }
             }
             else

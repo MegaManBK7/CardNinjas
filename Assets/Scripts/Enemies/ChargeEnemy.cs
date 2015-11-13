@@ -18,6 +18,7 @@ namespace Assets.Scripts.Enemies
         public Animator mechAnima;
         bool Attacking;
         bool ResetingPosition;
+        bool Hop;
 
         protected override void Initialize()
         {
@@ -28,11 +29,18 @@ namespace Assets.Scripts.Enemies
 
         protected override void RunAI()
         {
+            if (Hop && mechAnima.GetCurrentAnimatorClipInfo(0).Length > 0 && (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("MoveBegin") || (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("MoveEnd"))))
+            {
+                Hop = false;
+                mechAnima.SetBool("Hop", false);
+                transform.position = currentNode.transform.position;
 
+            }
             //We change turns each second
             turn += Time.deltaTime;
             if (!hit && (!Attacking && !ResetingPosition))
             {
+                
                 if (turn > 1f)
                 {
                     //mechAnima.SetBool("Hop", false);
@@ -47,8 +55,8 @@ namespace Assets.Scripts.Enemies
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Up;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
-                            //mechAnima.SetBool("Hop", true);
-
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         }
                     }
                     //If player is above us
@@ -60,7 +68,8 @@ namespace Assets.Scripts.Enemies
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Down;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
-                            //mechAnima.SetBool("Hop", true);
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
                         }
                     }
                     //If they are in front of us, ATTACK!.
@@ -74,7 +83,6 @@ namespace Assets.Scripts.Enemies
                             Attacking = true;
                         }
                     }
-                    transform.position = currentNode.transform.position;
                 }
             }
             else if (Attacking)
@@ -123,7 +131,7 @@ namespace Assets.Scripts.Enemies
                 {
                     transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 6f * Time.deltaTime);
                 }
-                else if (temp.Length > 0 && temp[0].clip.name.Equals("SamuraiStabExit"))
+                else if (temp.Length > 0 && (temp[0].clip.name.Equals("SamuraiStabExit") || temp[0].clip.name.Equals(("SamuraiWait1"))))
                 {
                     mechAnima.SetBool("WithdrawAttack", false);
                     ResetingPosition = false;
