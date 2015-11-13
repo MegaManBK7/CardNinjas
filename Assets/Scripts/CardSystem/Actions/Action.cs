@@ -41,6 +41,8 @@ namespace Assets.Scripts.CardSystem.Actions
         {
             Weapons.Hitbox temp = MonoBehaviour.Instantiate(hitbox);
             GameObject model = MonoBehaviour.Instantiate(prefab);
+            if(actor.Direction == Util.Enums.Direction.Left)
+                model.transform.localScale = new Vector3(model.transform.localScale.x, -model.transform.localScale.y, model.transform.localScale.z);
             model.transform.parent = temp.transform;
             temp.Damage = damage;
             temp.Distance = distance == 0 ? 1 : distance;
