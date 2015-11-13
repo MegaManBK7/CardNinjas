@@ -80,7 +80,7 @@ namespace Assets.Scripts.Enemies
             animDone = true;
         }
 
-        void OnTriggerEnter(Collider col)
+        public virtual void OnTriggerEnter(Collider col)
         {
             Weapons.Hitbox hitbox = col.gameObject.GetComponent<Weapons.Hitbox>();
             if (hitbox != null)

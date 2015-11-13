@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing.unity
   - enabled: 1
     path: Assets/Scenes/BoosterPackSelection.unity
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity

@@ -27,7 +27,7 @@ namespace Assets.Scripts.Enemies
         }
 
         protected override void RunAI()
-        { 
+        {
 
             //We change turns each second
             turn += Time.deltaTime;
@@ -64,26 +64,21 @@ namespace Assets.Scripts.Enemies
                         }
                     }
                     //If they are in front of us, ATTACK!.
-                    else if(this.transform.position.z == currentNode.transform.position.z && this.transform.position.x == currentNode.transform.position.x)
+                    else if (this.transform.position.z == currentNode.transform.position.z && this.transform.position.x == currentNode.transform.position.x)
                     {
                         AnimatorClipInfo[] temp = mechAnima.GetCurrentAnimatorClipInfo(0);
                         if (temp.Length > 0 && temp[0].clip.name.Equals("SamuraiWait1"))
                         {
                             mechAnima.SetBool("Attack", true);
-                            //Weapons.Hitbox b = Instantiate(bullet).GetComponent<Weapons.Hitbox>();
-                            // b.transform.position = currentNode.Left.transform.position;
-                            //b.CurrentNode = currentNode.Left;
-                            //sfx.PlaySong(0);
+                            sfx.PlaySong(0);
                             Attacking = true;
-                            print("initiate attack");
                         }
                     }
                     transform.position = currentNode.transform.position;
                 }
             }
-            else if(Attacking)
+            else if (Attacking)
             {
-                print("anim Hold Attack? " + mechAnima.GetBool("HoldAttack") + " clip info array: "+ mechAnima.GetCurrentAnimatorClipInfo(0).Length);
                 if (!mechAnima.GetBool("HoldAttack") && mechAnima.GetCurrentAnimatorClipInfo(0).Length > 0)
                 {
                     if (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("SamuraiStabEnter"))
@@ -93,19 +88,14 @@ namespace Assets.Scripts.Enemies
                     }
                 }
 
-                print("charging into the Player? "+ player.transform.position.z + " vs "+this.transform.position.z );
 
 
                 if ((player.transform.position.z + 2f) < this.transform.position.z)
                 {
-                    print("charge forward:" + " p: " + player.transform.position.z + " vs " + transform.position.z);
-
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.1f);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 5f * Time.deltaTime);
                 }
                 else
                 {
-                    print("initiate withdrawal");
-
                     ResetingPosition = true;
                     mechAnima.SetBool("Attack", false);
                     mechAnima.SetBool("HoldAttack", false);
@@ -125,20 +115,18 @@ namespace Assets.Scripts.Enemies
                     b.CurrentNode = t;
                 }
             }
-            else if(ResetingPosition)
+            else if (ResetingPosition)
             {
-                print("charging away from Player? " + currentNode.transform.position.z + " vs " + this.transform.position.z);
                 AnimatorClipInfo[] temp = mechAnima.GetCurrentAnimatorClipInfo(0);
 
                 if (currentNode.transform.position.z > this.transform.position.z)
                 {
-                    print("withdrawing");
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.3f);
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 6f * Time.deltaTime);
                 }
-                else if(temp.Length > 0 && temp[0].clip.name.Equals("SamuraiStabExit"))
+                else if (temp.Length > 0 && temp[0].clip.name.Equals("SamuraiStabExit"))
                 {
                     mechAnima.SetBool("WithdrawAttack", false);
-                    ResetingPosition = false; print("witdrawed");
+                    ResetingPosition = false;
                     transform.position = currentNode.transform.position;
                 }
 
