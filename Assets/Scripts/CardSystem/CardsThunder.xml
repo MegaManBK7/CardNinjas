@@ -3,14 +3,14 @@
   <!--Melee-->
   <card name= "Thunder Tanto">
     <element>Thunder</element>
-    <image></image>
+    <image>Cards/Tanto</image>
     <type>Tanto</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A thunder-elemental short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Thunder Wakizashi">
     <element>Thunder</element>
-    <image></image>
+    <image>Cards/Wakisashi</image>
     <type>Wakizashi</type>
     <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A thunder-elemental medium sword that hits the tile in front of you.</description>
@@ -42,27 +42,6 @@
     <type>NaginataHori</type>
     <action range= "2" damage= "9" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A thunder-elemental spear that hits 2 tiles in front of you.</description>
-  </card>
-  <card name= "Regular Thunder Fan">
-    <element>Thunder</element>
-    <image>Cards/RegularFan</image>
-    <type>Fan</type>
-    <action range= "1" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
-    <description>A thunder-elemental fan that hits the tile in front of you.</description>
-  </card>
-  <card name= "Wide Thunder Fan">
-    <element>Thunder</element>
-    <image>Cards/WideFan</image>
-    <type>Fan</type>
-    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
-    <description>A thunder-elemental fan that hits the tile in front of you and the tiles above and below.</description>
-  </card>
-  <card name= "Long Thunder Fan">
-    <element>Thunder</element>
-    <image>Cards/Long Fan</image>
-    <type>Fan</type>
-    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
-    <description>A thunder-elemental fan that hits 3 tiles in front of you.</description>
   </card>
 
   <!--Ranged-->
@@ -140,30 +119,51 @@
   <!--Unique-->
   <card name= "Lightning Bolt">
     <element>Thunder</element>
-    <image></image>
+    <image>Cards/Lightning1</image>
     <type>ChiStationary</type>
     <action range= "1" damage= "5" prefab= "Prefabs/Lightning">Lightning</action>
     <description>A random lightning strike on the enemy field.</description>
   </card>
   <card name= "Double Lightning Bolt">
     <element>Thunder</element>
-    <image></image>
+    <image>Cards/Lightning2</image>
     <type>ChiStationary</type>
     <action range= "2" damage= "4" prefab= "Prefabs/Lightning">Lightning</action>
     <description>2 random lightning strikes on the enemy field.</description>
   </card>
   <card name= "Triple Lightning Bolt">
     <element>Thunder</element>
-    <image></image>
+    <image>Cards/Lightning</image>
     <type>ChiStationary</type>
     <action range= "3" damage= "3" prefab= "Prefabs/Lightning">Lightning</action>
     <description>3 random lightning strikes on the enemy field.</description>
   </card>
   <card name= "Lightning Strike">
     <element>Thunder</element>
-    <image></image>
+    <image>Cards/Lightning3</image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "4" prefab= "Prefabs/Lightning">LightStrike</action>
+    <description>A strike of lightning two spaces ahead.</description>
+  </card>
+  <card name= "Lightning Cross">
+    <element>Thunder</element>
+    <image>Cards/Lightning3</image>
+    <type>ChiStationary</type>
+    <action range= "4" damage= "2" prefab= "Prefabs/Lightning">LightStrike</action>
+    <description>A cross-shaped barrage of lightning.</description>
+  </card>
+  <card name= "Lightning X">
+    <element>Thunder</element>
+    <image>Cards/Lightning3</image>
+    <type>ChiStationary</type>
+    <action range= "5" damage= "2" prefab= "Prefabs/Lightning">LightStrike</action>
+    <description>An X-shaped barrage of lightning.</description>
+  </card>
+  <card name= "Lightning Shot">
+    <element>Thunder</element>
+    <image>Cards/Lightning4</image>
     <type>ChiAttack</type>
-    <action range= "0" damage= "2" prefab= "Prefabs/LightningStrike">Laser</action>
-    <description>A laser that strikes across the field.</description>
+    <action range= "0" damage= "5" prefab= "Prefabs/LightningStrike">Laser</action>
+    <description>Channels your chi into a charged, thunderous bolt that strikes straight across the field.</description>
   </card>
 </library>

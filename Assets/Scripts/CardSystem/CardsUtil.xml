@@ -23,23 +23,37 @@
   </card>
   <card name= "Regular Shield">
     <element>None</element>
-    <image></image>
+    <image>Cards/Shield</image>
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 1 hit.</description>
   </card>
   <card name= "Super Shield">
     <element>None</element>
-    <image></image>
+    <image>Cards/Shield</image>
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 2 hits.</description>
   </card>
   <card name= "Ultra Shield">
     <element>None</element>
-    <image></image>
+    <image>Cards/Shield</image>
     <type>ChiStationary</type>
     <action range= "0" damage= "0" prefab= "Prefabs/Shield">Shield</action>
     <description>A magic shield that protects from 3 hits.</description>
+  </card>
+  <card name= "Panel Grab">
+    <element>None</element>
+    <image>Cards/Panel Grab</image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "0" prefab= "">PanelSteal</action>
+    <description>Steals a nearby enemy panel.</description>
+  </card>
+  <card name= "Line Grab">
+    <element>None</element>
+    <image>Cards/Panel Line</image>
+    <type>ChiStationary</type>
+    <action range= "3" damage= "0" prefab= "">PanelSteal</action>
+    <description>Steals the closest line of enemy panels.</description>
   </card>
 </library>

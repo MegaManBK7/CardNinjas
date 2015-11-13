@@ -3,14 +3,14 @@
   <!--Melee-->
   <card name= "Tanto">
     <element>None</element>
-    <image></image>
+    <image>Cards/Tanto</image>
     <type>Tanto</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Wakizashi">
     <element>None</element>
-    <image></image>
+    <image>Cards/Wakisashi</image>
     <type>Wakizashi</type>
     <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A medium sword that hits the tile in front of you.</description>
@@ -84,6 +84,20 @@
     <type>Fan</type>
     <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A fan that hits 3 tiles in front of you.</description>
+  </card>
+  <card name= "Hammer Slam">
+    <element>None</element>
+    <image>Cards/Hammer</image>
+    <type>HammerVert</type>
+    <action range= "1" damage= "11" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
+    <description>Slams and stuns the enemy in front of you.</description>
+  </card>
+  <card name= "Hammer Swing">
+    <element>None</element>
+    <image>Cards/Hammer</image>
+    <type>HammerHori</type>
+    <action range= "3" damage= "8" prefab= "Prefabs/SlashStun">MeleeHorizontal</action>
+    <description>Slams and stuns the enemies in the tile in front of you and the tiles above and below..</description>
   </card>
 
   <!--Ranged-->
@@ -161,58 +175,58 @@
   <!--Unique-->
   <card name= "Tetsubishi Drop">
     <element>None</element>
-    <image></image>
+    <image>Cards/Tetsubishi Drop</image>
     <type>SwordHori</type>
     <action range= "1" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
     <description>Throws small caltrop traps that can stun the enemy in front of you.</description>
   </card>
   <card name= "Tetsubishi Spray">
     <element>None</element>
-    <image></image>
+    <image>Cards/Tetsubishi Spray</image>
     <type>SwordHori</type>
     <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
     <description>Throws a cone of caltrop traps in front of you.</description>
   </card>
   <card name= "Tetsubishi Line">
     <element>None</element>
-    <image></image>
+    <image>Cards/Tetsubishi Line</image>
     <type>SwordHori</type>
     <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
     <description>Throws a line of caltrop traps in front of you.</description>
   </card>
   <card name= "Fuma Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/Fuma Shuriken</image>
     <type>ThrowMid</type>
     <action range= "1" damage= "7" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
     <description>A fuma shuriken that slices back and forth through 1 enemies.</description>
   </card>
   <card name= "Sharpened Fuma Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/Fuma Shuriken</image>
     <type>ThrowMid</type>
     <action range= "2" damage= "7" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
     <description>A fuma shuriken that slices back and forth through 2 enemies.</description>
   </card>
   <card name= "Piercing Fuma Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/Fuma Shuriken</image>
     <type>ThrowMid</type>
     <action range= "3" damage= "7" prefab= "Prefabs/FumaShuriken">BackNForthAction</action>
     <description>A fuma shuriken that slices back and forth through 3 enemies.</description>
   </card>
   <card name= "Bouncing Shuriken">
     <element>None</element>
-    <image></image>
+    <image>Cards/One Shuriken</image>
     <type>ThrowMid</type>
     <action range= "3" damage= "5" prefab= "Prefabs/SpecialShuriken">ZigZagAction</action>
     <description>A special shuriken that bounces in a zig-zag pattern.</description>
   </card>
   <card name= "Hadouken">
     <element>None</element>
-    <image></image>
+    <image>Cards/Hadouken</image>
     <type>ChiAttack</type>
-    <action range= "0" damage= "3" prefab= "Prefabs/Laser">Laser</action>
+    <action range= "0" damage= "5" prefab= "Prefabs/Laser">Laser</action>
     <description>Channels your chi into a special ninjutsu blast.</description>
   </card>
 </library>
