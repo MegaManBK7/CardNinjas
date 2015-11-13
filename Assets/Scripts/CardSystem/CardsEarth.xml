@@ -3,14 +3,14 @@
   <!--Melee-->
   <card name= "Earth Tanto">
     <element>Earth</element>
-    <image></image>
+    <image>Cards/Tanto</image>
     <type>Tanto</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>An earth-elemental short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Earth Wakizashi">
     <element>Earth</element>
-    <image></image>
+    <image>Cards/Wakisashi</image>
     <type>Wakizashi</type>
     <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>An earth-elemental medium sword that hits the tile in front of you.</description>
@@ -140,21 +140,21 @@
   <!--Unique-->
   <card name= "Earth Throw">
     <element>Earth</element>
-    <image></image>
+    <image>Cards/Earth Throw</image>
     <type>ChiAttack</type>
     <action range= "1" damage= "5" prefab= "Prefabs/Rock">EarthChuck</action>
     <description>Throws a piercing rock chunk in front of you.</description>
   </card>
   <card name= "Earth Swing">
     <element>Earth</element>
-    <image></image>
+    <image>Cards/Earth Swing</image>
     <type>ChiAttack</type>
     <action range= "2" damage= "5" prefab= "Prefabs/Rock">EarthChuck</action>
     <description>Throws two piercing rock chunks in the row front and below you.</description>
   </card>
   <card name= "Earth Barrage">
     <element>Earth</element>
-    <image></image>
+    <image>Cards/Earth Barrage</image>
     <type>ChiAttack</type>
     <action range= "3" damage= "5" prefab= "Prefabs/Rock">EarthChuck</action>
     <description>Throws piercing rock chunks downs all the rows.</description>

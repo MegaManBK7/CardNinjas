@@ -3,14 +3,14 @@
   <!--Melee-->
   <card name= "Tanto">
     <element>Wooden Wood</element>
-    <image></image>
+    <image>Cards/TAnto</image>
     <type>Tanto</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A wooden short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Wooden Wakizashi">
     <element>Wood</element>
-    <image></image>
+    <image>Cards/Wakisashi</image>
     <type>Wakizashi</type>
     <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A wooden medium sword that hits the tile in front of you.</description>
@@ -158,5 +158,19 @@
     <type>ThrowLight</type>
     <action range= "3" damage= "0" prefab= "Prefabs/Dart">Projectile</action>
     <description>Shoots a stun dart down all the rows.</description>
+  </card>
+  <card name= "Bamboo Sneak">
+    <element>Wood</element>
+    <image>Cards/Bamboo Sneak</image>
+    <type>ChiStationary</type>
+    <action range= "1" damage= "3" prefab= "Prefabs/Bamboo">Bamboo</action>
+    <description>A bamboo strike on the enemy's furthest panel.</description>
+  </card>
+  <card name= "Tree Growth">
+    <element>Wood</element>
+    <image>Cards/Tree Growth</image>
+    <type>ChiAttack</type>
+    <action range= "3" damage= "8" prefab= "Prefabs/Tree">GrowTree</action>
+    <description>Grow a tree three spaces in front of you.</description>
   </card>
 </library>

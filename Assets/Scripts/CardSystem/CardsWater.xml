@@ -3,14 +3,14 @@
   <!--Melee-->
   <card name= "Frozen Tanto">
     <element>Water</element>
-    <image></image>
+    <image>Cards/Tanto</image>
     <type>Tanto</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A water-elemental short sword that hits the tile in front of you.</description>
   </card>
   <card name= "Frozen Wakizashi">
     <element>Water</element>
-    <image></image>
+    <image>Cards/Wakisashi</image>
     <type>Wakizashi</type>
     <action range= "1" damage= "7" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
     <description>A water-elemental medium sword that hits the tile in front of you.</description>
@@ -42,6 +42,27 @@
     <type>NaginataHori</type>
     <action range= "2" damage= "9" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
     <description>A water-elemental spear that hits 2 tiles in front of you.</description>
+  </card>
+  <card name= "Regular Water Fan">
+    <element>Water</element>
+    <image>Cards/RegularFan</image>
+    <type>Fan</type>
+    <action range= "1" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A water-elemental fan that hits the tile in front of you.</description>
+  </card>
+  <card name= "Wide Water Fan">
+    <element>Water</element>
+    <image>Cards/WideFan</image>
+    <type>Fan</type>
+    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>
+    <description>A water-elemental fan that hits the tile in front of you and the tiles above and below.</description>
+  </card>
+  <card name= "Long Water Fan">
+    <element>Water</element>
+    <image>Cards/Long Fan</image>
+    <type>Fan</type>
+    <action range= "3" damage= "4" prefab= "Prefabs/SlashEffect">MeleeVertical</action>
+    <description>A water-elemental fan that hits 3 tiles in front of you.</description>
   </card>
 
   <!--Ranged-->
@@ -119,28 +140,28 @@
   <!--Unique-->
   <card name= "Oil Spill">
     <element>Water</element>
-    <image></image>
+    <image>Cards\Oil Spill</image>
     <type>SwordHori</type>
     <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Throws some slippery oil in front of you.</description>
   </card>
   <card name= "Oil Splash">
     <element>Water</element>
-    <image></image>
+    <image>Cards\Oil Splash</image>
     <type>SwordHori</type>
     <action range= "2" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Throws a cone of oil in front of you.</description>
   </card>
   <card name= "Oil Line">
     <element>Water</element>
-    <image></image>
+    <image>Cards\Oil Line</image>
     <type>SwordHori</type>
     <action range= "3" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Throws a line of oil three tiles forward.</description>
   </card>
   <card name= "Big Oil">
     <element>Water</element>
-    <image></image>
+    <image>Cards\Big Oil</image>
     <type>SwordHori</type>
     <action range= "4" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Cover half the enemy's field with oil.</description>
