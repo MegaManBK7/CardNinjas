@@ -126,23 +126,23 @@
   <!--Unique-->
   <card name= "Ignite Tile">
     <element>Fire</element>
-    <image></image>
+    <image>Cards/IgniteTile</image>
     <type>SwordHori</type>
-    <action range= "1" damage= "1" prefab= "Prefabs/Oil">Oil</action>
+    <action range= "1" damage= "3" prefab= "Prefabs/Oil">Oil</action>
     <description>Ignites the tile in front of you, damaging enemies that step on it.</description>
   </card>
   <card name= "Cone of Flames">
     <element>Fire</element>
-    <image></image>
+    <image>Cards/IgniteTileCone</image>
     <type>SwordHori</type>
-    <action range= "2" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <action range= "2" damage= "3" prefab= "Prefabs/Tetsubishi">Oil</action>
     <description>Ignites the tiles in cone-fashion, damaging enemies that step on them.</description>
   </card>
   <card name= "Line of Fire">
     <element>Fire</element>
-    <image></image>
+    <image>Cards/IgniteTileLine</image>
     <type>SwordHori</type>
-    <action range= "3" damage= "1" prefab= "Prefabs/Tetsubishi">Oil</action>
+    <action range= "3" damage= "3" prefab= "Prefabs/Tetsubishi">Oil</action>
     <description>Ignites a line of three tiles, damaging enemies that step on them.</description>
   </card>
   <card name= "Fireball">
