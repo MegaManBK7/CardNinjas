@@ -2762,7 +2762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0033dffcd61dcee478f32b6ddf1611c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 20
   rowStart: 1
   colStart: 1
   direction: 2
@@ -3129,6 +3129,10 @@ Prefab:
       propertyPath: sfx
       value: 
       objectReference: {fileID: 11406072}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 121776}

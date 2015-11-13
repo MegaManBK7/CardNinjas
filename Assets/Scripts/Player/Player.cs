@@ -89,7 +89,14 @@ namespace Assets.Scripts.Player
 
         void Awake()
         {
-            deck = new Deck(FindObjectOfType<CardList>().Cards);
+            GameObject dt = GameObject.Find("DeckTransfer" + playerNumber);
+            if(dt != null)
+            {
+                deck = dt.GetComponent<UI.DeckTransfer>().Deck;
+                element = dt.GetComponent<UI.DeckTransfer>().Element;
+            }
+            else
+                deck = new Deck(FindObjectOfType<CardList>().Cards);
         }
         void Start()
         {
@@ -113,6 +120,7 @@ namespace Assets.Scripts.Player
                     paused = false;
                     anim.speed = animSpeed;
                 }
+                #region detectMove
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, playerNumber))
                 {
                     if (currentNode.panelAllowed(Enums.Direction.Up, Type))
@@ -147,6 +155,7 @@ namespace Assets.Scripts.Player
                 }
                 else
                     directionToMove = Enums.Direction.None;
+                #endregion
                 //get next state
                 currState = machine.update(hit, animDone, directionToMove, hand.GetCurrentType(), hand.Empty(), playerNumber);
 
@@ -215,7 +224,7 @@ namespace Assets.Scripts.Player
                     currentNode.Owner = (this);
                     transform.position = currentNode.transform.position;
                 }
-
+                #region useCard
                 if (useCard)
                 {
                     if (!hand.Empty())
@@ -332,16 +341,22 @@ namespace Assets.Scripts.Player
                         CardUIEvent();
                     }
                 }
+                #endregion
 
                 if (basicAttack)
                 {
                     basicAttack = false;
                     Weapons.Hitbox b = Instantiate(bullet);
-					AddElement.AddElementByEnum(b.gameObject,(Enums.Element)Random.Range(0,5),true);
+					AddElement.AddElementByEnum(b.gameObject, element, true);
                     b.Owner = this.gameObject;
                     b.transform.position = Direction == Enums.Direction.Left ? currentNode.Left.transform.position : currentNode.Right.transform.position;
                     b.CurrentNode = Direction == Enums.Direction.Left ? currentNode.Left : currentNode.Right;
                     b.Direction = Direction;
+                    if (playerNumber == 2)
+                    {
+                        Transform model = b.GetComponentInChildren<Transform>();
+                        model.localScale = new Vector3(model.localScale.x, -model.localScale.y, model.localScale.z);
+                    }
                     sfx.PlaySong(2);
                 }
 
