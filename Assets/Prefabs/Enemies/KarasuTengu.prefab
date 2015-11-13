@@ -4365,7 +4365,7 @@ MonoBehaviour:
   - {fileID: 11433400, guid: 2b0f09f11df9d2e4096ab7e8874bc225, type: 2}
   meleeHitbox: {fileID: 11400000, guid: ee1e34cc0f4207642875a22e586a2615, type: 2}
   meleeEffect: {fileID: 170866, guid: 26cd10ac777fa4741b3e6e52d3f42eb6, type: 2}
-  sfx: {fileID: 0}
+  sfx: {fileID: 11481452}
 --- !u!114 &11481452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5096,6 +5096,10 @@ Prefab:
       propertyPath: SFX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 11481452}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195066}

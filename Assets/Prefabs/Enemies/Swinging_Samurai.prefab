@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d7c2edb16ebc5409520661e7f61891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
   rowStart: 1
   colStart: 1
   direction: 2
@@ -2552,6 +2552,10 @@ Prefab:
       propertyPath: audio
       value: 
       objectReference: {fileID: 8226950}
+    - target: {fileID: 0}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112476}
