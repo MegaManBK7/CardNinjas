@@ -82,6 +82,7 @@ namespace Assets.Scripts.UI
 
         void Update()
         {
+			Debug.Log("testing");
             if (Managers.GameManager.State == Enums.GameStates.CardSelection)
             {
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.Attack))

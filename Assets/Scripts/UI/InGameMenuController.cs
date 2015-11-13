@@ -37,6 +37,7 @@ public class InGameMenuController : MonoBehaviour {
 	#region Monobehaviour
  
 	public void Update() {
+		Debug.Log(es.currentSelectedGameObject);
 		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Pause)) {
 			if (hideBehaviour.OnScreen)
 				this.DismissDialog();
@@ -64,6 +65,15 @@ public class InGameMenuController : MonoBehaviour {
 			else if (GameManager.Player1Lose) {
 				this.BringUpP2Win();
 			}
+		}
+
+		if (GameManager.Pause) {
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) Navigate(CustomInput.UserInput.Accept);
+			
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) Navigate(CustomInput.UserInput.Up);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) Navigate(CustomInput.UserInput.Down);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) Navigate(CustomInput.UserInput.Right);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) Navigate(CustomInput.UserInput.Left);
 		}
 	}
 	#endregion
@@ -150,6 +160,37 @@ public class InGameMenuController : MonoBehaviour {
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
 		GameManager.Pause = false;
+	}
+	#endregion
+
+	#region NAVIGATION
+	private void Navigate(CustomInput.UserInput direction)
+	{
+		GameObject next = EventSystem.current.currentSelectedGameObject;
+		
+		// Prevent the edge case of selecting a dropdown element
+		
+		
+		switch(direction)
+		{
+		case CustomInput.UserInput.Up:
+			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp().gameObject;
+			break;
+		case CustomInput.UserInput.Down:
+			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
+			break;
+		case CustomInput.UserInput.Left:
+			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
+			break;
+		case CustomInput.UserInput.Right:
+			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
+			break;
+		case CustomInput.UserInput.Accept:
+			var pointer = new PointerEventData(EventSystem.current);
+			ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
+			return;
+		}
+		EventSystem.current.SetSelectedGameObject(next);
 	}
 	#endregion
 }
