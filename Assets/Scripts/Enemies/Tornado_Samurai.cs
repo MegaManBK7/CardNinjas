@@ -19,17 +19,44 @@ namespace Assets.Scripts.Enemies
         public Animator mechAnima;
         bool Attacking;
         bool ResetingPosition;
+        bool Hop;
+
+
+        Weapons.TornadoHitbox bulletHolster;
+
+
 
         protected override void Initialize()
         {
             player = FindObjectOfType<Player.Player>();
             mechAnima.GetComponent<Animator>();
             mechAnima.SetBool("VertiSlash", true);
+            bulletHolster = bullet.GetComponent<Weapons.TornadoHitbox>();
         }
 
         protected override void RunAI()
         {
+            if (Attacking && mechAnima.GetCurrentAnimatorClipInfo(0).Length > 0 && mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("SamuraiVerticalSlash"))
+            {
+                Attacking = false;
+                mechAnima.SetBool("Attack", false);
 
+                Weapons.TornadoHitbox b = Instantiate(bullet).GetComponent<Weapons.TornadoHitbox>();
+                b.transform.position = bulletHolster.transform.position;
+                b.CurrentNode = bulletHolster.CurrentNode;
+                b.zTargetDistance =  bulletHolster.zTargetDistance;
+                b.xTargetDistance = bulletHolster.xTargetDistance;
+                b.zStartingPoint = bulletHolster.zStartingPoint;
+                b.xStartingPoint = bulletHolster.xStartingPoint;
+            }
+
+            if(Hop && mechAnima.GetCurrentAnimatorClipInfo(0).Length > 0 && (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("MoveBegin") || (mechAnima.GetCurrentAnimatorClipInfo(0)[0].clip.name.Equals("MoveEnd"))))
+            {
+                Hop = false;
+                mechAnima.SetBool("Hop", false);
+                transform.position = currentNode.transform.position;
+
+            }
             //We change turns each second
             turn += Time.deltaTime;
             if (!hit)
@@ -37,8 +64,6 @@ namespace Assets.Scripts.Enemies
                 if (turn > 3f)
                 {
                     mechAnima.SetBool("Attack", false);
-
-                    //mechAnima.SetBool("Hop", false);
 
                     turn = 0;
 
@@ -49,44 +74,37 @@ namespace Assets.Scripts.Enemies
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Left;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
+
                         }
                         else if (currentNode.Left.Down != null && !currentNode.Left.Down.Occupied && !currentNode.Down.Occupied)
                         {
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Down;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
+
                         }
                         else if (currentNode.Left.Up != null && !currentNode.Left.Up.Occupied && !currentNode.Up.Occupied)
                         {
                             currentNode.clearOccupied();//Say we aren't here
                             currentNode = currentNode.Up;//Say we're there
                             currentNode.Owner = (this);//Tell the place we own it.
-                        }
-                    }
-                    //If player is above us
-                    else if (player.CurrentNode.Position.x < currentNode.Position.x)
-                    {
-                        //Check if we can move up.
-                        if (!currentNode.Up.Occupied)
-                        {
-                            currentNode.clearOccupied();//Say we aren't here
-                            currentNode = currentNode.Up;//Say we're there
-                            currentNode.Owner = (this);//Tell the place we own it.
-                            //mechAnima.SetBool("Hop", true);
+                            mechAnima.SetBool("Hop", true);
+                            Hop = true;
 
                         }
                     }
-                    //If player is above us
-                    else if (player.CurrentNode.Position.x > currentNode.Position.x)
+                    else if(currentNode.Up != null && !currentNode.Up.Occupied)
                     {
-                        //Check if we can move up.
-                        if (!currentNode.Down.Occupied)
-                        {
-                            currentNode.clearOccupied();//Say we aren't here
-                            currentNode = currentNode.Down;//Say we're there
-                            currentNode.Owner = (this);//Tell the place we own it.
-                            //mechAnima.SetBool("Hop", true);
-                        }
+                        currentNode.clearOccupied();//Say we aren't here
+                        currentNode = currentNode.Up;//Say we're there
+                        currentNode.Owner = (this);//Tell the place we own it.
+                        mechAnima.SetBool("Hop", true);
+                        Hop = true;
+
                     }
                     //If they are in front of us, ATTACK!.
                     else
@@ -94,6 +112,7 @@ namespace Assets.Scripts.Enemies
                         AnimatorClipInfo[] temp = mechAnima.GetCurrentAnimatorClipInfo(0);
                         if (temp.Length > 0 && temp[0].clip.name.Equals("SamuraiWait1"))
                         {
+                            Attacking = true;
                             mechAnima.SetBool("Attack", true);
                             sfx.PlaySong(0);
 
@@ -110,6 +129,12 @@ namespace Assets.Scripts.Enemies
                             }
 
                             t = t.Right;
+
+                            if(t == currentNode)
+                            {
+                                t = t.Left;
+                            }
+
                             Grid.GridNode s = t;
 
                             while(s.Down != null)
@@ -117,18 +142,16 @@ namespace Assets.Scripts.Enemies
                                 s = s.Down;
                             }
 
-                            Weapons.TornadoHitbox b = Instantiate(bullet).GetComponent<Weapons.TornadoHitbox>();
 
-                            b.transform.position = t.transform.position;
-                            b.CurrentNode = t;
-                            b.zTargetDistance = player.transform.position.z;
-                            b.xTargetDistance = s.transform.position.x;
-                            b.zStartingPoint = t.transform.position.z;
-                            b.xStartingPoint = t.transform.position.x;
+                            bulletHolster.transform.position = t.transform.position;
+                            bulletHolster.CurrentNode = t;
+                            bulletHolster.zTargetDistance = player.transform.position.z;
+                            bulletHolster.xTargetDistance = s.transform.position.x;
+                            bulletHolster.zStartingPoint = t.transform.position.z;
+                            bulletHolster.xStartingPoint = t.transform.position.x;
 
                         }
                     }
-                    transform.position = currentNode.transform.position;
                 }
             }
            
