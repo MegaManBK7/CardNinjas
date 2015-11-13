@@ -5,7 +5,7 @@ using Assets.Scripts.Managers;
 
 public class UILevelSwitch : MonoBehaviour {
 
-	public string[] levels = {"Loading"
+	public string[] levels = {"Loading",
 		"MenuTest",
 		"Testing",
 		"BoosterPackSelection",
