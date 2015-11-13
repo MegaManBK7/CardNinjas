@@ -4326,7 +4326,7 @@ MonoBehaviour:
   bullet: {fileID: 11490780, guid: c17618ea2789c0943a2977d03acf5990, type: 2}
   sfx: {fileID: 11452976}
   Katana: {fileID: 115850, guid: a89935a83db070c4bbc8a6e2bfce347f, type: 2}
-  WideSword: {fileID: 0}
+  WideSword: {fileID: 175798, guid: 453c6295a7ef5ff4c8a47cedd3476015, type: 2}
   Naginata: {fileID: 118990, guid: 450858e208396b846a87294d3bdc0087, type: 2}
   Hammer: {fileID: 118704, guid: e11ebf88e37711641bc4c3518ba81c50, type: 2}
   Fan: {fileID: 187306, guid: 428c1232b0f06a6468089f2acd24ec97, type: 2}
@@ -4950,6 +4950,10 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: WideSword
+      value: 
+      objectReference: {fileID: 175798, guid: 453c6295a7ef5ff4c8a47cedd3476015, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118040}
