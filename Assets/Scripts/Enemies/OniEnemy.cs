@@ -98,7 +98,7 @@ namespace Assets.Scripts.Enemies
             if (mdec == Util.Enums.Direction.Up)
             {
                 //If we're randomly going up
-                if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type) || !currentNode.Up.Occupied)
+                if (currentNode.panelAllowed(Util.Enums.Direction.Up, Type) && !currentNode.Up.Occupied)
                 {
                     currentNode.clearOccupied();//Say we aren't here
                     currentNode = currentNode.Up;//Say we're there
@@ -106,21 +106,21 @@ namespace Assets.Scripts.Enemies
                 }
             }
 
-            else if (currentNode.panelAllowed(Util.Enums.Direction.Right, Type) || !currentNode.Up.Occupied)
+            else if (currentNode.panelAllowed(Util.Enums.Direction.Right, Type) && !currentNode.Right.Occupied)
             {
                 currentNode.clearOccupied();//Say we aren't here
                 currentNode = currentNode.Right;//Say we're there
                 currentNode.Owner = (this);//Tell the place we own it.
             }
 
-            else if (currentNode.panelAllowed(Util.Enums.Direction.Left, Type) || !currentNode.Up.Occupied)
+            else if (currentNode.panelAllowed(Util.Enums.Direction.Left, Type) && !currentNode.Left.Occupied)
             {
                 currentNode.clearOccupied();//Say we aren't here
                 currentNode = currentNode.Left;//Say we're there
                 currentNode.Owner = (this);//Tell the place we own it.
             }
 
-            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type) || !currentNode.Up.Occupied)
+            else if (currentNode.panelAllowed(Util.Enums.Direction.Down, Type) && !currentNode.Down.Occupied)
             {
                     currentNode.clearOccupied();//Say we aren't here
                     currentNode = currentNode.Down;//Say we're there

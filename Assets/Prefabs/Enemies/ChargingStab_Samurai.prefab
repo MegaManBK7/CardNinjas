@@ -2155,7 +2155,8 @@ MonoBehaviour:
   element: 2
   stunTime: 1
   bullet: {fileID: 160770, guid: c18ccf783d9857842a1b09bdf8942056, type: 2}
-  body: []
+  body:
+  - {fileID: 13704868}
   sfx: {fileID: 11476890}
   mechAnima: {fileID: 9551836}
 --- !u!137 &13704868
@@ -2519,6 +2520,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: body.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: element
       value: 2
       objectReference: {fileID: 0}
@@ -2538,6 +2543,14 @@ Prefab:
       propertyPath: health
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: body.Array.data[1]
+      value: 
+      objectReference: {fileID: 13706786}
+    - target: {fileID: 0}
+      propertyPath: body.Array.data[2]
+      value: 
+      objectReference: {fileID: 13720630}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112476}

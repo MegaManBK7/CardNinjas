@@ -46,7 +46,7 @@ namespace Assets.Scripts.UI
 
         void Update()
         {
-            if (canvas.enabled)
+            if (canvas.enabled && Managers.GameManager.State == Util.Enums.GameStates.Battle)
             {
                 timer += Time.deltaTime;
                 xScale = Mathf.Clamp((timeToSelect - timer) / timeToSelect, 0, 1);
