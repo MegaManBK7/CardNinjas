@@ -228,7 +228,7 @@ MonoBehaviour:
   distance: 3
   deathTime: .200000003
   piercing: 1
-  direction: 2
+  direction: 4
   speed: 5
   timesCanPierce: 2
   isFlying: 1
@@ -279,7 +279,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: direction
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: speed
