@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Grid;
+using Assets.Scripts.Util;
+
+
 
 namespace Assets.Scripts.Weapons
 {
@@ -20,20 +24,24 @@ namespace Assets.Scripts.Weapons
         // Update is called once per frame
         public override void Update()
         {
-            if (transform.position.z > zTargetDistance && transform.position.x == xStartingPoint)
+            if (Managers.GameManager.State == Enums.GameStates.Battle)
             {
-                transform.position = new Vector3(transform.position.x,transform.position.y,transform.position.z - 0.2f);
-            }
-            else if(transform.position.x < xTargetDistance)
-            {
-                transform.position = new Vector3(transform.position.x +0.2f, transform.position.y, transform.position.z);
-            }else if(transform.position.z < zStartingPoint)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.2f);
-            }
-            else
-            {
-                Destroy(this.gameObject);
+                if (transform.position.z > zTargetDistance && transform.position.x == xStartingPoint)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - Speed * Time.deltaTime);
+                }
+                else if (transform.position.x < xTargetDistance)
+                {
+                    transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);
+                }
+                else if (transform.position.z < zStartingPoint)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + Speed * Time.deltaTime);
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                }
             }
         }
     }

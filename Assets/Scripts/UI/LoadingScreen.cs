@@ -12,7 +12,7 @@ namespace Assets.Scripts.UI
         public static event LoadingAction BeginLoadLevel, FinishedLoading;
 
 		public static LoadingScreen instance;
-		private static string levelToLoad = "Testing";
+		private static string levelToLoad = "MenuTest";
 
 		private Transform loadingCard, randomCard, activeCard;
         private const float START_Y_ROT = -90, TURN_AMOUNT = 180;
@@ -110,7 +110,9 @@ namespace Assets.Scripts.UI
         }
 
         public void LoadLevel(string level)
-        {
+		{
+			win.enabled = true;
+			timer = 0;
             LevelToLoad = level;
             if (BeginLoadLevel != null) BeginLoadLevel();
             async = Application.LoadLevelAsync(level);
@@ -132,6 +134,7 @@ namespace Assets.Scripts.UI
 		public static string LevelToLoad
 		{
 			set { levelToLoad = value; }
+			get { return levelToLoad; }
 		}
 	}
 }

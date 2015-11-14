@@ -20,8 +20,8 @@ namespace Assets.Scripts.Managers
                 instance = this;
                 state = Enums.GameStates.CardSelection;
                 prevState = Enums.GameStates.CardSelection;
-                musicVol = 0f;
-                sfxVol = 0f;
+                musicVol = .5f;
+                sfxVol = .5f;
                 player1Win = false;
                 player1Lose = false;
             }
@@ -107,7 +107,7 @@ namespace Assets.Scripts.Managers
             set
             {
                 player1Win = value;
-                state = Enums.GameStates.EndState;
+                state = Enums.GameStates.Paused;
             }
         }
 
@@ -117,7 +117,7 @@ namespace Assets.Scripts.Managers
             set
             {
                 player1Lose = value;
-                state = Enums.GameStates.EndState;
+                state = Enums.GameStates.Paused;
             }
         }
     }

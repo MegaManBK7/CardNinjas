@@ -17,6 +17,8 @@ namespace Assets.Scripts.CardSystem.Actions
                 temp.Direction = Util.Enums.Direction.Left;
                 temp.transform.position = actor.CurrentNode.Left.transform.position;
                 temp.CurrentNode = actor.CurrentNode.Left;
+                Transform model = temp.GetComponentInChildren<Transform>();
+                model.localScale = new Vector3(model.localScale.x, -model.localScale.y, model.localScale.z);
             }
 
             if (actor.Direction == Util.Enums.Direction.Right)

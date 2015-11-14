@@ -82,8 +82,7 @@ namespace Assets.Scripts.UI
 
         void Update()
         {
-            if (Managers.GameManager.State == Enums.GameStates.CardSelection)
-            {
+			Debug.Log("testing");
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.Attack))
                 {
                     DrawPossibleSelections();
@@ -93,7 +92,6 @@ namespace Assets.Scripts.UI
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigate(CustomInput.UserInput.Right);
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigate(CustomInput.UserInput.Left);
                 if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept, thisPlayerIndex)) CallSubmit();
-            }
         }
 
         private void CallSubmit()

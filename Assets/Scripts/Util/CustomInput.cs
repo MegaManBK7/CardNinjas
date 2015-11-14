@@ -371,13 +371,7 @@ namespace Assets.Scripts.Util
 
             RawSign();
 
-            if (FileExists())
-                Load();
-            else
-            {
-                Default();
-                Store();
-            }
+			Default();
         }
 
         /// <summary> Resets all the bindings to default. </summary>

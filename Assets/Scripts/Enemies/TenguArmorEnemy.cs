@@ -80,9 +80,9 @@ namespace Assets.Scripts.Enemies
 
 		}
 
-		void OnTriggerEnter(Collider col)
+		protected override void OnTriggerEnterAI(Collider col)
 		{
-			anim.SetTrigger("Hurt");
+            anim.SetTrigger("Hurt");
 			isHurt = true;
 			animDone = false;
 		}
