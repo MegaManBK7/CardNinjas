@@ -75,6 +75,21 @@ namespace Assets.Scripts.Managers
             }
         }
 
+		public static bool CardSelect
+		{
+			get { return state == Enums.GameStates.CardSelection; }
+			set
+			{
+				if (value)
+				{
+					prevState = state;
+					state = Enums.GameStates.CardSelection;
+				}
+				else
+					state = prevState;
+			}
+		}
+
         public static float MusicVol
         {
             get { return musicVol; }

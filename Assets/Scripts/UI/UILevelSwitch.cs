@@ -20,10 +20,12 @@ public class UILevelSwitch : MonoBehaviour {
 
 	public void LevelSwitch(int level) {
 		LoadingScreen.LevelToLoad = levels[level];
+		Debug.Log(levels[level]);
 		LoadingScreen.instance.LoadLevel(levels[level]);
 	}
 
 	public void LevelSwitchForPackSelection(int level) {
+		GameManager.CardSelect = true;
 		Application.LoadLevel(level);
 	}
 
