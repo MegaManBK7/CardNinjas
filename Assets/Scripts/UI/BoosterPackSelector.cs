@@ -152,6 +152,11 @@ namespace Assets.Scripts.UI
 			LoadingScreen.instance.LoadLevel(LoadingScreen.LevelToLoad);
         }
 
+        void OnLevelWasLoaded(int i)
+        {
+            playerIndex = 0;
+        }
+
         public int LastSelected
         {
             set { lastSelected = value; }
