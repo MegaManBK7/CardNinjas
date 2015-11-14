@@ -5265,14 +5265,14 @@ MonoBehaviour:
   Pause: {fileID: 1917498580}
   PauseSelect: {fileID: 1976051144}
   Win: {fileID: 1423642668}
-  WinSelect: {fileID: 0}
+  WinSelect: {fileID: 1706710687}
   Lose: {fileID: 1547167256}
   LoseSelect: {fileID: 1440332848}
   P1Win: {fileID: 1457161009}
-  P1WinSelect: {fileID: 0}
+  P1WinSelect: {fileID: 1944156170}
   P2Win: {fileID: 1778761408}
-  P2WinSelect: {fileID: 0}
-  es: {fileID: 0}
+  P2WinSelect: {fileID: 667285113}
+  es: {fileID: 584548264}
   hideBehaviour: {fileID: 562454918}
   IsMultiplayer: 1
 --- !u!1 &818192062
@@ -8475,7 +8475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1457161010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8708,6 +8708,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bcfe9a70e70cc4ca2b84caafa3c089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - Loading
+  - MenuTest
+  - Testing
+  - BoosterPackSelection
+  - Credits
+  - Level1
+  - Level2
+  - Level3
+  - Level4
+  - Level5
+  - BoosterPackSelectionMultiplayer
+  - MultiplayerBattle
 --- !u!1 &1511908432
 GameObject:
   m_ObjectHideFlags: 0
@@ -10177,7 +10190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1778761409
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11072,7 +11085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1917498581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12607,6 +12620,14 @@ Prefab:
     - target: {fileID: 190478, guid: 0c9e509c73691a94583b645ff9f0a015, type: 2}
       propertyPath: m_Name
       value: Panel 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480050, guid: 0c9e509c73691a94583b645ff9f0a015, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159852, guid: 0c9e509c73691a94583b645ff9f0a015, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0c9e509c73691a94583b645ff9f0a015, type: 2}

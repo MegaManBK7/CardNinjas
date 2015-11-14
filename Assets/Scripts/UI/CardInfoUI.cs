@@ -8,7 +8,7 @@ namespace Assets.Scripts.UI
 {
     public class CardInfoUI : MonoBehaviour
     {
-        private static int playerIndex;
+        private static int playerIndex = 0;
         private int thisPlayerIndex;
 
         private const int MAX_HAND = 4;
@@ -38,23 +38,31 @@ namespace Assets.Scripts.UI
 
         void Awake()
         {
-            hand = new Image[MAX_HAND];
-            cards = new string[MAX_HAND];
-
-            thisPlayerIndex = ++playerIndex;
-            player = GameObject.Find("Player " + playerIndex).GetComponent<Player.Player>();
-            GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
-            for (int i = 0; i < MAX_HAND; i++)
-            {
-                gos[i].tag = "Hand " + thisPlayerIndex.ToString();
-                hand[i] = gos[i].GetComponent<Image>();
-            }
-            currentCardName = GameObject.Find("Current Hand Card " + thisPlayerIndex.ToString()).GetComponent<Text>();
-
-            canvas = this.GetComponent<Canvas>();
-            Hide();
+            
         }
 
+		void Start()
+		{
+			thisPlayerIndex = ++playerIndex;
+			player = GameObject.Find("Player " + playerIndex).GetComponent<Player.Player>();
+
+			hand = new Image[MAX_HAND];
+			cards = new string[MAX_HAND];
+			
+			
+			
+			GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
+			for (int i = 0; i < MAX_HAND; i++)
+			{
+				Debug.Log(this.thisPlayerIndex);
+				gos[i].tag = "Hand " + thisPlayerIndex.ToString();
+				hand[i] = gos[i].GetComponent<Image>();
+			}
+			currentCardName = GameObject.Find("Current Hand Card " + thisPlayerIndex.ToString()).GetComponent<Text>();
+			
+			canvas = this.GetComponent<Canvas>();
+			Hide();
+			}
         private void UpdateCardInfo(CardSystem.Card card, int playerIndex)
         {
             if (playerIndex != thisPlayerIndex) return;

@@ -37,7 +37,7 @@ public class InGameMenuController : MonoBehaviour {
 	#region Monobehaviour
  
 	public void Update() {
-		Debug.Log(es.currentSelectedGameObject);
+		//Debug.Log(es.currentSelectedGameObject);
 		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Pause)) {
 			if (hideBehaviour.OnScreen)
 				this.DismissDialog();
