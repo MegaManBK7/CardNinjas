@@ -24,7 +24,7 @@ namespace Assets.Scripts.UI
         [SerializeField]
         private Image image, cardBase;
 
-        private float vel, counter, turnStep = 0.75f, smoothTime = 0.1f;
+        private float vel, counter, turnStep = 0.75f;
 
         private List<Card> allCards;
 
