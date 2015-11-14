@@ -9,4 +9,11 @@ public class UIVideo : MonoBehaviour {
 		movie.loop = true;
 		movie.Play();
 	}
+
+	void Update() {
+		if (!movie.isPlaying) {
+			movie.loop = true;
+			movie.Play();
+		}
+	}
 }
