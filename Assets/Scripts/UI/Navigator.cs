@@ -20,20 +20,32 @@ public static class Navigator
             switch (direction)
             {
                 case CustomInput.UserInput.Up:
-                    next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp().gameObject;
+                    if (EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp() != null)
+                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp().gameObject;
+                    else next = null;
                     break;
                 case CustomInput.UserInput.Down:
-                    next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
+                    if (EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown() != null)
+                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
+                    else next = null;
                     break;
                 case CustomInput.UserInput.Left:
-                    next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
+                    if (EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft() != null)
+                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
+                    else next = null;
                     break;
                 case CustomInput.UserInput.Right:
-                    next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
+                    if (EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight() != null)
+                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
+                    else next = null;
                     break;
             }
-            EventSystem.current.SetSelectedGameObject(next);
-            nextIsValid = next.GetComponent<Selectable>().interactable;
+            if (next != null)
+            {
+                EventSystem.current.SetSelectedGameObject(next);
+                nextIsValid = next.GetComponent<Selectable>().interactable;
+            }
+            else nextIsValid = true;
         }
     }
 

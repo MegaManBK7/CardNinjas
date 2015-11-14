@@ -18,16 +18,6 @@ public class UILevelSwitch : MonoBehaviour {
 		"BoosterPackSelectionMultiplayer",
 		"MultiplayerBattle"};
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	public void LevelSwitch(int level) {
 		LoadingScreen.LevelToLoad = levels[level];
 		LoadingScreen.instance.LoadLevel(levels[level]);
