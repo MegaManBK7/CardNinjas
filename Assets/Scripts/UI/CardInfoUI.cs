@@ -21,6 +21,9 @@ namespace Assets.Scripts.UI
         private Canvas canvas;
         private Player.Player player;
 
+		[SerializeField]
+		private Sprite defaultImage;
+
         void OnEnable()
         {
             Player.Player.NewSelect += UpdateCardInfo;
@@ -73,7 +76,7 @@ namespace Assets.Scripts.UI
             else
             {
                 currentCardName.text = cardToUse+1 >= MAX_HAND ? "None" : cards[cardToUse+1];
-                hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
+                hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = defaultImage;
                 hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
                 hand[cardToUse].color = CustomColor.Convert255(128.0f, 128.0f, 128.0f);
             }
@@ -97,7 +100,7 @@ namespace Assets.Scripts.UI
                     cards[i] = "";
                 }
             }
-            currentCardName.text = cards[0] == null ?  "" : cards[0];
+            currentCardName.text = cards[0] == null ?  "None" : cards[0];
         }
 
         private void Hide()
@@ -105,7 +108,7 @@ namespace Assets.Scripts.UI
             canvas.enabled = false;
             for(int i = 0; i < hand.Length; i++)
             {
-                hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
+                hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = defaultImage;
                 hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
                 hand[i].color = new Color(128.0f / 255, 128.0f / 255, 128.0f / 255);
             }

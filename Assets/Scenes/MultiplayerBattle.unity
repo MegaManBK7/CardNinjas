@@ -2316,6 +2316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a51b2ce61062846927359cdcc2c319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultImage: {fileID: 21300002, guid: 9ad1a956bca6eee46878856465750c7a, type: 3}
 --- !u!1 &381827625
 GameObject:
   m_ObjectHideFlags: 0
@@ -12631,6 +12632,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11455846, guid: 0c9e509c73691a94583b645ff9f0a015, type: 2}
       propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 9ad1a956bca6eee46878856465750c7a,
+        type: 3}
+    - target: {fileID: 11480050, guid: 0c9e509c73691a94583b645ff9f0a015, type: 2}
+      propertyPath: defaultImage
       value: 
       objectReference: {fileID: 21300002, guid: 9ad1a956bca6eee46878856465750c7a,
         type: 3}
