@@ -18,22 +18,47 @@ public class UILevelSwitch : MonoBehaviour {
 		"BoosterPackSelectionMultiplayer",
 		"MultiplayerBattle"};
 
-	public void LevelSwitch(int level) {
-		LoadingScreen.LevelToLoad = levels[level];
-		Debug.Log(levels[level]);
-		LoadingScreen.instance.LoadLevel(levels[level]);
+	public void LevelSwitch(string level) {
+		LoadingScreen.instance.LoadLevel(level);
 	}
 
-	public void LevelSwitchForPackSelection(int level) {
+	public void LevelSwitchForPackSelection() {
 		GameManager.CardSelect = true;
-		Application.LoadLevel(level);
+		Application.LoadLevel(3);
+	}
+
+	public void LevelSwitchForMultiplayerPackSelection() {
+		GameManager.CardSelect = true;
+		Application.LoadLevel(10);
 	}
 
 	public void ReloadLevel() {
-		LevelSwitch(Application.loadedLevel);
+		LevelSwitch(Application.loadedLevelName);
 	}
 
 	public void SetLoadingLevel(string _level) {
 		LoadingScreen.LevelToLoad = _level;
+	}
+
+	public void DeckSelectNextLevel() {
+		SetLoadingLevel(getNextLevel());
+		LevelSwitchForPackSelection();
+	}
+
+	public void DeckSelectThisLevel() {
+		LevelSwitchForPackSelection();
+	}
+
+	public void DirectNextLevel() {
+		LevelSwitch(getNextLevel());
+	}
+
+	public void BackToMenu() {
+		LevelSwitch("MenuTest");
+	}
+
+	private string getNextLevel() {
+		int current = Application.loadedLevel;
+		return levels[++current];
 	}
 }
