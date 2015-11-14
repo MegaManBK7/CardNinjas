@@ -9,7 +9,6 @@ namespace Assets.Scripts.UI
     public class BoosterPackSelectorMultiplayer : MonoBehaviour
     {
 
-		public bool done;
         public delegate void SelectionPackAction();
         public static event SelectionPackAction PacksSelected;
         public static event SelectionPackAction PacksDeselected;
@@ -91,7 +90,6 @@ namespace Assets.Scripts.UI
             }
 
             selectedPacks = new List<int>();
-			done = false;
         }
 
         void Update()
@@ -171,12 +169,9 @@ namespace Assets.Scripts.UI
             t.Element = playerType;
 
             DontDestroyOnLoad(newDeck);
-
-			BoosterPackSelectorMultiplayer[] bpsm = GameObject.FindObjectsOfType<BoosterPackSelectorMultiplayer>();
-			if (bpsm[0] != this && bpsm[0].done)
-				LoadingScreen.instance.LoadLevel("MultiplayerBattle");
-			else if(bpsm[1] != this && bpsm[1].done)
-				LoadingScreen.instance.LoadLevel("MultiplayerBattle");
+			Application.LoadLevel("MultiplayerBattle");
+			//LoadingScreen.LevelToLoad = "MultiplayerBattle";
+			//LoadingScreen.instance.LoadLevel("MultiplayerBattle");
         }
     }
 }
