@@ -50,24 +50,28 @@ public class InGameMenuController : MonoBehaviour {
 			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel)) this.DismissDialog();
 		}
 
-		if (this.IsMultiplayer) {
+		if (!this.IsMultiplayer) {
 			if (GameManager.Player1Win) {
 				this.BringUpWin();
+				GameManager.Player1Win = false;
 			}
 			else if (GameManager.Player1Lose) {
 				this.BringUpLose();
+				GameManager.Player1Lose = false;
 			}
 		}
 		else {
 			if (GameManager.Player1Win) {
 				this.BringUpP1Win();
+				GameManager.Player1Win = false;
 			}
 			else if (GameManager.Player1Lose) {
 				this.BringUpP2Win();
+				GameManager.Player1Lose = false;
 			}
 		}
 
-		if (GameManager.Pause) {
+		if (GameManager.State == Enums.GameStates.Paused) {
 			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) Navigate(CustomInput.UserInput.Accept);
 			
 			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) Navigate(CustomInput.UserInput.Up);

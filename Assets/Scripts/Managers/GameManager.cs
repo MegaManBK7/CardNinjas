@@ -107,7 +107,7 @@ namespace Assets.Scripts.Managers
             set
             {
                 player1Win = value;
-                state = Enums.GameStates.EndState;
+                state = Enums.GameStates.Paused;
             }
         }
 
@@ -117,7 +117,7 @@ namespace Assets.Scripts.Managers
             set
             {
                 player1Lose = value;
-                state = Enums.GameStates.EndState;
+                state = Enums.GameStates.Paused;
             }
         }
     }

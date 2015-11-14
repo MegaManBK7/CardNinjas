@@ -400,7 +400,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2052764548}
-        m_MethodName: LevelSwitch
+        m_MethodName: LevelSwitchForPackSelection
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   Pause: {fileID: 1406066678}
   PauseSelect: {fileID: 1631953203}
   Win: {fileID: 1931465531}
-  WinSelect: {fileID: 616080680}
+  WinSelect: {fileID: 196321704}
   Lose: {fileID: 703215554}
   LoseSelect: {fileID: 58528184}
   P1Win: {fileID: 1771844894}
@@ -4543,7 +4543,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2052764548}
-        m_MethodName: LevelSwitch
+        m_MethodName: LevelSwitchForPackSelection
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
