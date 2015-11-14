@@ -3382,8 +3382,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1510713552}
-        m_MethodName: LevelSwitch
-        m_Mode: 3
+        m_MethodName: BackToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4324,8 +4324,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1510713552}
-        m_MethodName: LevelSwitch
-        m_Mode: 3
+        m_MethodName: LevelSwitchForMultiplayerPackSelection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5275,6 +5275,7 @@ MonoBehaviour:
   P2WinSelect: {fileID: 667285113}
   es: {fileID: 584548264}
   hideBehaviour: {fileID: 562454918}
+  CurrentDefault: {fileID: 0}
   IsMultiplayer: 1
 --- !u!1 &818192062
 GameObject:
@@ -5646,7 +5647,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Retry
+  m_Text: Restart
 --- !u!222 &855402002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11450,8 +11451,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1510713552}
-        m_MethodName: LevelSwitch
-        m_Mode: 3
+        m_MethodName: LevelSwitchForMultiplayerPackSelection
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
