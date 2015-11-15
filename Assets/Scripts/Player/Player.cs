@@ -89,7 +89,7 @@ namespace Assets.Scripts.Player
 
         void Awake()
         {
-            GameObject dt = GameObject.Find("DeckTransfer" + playerNumber);
+            GameObject dt = GameObject.Find("DeckTransfer " + playerNumber);
             if(dt != null)
             {
                 deck = dt.GetComponent<UI.DeckTransfer>().Deck;

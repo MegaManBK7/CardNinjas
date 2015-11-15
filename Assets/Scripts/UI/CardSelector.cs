@@ -82,11 +82,14 @@ namespace Assets.Scripts.UI
 
         void Update()
         {
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Up, okayButton.gameObject);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Down, okayButton.gameObject);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Right, okayButton.gameObject);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Left, okayButton.gameObject);
-            if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Accept, thisPlayerIndex)) Navigator.CallSubmit();
+            if (Managers.GameManager.State == Enums.GameStates.CardSelection)
+            {
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Up, okayButton.gameObject);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Down, okayButton.gameObject);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Right, okayButton.gameObject);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Left, okayButton.gameObject);
+                if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Accept, thisPlayerIndex)) Navigator.CallSubmit();
+            }
         }
 
         private void DrawPossibleSelections()
@@ -162,7 +165,7 @@ namespace Assets.Scripts.UI
             finalMap.Clear();
             numSelections = 0;
             transform.GetComponent<Canvas>().enabled = true;
-            Navigator.Navigate(CustomInput.UserInput.Up, okayButton.gameObject);
+            Navigator.Navigate(CustomInput.UserInput.Up, okayButton.FindSelectableOnLeft().gameObject);
             DrawPossibleSelections();
             UpdateDisplayData();
             UpdateFinalDisplayData();

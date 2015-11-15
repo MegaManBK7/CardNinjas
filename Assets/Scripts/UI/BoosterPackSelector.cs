@@ -52,7 +52,9 @@ namespace Assets.Scripts.UI
                 okay = GameObject.Find("Okay").GetComponent<Button>();
             }
             catch(Exception e)
-            { }
+            {
+                Debug.Log(e.Message);
+            }
         }
 
         void Update()

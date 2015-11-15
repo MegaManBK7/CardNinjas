@@ -3340,14 +3340,14 @@ MonoBehaviour:
   ErrorImage: {fileID: 21300000, guid: cb4340bac6343db4e89def9c27a09b96, type: 3}
   hitbox: {fileID: 0}
   BoosterPackXMLFiles:
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  - {fileID: 4900000, guid: 8ad00bea1751d09478ef2742622816cd, type: 3}
-  BoosterPackSizes: 10000000100000001000000010000000100000001000000010000000
+  - {fileID: 4900000, guid: 3b16f5fe65a671146a0c06ea637d85ca, type: 3}
+  - {fileID: 4900000, guid: 49ef419bbffb2644d8970fbee39ab7ec, type: 3}
+  - {fileID: 4900000, guid: 14111641e7e24db459d0b73669206f02, type: 3}
+  - {fileID: 4900000, guid: 85d45590aa15f83499fe3f21f067e391, type: 3}
+  - {fileID: 4900000, guid: 0ca2e39030dad17488b52f890fedaf4b, type: 3}
+  - {fileID: 4900000, guid: 4a8ff6b5f02ee2f4186cda76acfdceba, type: 3}
+  - {fileID: 4900000, guid: e5580fe957eb4c249bb151b535805b7c, type: 3}
+  BoosterPackSizes: 17000000170000001700000017000000170000001700000017000000
   BoosterPackImages:
   - {fileID: 21300000, guid: 760a15156ce57484e82d359ad5ff8c55, type: 3}
   - {fileID: 21300000, guid: b7c715cf9be2fa048af580fe243210aa, type: 3}

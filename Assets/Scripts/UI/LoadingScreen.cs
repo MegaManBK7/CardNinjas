@@ -20,9 +20,9 @@ namespace Assets.Scripts.UI
 		private Canvas win;
 
         [SerializeField]
-        private Text cardName, type, damage, range, description;
+        private Text cardName = null, type = null, damage = null, range = null, description = null;
         [SerializeField]
-        private Image image, cardBase;
+        private Image image = null, cardBase = null;
 
         private float vel, counter, turnStep = 0.75f;
 
