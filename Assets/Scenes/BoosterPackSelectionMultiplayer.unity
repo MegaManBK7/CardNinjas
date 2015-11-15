@@ -5487,7 +5487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ErrorImage: {fileID: 21300000, guid: cb4340bac6343db4e89def9c27a09b96, type: 3}
-  hitbox: {fileID: 0}
+  hitbox: {fileID: 11400000, guid: ee1e34cc0f4207642875a22e586a2615, type: 2}
   BoosterPackXMLFiles:
   - {fileID: 4900000, guid: 3b16f5fe65a671146a0c06ea637d85ca, type: 3}
   - {fileID: 4900000, guid: 49ef419bbffb2644d8970fbee39ab7ec, type: 3}
