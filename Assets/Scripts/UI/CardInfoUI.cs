@@ -39,9 +39,9 @@ namespace Assets.Scripts.UI
             SelectionTimer.TimerFinish -= Hide;
         }
 
-        void Awake()
+        void OnLevelWasLoaded(int i)
         {
-            
+            playerIndex = 0;
         }
 
 		void Start()

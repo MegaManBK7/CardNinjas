@@ -41,12 +41,22 @@ public class UILevelSwitch : MonoBehaviour {
 	}
 
 	public void DeckSelectNextLevel() {
+        DeckTransfer[] decks = GameObject.FindObjectsOfType<DeckTransfer>();
+        for(int i = 0; i < decks.Length; i++)
+        {
+            Destroy(decks[i].gameObject);
+        }
 		SetLoadingLevel(getNextLevel());
 		LevelSwitchForPackSelection();
 	}
 
 	public void DeckSelectThisLevel() {
-		LevelSwitchForPackSelection();
+        DeckTransfer[] decks = GameObject.FindObjectsOfType<DeckTransfer>();
+        for (int i = 0; i < decks.Length; i++)
+        {
+            Destroy(decks[i].gameObject);
+        }
+        LevelSwitchForPackSelection();
 	}
 
 	public void DirectNextLevel() {
