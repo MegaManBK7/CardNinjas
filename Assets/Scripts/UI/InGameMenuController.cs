@@ -48,7 +48,6 @@ public class InGameMenuController : MonoBehaviour {
 		}
 
 		if (hideBehaviour.OnScreenPos.position == hideBehaviour.transform.position && hideBehaviour.OnScreen) {
-			GameManager.Pause = true;
 			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel)) this.DismissDialog();
 		}
 
@@ -98,7 +97,8 @@ public class InGameMenuController : MonoBehaviour {
 
 		CurrentDefault = P2WinSelect;
 		es.SetSelectedGameObject(P2WinSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up p1 wins window.
@@ -113,7 +113,8 @@ public class InGameMenuController : MonoBehaviour {
 		hideBehaviour.OnScreen = true;
 		
 		es.SetSelectedGameObject(P1WinSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up Single Player lose window.
@@ -129,7 +130,8 @@ public class InGameMenuController : MonoBehaviour {
 
 		CurrentDefault = LoseSelect;
 		es.SetSelectedGameObject(LoseSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up Single Player win window.
@@ -145,7 +147,8 @@ public class InGameMenuController : MonoBehaviour {
 
 		CurrentDefault = WinSelect;
 		es.SetSelectedGameObject(WinSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up pause window.
@@ -161,7 +164,8 @@ public class InGameMenuController : MonoBehaviour {
 
 		CurrentDefault = PauseSelect;
 		es.SetSelectedGameObject(PauseSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Dismisses the current in game dialog.
@@ -169,6 +173,7 @@ public class InGameMenuController : MonoBehaviour {
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
 		GameManager.Pause = false;
+        es.SetSelectedGameObject(null);
 	}
 	#endregion
 }

@@ -31,6 +31,11 @@ namespace Assets.Scripts.Managers
             }
         }
 
+        void Update()
+        {
+            Debug.Log(state);
+        }
+
         private void CardSelectorStateEnable()
         {
             state = Enums.GameStates.CardSelection;
@@ -65,7 +70,7 @@ namespace Assets.Scripts.Managers
             get { return state == Enums.GameStates.Paused; }
             set
             {
-                if (value)
+                if (value && state != Enums.GameStates.Paused)
                 {
                     prevState = state;
                     state = Enums.GameStates.Paused;
