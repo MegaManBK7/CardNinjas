@@ -39,12 +39,22 @@ namespace Assets.Scripts.CardSystem
             return hand.Count == 0;
         }
 
-        public void UseCurrent(Player.Character character)
+        public void UseCurrent(Player.Character character, Deck deck)
         {
             if (hand == null)
                 return ;
             hand[0].Action.useCard(character);
+            deck.AddUsedCard(hand[0]);
             hand.RemoveAt(0);
+        }
+
+        public void AddUnusedCards(Deck deck)
+        {
+            if(!Empty())
+            {
+                foreach(Card c in hand)
+                    deck.AddUsedCard(c);
+            }
         }
     }
 }

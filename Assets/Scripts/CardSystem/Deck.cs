@@ -38,6 +38,11 @@ namespace Assets.Scripts.CardSystem
             deck.InsertRange(0, cards);
         }
 
+        public void AddUsedCard(Card card)
+        {
+            deck.Add(card);
+        }
+
         public List<Card> GetDeck
         {
             get { return deck; }
