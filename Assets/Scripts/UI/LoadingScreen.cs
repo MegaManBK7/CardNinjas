@@ -23,6 +23,8 @@ namespace Assets.Scripts.UI
         private Text cardName = null, type = null, damage = null, range = null, description = null;
         [SerializeField]
         private Image image = null, cardBase = null;
+        [SerializeField]
+        private SoundPlayer music;
 
         private float vel, counter, turnStep = 0.75f;
 
@@ -31,6 +33,8 @@ namespace Assets.Scripts.UI
         AsyncOperation async;
 
         private float timer = 0, timeToChange = 5f;
+
+        private SoundPlayer[] soundsInScene;
 
 		void Awake()
 		{
@@ -42,6 +46,7 @@ namespace Assets.Scripts.UI
 			else if(instance != this)
 			{
 				Destroy(this.gameObject);
+                return;
 			}
 
             win = this.GetComponent<Canvas>();
@@ -76,6 +81,9 @@ namespace Assets.Scripts.UI
             timer += Time.deltaTime;
             activeCard.Rotate(0f, -turnStep, 0f);
             counter += turnStep;
+            foreach (SoundPlayer s in soundsInScene)
+                if (s != null && s.audio.isPlaying)
+                    s.Stop();
             if (counter > TURN_AMOUNT) SwapCards();
             if (timer >= timeToChange && async.progress >= 0.9f) FinishLoading();
         }
@@ -117,6 +125,19 @@ namespace Assets.Scripts.UI
             if (BeginLoadLevel != null) BeginLoadLevel();
             async = Application.LoadLevelAsync(level);
             async.allowSceneActivation = false;
+            SoundPlayer[] bgms = FindObjectsOfType<SoundPlayer>();
+            soundsInScene = new SoundPlayer[bgms.Length - 1];
+            int i = 0;
+            foreach (SoundPlayer s in bgms)
+            {
+                if (s != music)
+                {
+                    s.Stop();
+                    soundsInScene[i] = s;
+                    i++;
+                }
+            }
+            music.PlaySong(0);
         }
 
         private void FinishLoading()
@@ -128,6 +149,7 @@ namespace Assets.Scripts.UI
 
         void OnLevelWasLoaded(int level)
         {
+            music.Stop();
             win.enabled = false;
         }
 

@@ -31,11 +31,6 @@ namespace Assets.Scripts.Managers
             }
         }
 
-        void Update()
-        {
-            Debug.Log(state);
-        }
-
         private void CardSelectorStateEnable()
         {
             state = Enums.GameStates.CardSelection;
