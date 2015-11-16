@@ -17,6 +17,14 @@ namespace Assets.Scripts.Player
         [SerializeField]
         private Animator anim;
         [SerializeField]
+        private Material[] fireClothes;
+        [SerializeField]
+        private Material[] earthClothes;
+        [SerializeField]
+        private Material[] thunderClothes;
+        [SerializeField]
+        private Material[] woodClothes;
+        [SerializeField]
         private SkinnedMeshRenderer[] body;
         [SerializeField]
         private Weapons.Hitbox bullet;
@@ -94,6 +102,29 @@ namespace Assets.Scripts.Player
             {
                 deck = dt.GetComponent<UI.DeckTransfer>().Deck;
                 element = dt.GetComponent<UI.DeckTransfer>().Element;
+                Material[] clothes;
+                switch(element)
+                {
+                    case Enums.Element.Fire: clothes = fireClothes; break;
+                    case Enums.Element.Earth: clothes = earthClothes; break;
+                    case Enums.Element.Thunder: clothes = thunderClothes; break;
+                    case Enums.Element.Wood: clothes = woodClothes; break;
+                    default: clothes = null; break;
+                }
+                if(clothes != null)
+                {
+                    body[0].material = clothes[0];
+                    body[1].material = clothes[2];
+                    body[2].material = clothes[2];
+                    body[4].material = clothes[0];
+                    body[5].material = clothes[0];
+                    body[6].material = clothes[2];
+                    body[7].material = clothes[2];
+                    body[8].material = clothes[1];
+                    body[9].material = clothes[1];
+                    body[10].material = clothes[0];
+                    body[11].material = clothes[0];
+                }
             }
             else
                 deck = new Deck(FindObjectOfType<CardList>().Cards);
