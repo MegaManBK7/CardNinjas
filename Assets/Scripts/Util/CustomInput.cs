@@ -498,7 +498,7 @@ namespace Assets.Scripts.Util
                     if (arr[i].ToLower().Contains("playstation") || arr[i].ToLower().Contains("ps3"))
                         gamePadMapping[controller].type = ControllerInputHandler.ControlType.PS3;
                     else if (arr[i].ToLower().Contains("ps4") || arr[i].ToLower().Contains("wireless controller"))
-                        gamePadMapping[controller].type = ControllerInputHandler.ControlType.Xbox;
+                        gamePadMapping[controller].type = ControllerInputHandler.ControlType.PS4;
                     else
                         gamePadMapping[controller].type = ControllerInputHandler.ControlType.Xbox;
                     gamePadMapping[controller].joysticNum = i + 1;

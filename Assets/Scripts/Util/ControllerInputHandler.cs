@@ -397,8 +397,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.Joystick1Button5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.Joystick1Button6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.Joystick1Button4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
