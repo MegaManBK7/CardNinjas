@@ -490,17 +490,27 @@ namespace Assets.Scripts.Util
         private void UpdateGamePadArray()
         {
             int controller = 1;
+            int ps3 = 0, ps4 = 0, xbox = 0;
             string[] arr = Input.GetJoystickNames();
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] != null && arr[i] != "")
                 {
                     if (arr[i].ToLower().Contains("playstation") || arr[i].ToLower().Contains("ps3"))
+                    {
                         gamePadMapping[controller].type = ControllerInputHandler.ControlType.PS3;
+                        ps3++;
+                    }
                     else if (arr[i].ToLower().Contains("ps4") || arr[i].ToLower().Contains("wireless controller"))
+                    {
                         gamePadMapping[controller].type = ControllerInputHandler.ControlType.PS4;
+                        ps4++;
+                    }
                     else
+                    {
                         gamePadMapping[controller].type = ControllerInputHandler.ControlType.Xbox;
+                        xbox++;
+                    }
                     gamePadMapping[controller].joysticNum = i + 1;
                     controller++;
                 }
@@ -510,6 +520,13 @@ namespace Assets.Scripts.Util
                 gamePadMapping[controller].type = ControllerInputHandler.ControlType.Xbox;
                 gamePadMapping[controller].joysticNum = -1;
             }
+            int max = Mathf.Max(ps3, ps4, xbox);
+            if(max == ps3)
+                gamePadMapping[0].type = ControllerInputHandler.ControlType.PS3;
+            else if(max == ps4)
+                gamePadMapping[0].type = ControllerInputHandler.ControlType.PS4;
+            else
+                gamePadMapping[0].type = ControllerInputHandler.ControlType.Xbox;
         }
 
         /// <summary> Used to see if the user has pressed any monitored input. </summary>
