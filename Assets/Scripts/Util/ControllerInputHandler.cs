@@ -40,48 +40,40 @@ namespace Assets.Scripts.Util
         private const string DPAD_PS4_STICK_X = "DpadPS4StickX";
         private const string DPAD_PS4_STICK_Y = "DpadPS4StickY";
 
+        /// <summary> A tuple for defining a controllers type and number. </summary>
+        public struct Controller { public ControlType type; public int joysticNum; }
 
-        public static ControlType GetControlType(int joyStickNumber)
+        public static bool GetButton(Buttons btn, Controller controller)
         {
-            string[] arr = Input.GetJoystickNames();
-            string names = "";
-            foreach (string s in arr)
-                names += s + ", ";
-            Debug.Log(names);
-            if (Input.GetJoystickNames().Length > joyStickNumber)
-            {
-                if (joyStickNumber == 0)
-                    joyStickNumber++;
-                if (Input.GetJoystickNames()[joyStickNumber -1].ToLower().Contains("playstation") || Input.GetJoystickNames()[joyStickNumber - 1].ToLower().Contains("ps3"))
-                    return ControlType.PS3;
-                else if (Input.GetJoystickNames()[joyStickNumber - 1].ToLower().Contains("ps4") || Input.GetJoystickNames()[joyStickNumber - 1].ToLower().Contains("wireless controller"))
-                    return ControlType.PS4;
-            }
-            return ControlType.Xbox;
-        }
-
-        public static bool GetButton(Buttons btn, int joyStickNumber = 0)
-        {
-            KeyCode btnKeyCode = GetKeyCode(btn, joyStickNumber);
+            if (controller.joysticNum < 0)
+                return false;
+            KeyCode btnKeyCode = GetKeyCode(btn, controller);
             return Input.GetKey(btnKeyCode);
         }
 
-        public static bool GetButtonUp(Buttons btn, int joyStickNumber = 0)
+        public static bool GetButtonUp(Buttons btn, Controller controller)
         {
-            KeyCode btnKeyCode = GetKeyCode(btn, joyStickNumber);
+            if (controller.joysticNum < 0)
+                return false;
+            KeyCode btnKeyCode = GetKeyCode(btn, controller);
             return Input.GetKeyUp(btnKeyCode);
         }
 
-        public static bool GetButtonDown(Buttons btn, int joyStickNumber = 0)
+        public static bool GetButtonDown(Buttons btn, Controller controller)
         {
-            KeyCode btnKeyCode = GetKeyCode(btn, joyStickNumber);
+            if (controller.joysticNum < 0)
+                return false;
+            KeyCode btnKeyCode = GetKeyCode(btn, controller);
             return Input.GetKeyDown(btnKeyCode);
         }
 
-        public static float GetAxis(Axis axisName, int joyStickNumber = 0)
+        public static float GetAxis(Axis axisName, Controller controller)
         {
+            if (controller.joysticNum < 0)
+                return 0;
             float result = 0;
-            ControlType inControlType = GetControlType(joyStickNumber);
+            ControlType inControlType = controller.type;
+            int joyStickNumber = controller.joysticNum;
             switch (axisName)
             {
                 case Axis.RightStickY:
@@ -220,10 +212,13 @@ namespace Assets.Scripts.Util
             return result;
         }
 
-        public static float GetTrigger(Triggers trgName, int joyStickNumber = 0)
+        public static float GetTrigger(Triggers trgName, Controller controller)
         {
+            if (controller.joysticNum < 0)
+                return 0;
             float result = 0;
-            ControlType inControlType = GetControlType(joyStickNumber);
+            ControlType inControlType = controller.type;
+            int joyStickNumber = controller.joysticNum;
             switch (trgName)
             {
                 case Triggers.LeftTrigger:
@@ -321,9 +316,12 @@ namespace Assets.Scripts.Util
         }
 
         //Function to return Keycode of a particular button based on OS and joystick number. Joystick number 0 is considered for "Any" joystick.
-        public static KeyCode GetKeyCode(Buttons btn, int joyStickNumber = 0)
+        public static KeyCode GetKeyCode(Buttons btn, Controller controller)
         {
-            ControlType inControlType = GetControlType(joyStickNumber);
+            if (controller.joysticNum < 0)
+                return KeyCode.None;
+            ControlType inControlType = controller.type;
+            int joyStickNumber = controller.joysticNum;
             switch (joyStickNumber)
             {
                 #region joystick 1
