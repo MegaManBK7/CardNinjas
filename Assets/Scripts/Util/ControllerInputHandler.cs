@@ -547,8 +547,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.Joystick2Button5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.Joystick2Button6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.Joystick2Button4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
@@ -695,8 +697,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.Joystick3Button5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.Joystick3Button6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.Joystick3Button4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
@@ -843,8 +847,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.Joystick4Button5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.Joystick4Button6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.Joystick4Button4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
@@ -991,8 +997,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.Joystick5Button5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.Joystick5Button6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.Joystick5Button4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
@@ -1139,8 +1147,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.Joystick6Button5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.Joystick6Button6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.Joystick6Button4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
@@ -1287,8 +1297,10 @@ namespace Assets.Scripts.Util
                                     return KeyCode.JoystickButton5;
                             }
                         case Buttons.LeftBumper:    //L1 for playstation
-                            if (inControlType == ControlType.PS3 || inControlType == ControlType.PS4)
+                            if (inControlType == ControlType.PS3)
                                 return KeyCode.JoystickButton6;
+                            if (inControlType == ControlType.PS4)
+                                return KeyCode.JoystickButton4;
                             switch (Application.platform)
                             {
                                 case RuntimePlatform.OSXDashboardPlayer:
