@@ -337,7 +337,7 @@ namespace Assets.Scripts.Player
                         }
                         sfx.PlaySong(sfxNumber);
                         useCard = false;
-                        hand.UseCurrent(this);
+                        hand.UseCurrent(this, deck);
                         CardUIEvent();
                     }
                 }
@@ -411,6 +411,7 @@ namespace Assets.Scripts.Player
 
         public void AddCardsToHand(List<Card> cards)
         {
+            hand.AddUnusedCards(deck);
             hand.PlayerHand = cards;
         }
 
