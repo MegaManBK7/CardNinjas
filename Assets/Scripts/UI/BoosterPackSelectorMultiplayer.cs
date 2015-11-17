@@ -41,6 +41,11 @@ namespace Assets.Scripts.UI
         private static Enums.Element[] elementMap = {Enums.Element.Fire, Enums.Element.Water, Enums.Element.Thunder,
                                               Enums.Element.Earth, Enums.Element.Wood, Enums.Element.None, Enums.Element.None};
 
+        void OnLevelWasLoaded(int i)
+        {
+            playerIndex = 0;
+        }
+
         void Start()
         {
             thisPlayerIndex = ++playerIndex;

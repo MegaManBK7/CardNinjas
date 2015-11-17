@@ -39,9 +39,9 @@ namespace Assets.Scripts.UI
             SelectionTimer.TimerFinish -= Hide;
         }
 
-        void Awake()
+        void OnLevelWasLoaded(int i)
         {
-            
+            playerIndex = 0;
         }
 
 		void Start()
@@ -57,7 +57,6 @@ namespace Assets.Scripts.UI
 			GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
 			for (int i = 0; i < MAX_HAND; i++)
 			{
-				Debug.Log(this.thisPlayerIndex);
 				gos[i].tag = "Hand " + thisPlayerIndex.ToString();
 				hand[i] = gos[i].GetComponent<Image>();
 			}

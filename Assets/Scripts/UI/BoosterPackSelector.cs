@@ -52,56 +52,20 @@ namespace Assets.Scripts.UI
                 okay = GameObject.Find("Okay").GetComponent<Button>();
             }
             catch(Exception e)
-            { }
+            {
+                Debug.Log(e.Message);
+            }
         }
 
         void Update()
         {
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, thisPlayerIndex)) Navigate(CustomInput.UserInput.Up);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down, thisPlayerIndex)) Navigate(CustomInput.UserInput.Down);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigate(CustomInput.UserInput.Right);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigate(CustomInput.UserInput.Left);
-            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept, thisPlayerIndex)) CallSubmit();
+            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Up, packs[0].gameObject);
+            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Down, packs[0].gameObject);
+            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Right, packs[0].gameObject);
+            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Left, packs[0].gameObject);
+            if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept, thisPlayerIndex)) Navigator.CallSubmit();
 
             if (CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel, thisPlayerIndex)) RemovePack(lastSelected);
-        }
-
-        private void Navigate(CustomInput.UserInput direction)
-        {
-            GameObject next = EventSystem.current.currentSelectedGameObject;
-            if (next == null)
-            {
-                EventSystem.current.SetSelectedGameObject(packs[0].gameObject);
-                return;
-            }
-
-            bool nextIsValid = false;
-            while (!nextIsValid)
-            {
-                switch (direction)
-                {
-                    case CustomInput.UserInput.Up:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp().gameObject;
-                        break;
-                    case CustomInput.UserInput.Down:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
-                        break;
-                    case CustomInput.UserInput.Left:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
-                        break;
-                    case CustomInput.UserInput.Right:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
-                        break;
-                }
-                EventSystem.current.SetSelectedGameObject(next);
-                nextIsValid = next.GetComponent<Selectable>().interactable;
-            }
-        }
-
-        private void CallSubmit()
-        {
-            var pointer = new PointerEventData(EventSystem.current);
-            ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
         }
 
         public void AddPack(int index)
@@ -188,6 +152,11 @@ namespace Assets.Scripts.UI
 
 			// Load loading screen, correct level should already be stored from Main Menu
 			LoadingScreen.instance.LoadLevel(LoadingScreen.LevelToLoad);
+        }
+
+        void OnLevelWasLoaded(int i)
+        {
+            playerIndex = 0;
         }
 
         public int LastSelected

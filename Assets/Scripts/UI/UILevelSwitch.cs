@@ -18,30 +18,57 @@ public class UILevelSwitch : MonoBehaviour {
 		"BoosterPackSelectionMultiplayer",
 		"MultiplayerBattle"};
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public void LevelSwitch(string level) {
+		LoadingScreen.instance.LoadLevel(level);
 	}
 
-	public void LevelSwitch(int level) {
-		LoadingScreen.LevelToLoad = levels[level];
-		LoadingScreen.instance.LoadLevel(levels[level]);
+	public void LevelSwitchForPackSelection() {
+		GameManager.CardSelect = true;
+		Application.LoadLevel(3);
 	}
 
-	public void LevelSwitchForPackSelection(int level) {
-		Application.LoadLevel(level);
+	public void LevelSwitchForMultiplayerPackSelection() {
+		GameManager.CardSelect = true;
+		Application.LoadLevel(10);
 	}
 
 	public void ReloadLevel() {
-		LevelSwitch(Application.loadedLevel);
+		LevelSwitch(Application.loadedLevelName);
 	}
 
 	public void SetLoadingLevel(string _level) {
 		LoadingScreen.LevelToLoad = _level;
+	}
+
+	public void DeckSelectNextLevel() {
+        DeckTransfer[] decks = GameObject.FindObjectsOfType<DeckTransfer>();
+        for(int i = 0; i < decks.Length; i++)
+        {
+            Destroy(decks[i].gameObject);
+        }
+		SetLoadingLevel(getNextLevel());
+		LevelSwitchForPackSelection();
+	}
+
+	public void DeckSelectThisLevel() {
+        DeckTransfer[] decks = GameObject.FindObjectsOfType<DeckTransfer>();
+        for (int i = 0; i < decks.Length; i++)
+        {
+            Destroy(decks[i].gameObject);
+        }
+        LevelSwitchForPackSelection();
+	}
+
+	public void DirectNextLevel() {
+		LevelSwitch(getNextLevel());
+	}
+
+	public void BackToMenu() {
+		LevelSwitch("MenuTest");
+	}
+
+	private string getNextLevel() {
+		int current = Application.loadedLevel;
+		return levels[++current];
 	}
 }

@@ -82,22 +82,14 @@ namespace Assets.Scripts.UI
 
         void Update()
         {
-			Debug.Log("testing");
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Attack))
-                {
-                    DrawPossibleSelections();
-                }
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, thisPlayerIndex)) Navigate(CustomInput.UserInput.Up);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down, thisPlayerIndex)) Navigate(CustomInput.UserInput.Down);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigate(CustomInput.UserInput.Right);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigate(CustomInput.UserInput.Left);
-                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept, thisPlayerIndex)) CallSubmit();
-        }
-
-        private void CallSubmit()
-        {
-            var pointer = new PointerEventData(EventSystem.current);
-            ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
+            if (Managers.GameManager.State == Enums.GameStates.CardSelection)
+            {
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Up, okayButton.gameObject);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Down, okayButton.gameObject);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Right, okayButton.gameObject);
+                if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left, thisPlayerIndex)) Navigator.Navigate(CustomInput.UserInput.Left, okayButton.gameObject);
+                if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Accept, thisPlayerIndex)) Navigator.CallSubmit();
+            }
         }
 
         private void DrawPossibleSelections()
@@ -173,7 +165,7 @@ namespace Assets.Scripts.UI
             finalMap.Clear();
             numSelections = 0;
             transform.GetComponent<Canvas>().enabled = true;
-            Navigate(CustomInput.UserInput.Up);
+            Navigator.Navigate(CustomInput.UserInput.Up, okayButton.FindSelectableOnLeft().gameObject);
             DrawPossibleSelections();
             UpdateDisplayData();
             UpdateFinalDisplayData();
@@ -214,13 +206,13 @@ namespace Assets.Scripts.UI
             {
                 if(i < finalMap.Count)
                 {
-                    finalButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = GetElementDisplay(selectionOptions[finalMap[i]].Element);
+                    finalButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = CustomColor.ColorFromElement(selectionOptions[finalMap[i]].Element);
                     finalButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = selectionOptions[finalMap[i]].Image;
                     finalButtons[i].interactable = true;
                 }
                 else
                 {
-                    finalButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = GetElementDisplay(Enums.Element.None);
+                    finalButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = CustomColor.ColorFromElement(Enums.Element.None);
                     finalButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
                     finalButtons[i].interactable = false;
                 }
@@ -252,14 +244,14 @@ namespace Assets.Scripts.UI
             {
                 if (selectionOptions != null && i < selectionOptions.Count)
                 {
-                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = GetElementDisplay(selectionOptions[i].Element);
+                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = CustomColor.ColorFromElement(selectionOptions[i].Element);
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.white;
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = selectionOptions[i].Image;
                     selectionButtons[i].interactable = true;
                 }
                 else
                 {
-                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = GetElementDisplay(Enums.Element.None);
+                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = CustomColor.ColorFromElement(Enums.Element.None);
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
                     selectionButtons[i].interactable = false;
@@ -331,67 +323,5 @@ namespace Assets.Scripts.UI
             displayingDescription.text = nextDescription.text;
         }
         #endregion
-
-        #region NAVIGATION
-
-        private void Navigate(CustomInput.UserInput direction)
-        {
-            GameObject next = EventSystem.current.currentSelectedGameObject;
-            if(next == null)
-            {
-                if(deck.GetDeck.Count > 0)
-                {
-                    Transition(0);
-                    EventSystem.current.SetSelectedGameObject(selectionButtons[0].gameObject);
-                }
-                else
-                {
-                    EventSystem.current.SetSelectedGameObject(okayButton.gameObject);
-                }
-                return;
-            }
-
-            bool nextIsValid = false;
-            while (!nextIsValid)
-            {
-                switch(direction)
-                {
-                    case CustomInput.UserInput.Up:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp().gameObject;
-                        break;
-                    case CustomInput.UserInput.Down:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
-                        break;
-                    case CustomInput.UserInput.Left:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
-                        break;
-                    case CustomInput.UserInput.Right:
-                        next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
-                        break;
-                }
-                EventSystem.current.SetSelectedGameObject(next);
-                nextIsValid = next.GetComponent<Selectable>().interactable;
-            }
-        }
-        #endregion
-
-        public Color GetElementDisplay(Enums.Element element)
-        {
-            switch(element)
-            {
-                case Enums.Element.Fire:
-                    return new Color(175.0f / 255, 30.0f / 255, 30.0f / 255);
-                case Enums.Element.Water:
-                    return new Color(30.0f / 255, 30.0f / 255, 175.0f / 255);
-                case Enums.Element.Thunder:
-                    return new Color(225.0f / 255, 225.0f / 255, 30.0f / 255);
-                case Enums.Element.Earth:
-                    return new Color(85.0f / 255, 50.0f/255, 15.0f / 255);
-                case Enums.Element.Wood:
-                    return new Color(30.0f / 255, 175.0f / 255, 30.0f / 255);
-                default:
-                    return new Color(128.0f / 255, 128.0f / 255, 128.0f / 255);
-            }
-        }
     }
 }

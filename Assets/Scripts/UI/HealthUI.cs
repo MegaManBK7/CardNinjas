@@ -35,5 +35,10 @@ namespace Assets.Scripts.UI
 
             healthBar.localScale = new Vector3(xScale, 1, 1);
         }
+
+        void OnLevelWasLoaded(int i)
+        {
+            playerIndex = 0;
+        }
     }
 }

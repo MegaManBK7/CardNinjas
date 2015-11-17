@@ -2,7 +2,7 @@
 <library>
   <!--Melee-->
   <card name= "Tanto">
-    <element>Wooden Wood</element>
+    <element>Wood</element>
     <image>Cards/TAnto</image>
     <type>Tanto</type>
     <action range= "1" damage= "6" prefab= "Prefabs/SlashEffect">MeleeHorizontal</action>

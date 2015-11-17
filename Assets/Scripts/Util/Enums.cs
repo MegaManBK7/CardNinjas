@@ -14,7 +14,7 @@
             Idle = 0, MoveBegining, MoveEnding, Hit, Dead, BasicAttack, HoriSwingMid, VertiSwingHeavy, ThrowLight, ThrowMid, Shoot, ChiAttack, ChiStationary,
             TauntGokuStretch, TauntPointPoint, TauntThumbsDown, TauntWrasslemania, TauntYaMoves
         };
-        public enum GameStates { Battle, CardSelection, Paused, EndState };
+        public enum GameStates { Battle, CardSelection, Paused };
 		public enum Element { Fire, Earth, Thunder, Water, Wood, None };
     }
 }
