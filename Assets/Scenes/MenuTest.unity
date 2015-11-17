@@ -8147,6 +8147,7 @@ GameObject:
   - 223: {fileID: 567838340}
   - 114: {fileID: 567838339}
   - 114: {fileID: 567838338}
+  - 114: {fileID: 567838341}
   m_Layer: 5
   m_Name: Card Selector
   m_TagString: Untagged
@@ -8230,6 +8231,17 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 1
+--- !u!114 &567838341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 567838336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccb2403f4afa2841a98bfccc2329960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &573812369
 GameObject:
   m_ObjectHideFlags: 0
@@ -20818,6 +20830,7 @@ GameObject:
   - 114: {fileID: 1490062141}
   - 114: {fileID: 1490062140}
   - 225: {fileID: 1490062144}
+  - 114: {fileID: 1490062145}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -20916,6 +20929,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1490062145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1490062139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ccb2403f4afa2841a98bfccc2329960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1496491358
 GameObject:
   m_ObjectHideFlags: 0

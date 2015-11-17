@@ -174,9 +174,9 @@ namespace Assets.Scripts.UI
             t.Element = playerType;
 
             DontDestroyOnLoad(newDeck);
-			Application.LoadLevel("MultiplayerBattle");
+			//Application.LoadLevel("MultiplayerBattle");
 			//LoadingScreen.LevelToLoad = "MultiplayerBattle";
-			//LoadingScreen.instance.LoadLevel("MultiplayerBattle");
+			LoadingScreen.instance.LoadLevel("MultiplayerBattle");
         }
     }
 }

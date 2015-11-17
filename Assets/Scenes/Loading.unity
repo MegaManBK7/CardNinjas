@@ -95,7 +95,7 @@ GameObject:
   - 224: {fileID: 210314226}
   - 222: {fileID: 210314228}
   - 114: {fileID: 210314227}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RCard Type
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - 224: {fileID: 254827189}
   - 222: {fileID: 254827191}
   - 114: {fileID: 254827190}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - 224: {fileID: 442183124}
   - 222: {fileID: 442183126}
   - 114: {fileID: 442183125}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RCard Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - 222: {fileID: 462359945}
   - 114: {fileID: 462359944}
   - 114: {fileID: 462359943}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   - 224: {fileID: 606962719}
   - 222: {fileID: 606962721}
   - 114: {fileID: 606962720}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RCard Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - 224: {fileID: 692424662}
   - 222: {fileID: 692424664}
   - 114: {fileID: 692424663}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RCard Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   - 224: {fileID: 903085876}
   - 222: {fileID: 903085875}
   - 114: {fileID: 903085874}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - 224: {fileID: 1279710043}
   - 222: {fileID: 1279710045}
   - 114: {fileID: 1279710044}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RCard Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   - 224: {fileID: 1373886900}
   - 222: {fileID: 1373886902}
   - 114: {fileID: 1373886901}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Loading Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1586184342
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +773,7 @@ GameObject:
   - 224: {fileID: 1586184343}
   - 222: {fileID: 1586184345}
   - 114: {fileID: 1586184344}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +881,7 @@ GameObject:
   - 224: {fileID: 1705484484}
   - 222: {fileID: 1705484486}
   - 114: {fileID: 1705484485}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   - 224: {fileID: 1715897045}
   - 222: {fileID: 1715897047}
   - 114: {fileID: 1715897046}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Random Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1020,7 +1020,7 @@ GameObject:
   - 224: {fileID: 1768770274}
   - 222: {fileID: 1768770276}
   - 114: {fileID: 1768770275}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   - 224: {fileID: 1813428136}
   - 222: {fileID: 1813428138}
   - 114: {fileID: 1813428137}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: RCard Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,21 +1161,13 @@ GameObject:
   - 20: {fileID: 2053012996}
   - 92: {fileID: 2053012995}
   - 124: {fileID: 2053012994}
-  - 81: {fileID: 2053012993}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
+  m_Name: Loading Camera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2053012993
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2053012992}
-  m_Enabled: 1
 --- !u!124 &2053012994
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1214,7 +1206,7 @@ Camera:
   m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1231,11 +1223,46 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2053012992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
+--- !u!1 &2061040711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2061040713}
+  - 81: {fileID: 2061040712}
+  m_Layer: 0
+  m_Name: Audio Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &2061040712
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061040711}
+  m_Enabled: 1
+--- !u!4 &2061040713
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061040711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1 &2114626141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1277,7 @@ GameObject:
   - 114: {fileID: 2114626146}
   - 114: {fileID: 2114626148}
   - 82: {fileID: 2114626147}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Loading Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1336,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -334367983
   m_SortingOrder: 100
 --- !u!224 &2114626145
 RectTransform:
@@ -1326,7 +1353,7 @@ RectTransform:
   - {fileID: 1715897045}
   - {fileID: 1373886900}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1351,6 +1378,7 @@ MonoBehaviour:
   image: {fileID: 442183125}
   cardBase: {fileID: 1715897046}
   music: {fileID: 2114626148}
+  loadingCamera: {fileID: 2053012996}
 --- !u!82 &2114626147
 AudioSource:
   m_ObjectHideFlags: 0

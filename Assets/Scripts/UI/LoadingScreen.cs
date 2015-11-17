@@ -25,6 +25,8 @@ namespace Assets.Scripts.UI
         private Image image = null, cardBase = null;
         [SerializeField]
         private SoundPlayer music;
+        [SerializeField]
+        Camera loadingCamera;
 
         private float vel, counter, turnStep = 0.75f;
 
@@ -42,6 +44,7 @@ namespace Assets.Scripts.UI
 			{
 				instance = this;
 				DontDestroyOnLoad(this.gameObject);
+                DontDestroyOnLoad(loadingCamera.gameObject);
 			}
 			else if(instance != this)
 			{
@@ -120,6 +123,8 @@ namespace Assets.Scripts.UI
         public void LoadLevel(string level)
 		{
 			win.enabled = true;
+            if (Camera.main != null) Camera.main.enabled = false;
+            loadingCamera.enabled = true;
 			timer = 0;
             LevelToLoad = level;
             if (BeginLoadLevel != null) BeginLoadLevel();
@@ -142,6 +147,7 @@ namespace Assets.Scripts.UI
 
         private void FinishLoading()
         {
+            loadingCamera.enabled = false;
             async.allowSceneActivation = true;
             timer = 0;
             if (FinishedLoading != null) FinishedLoading();

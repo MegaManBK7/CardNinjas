@@ -28,7 +28,6 @@ namespace Assets.Scripts.UI
 
         private Enums.Element[] elementMap = {Enums.Element.Fire, Enums.Element.Water, Enums.Element.Thunder,
                                               Enums.Element.Earth, Enums.Element.Wood, Enums.Element.None, Enums.Element.None};
-
         void Start()
         {
             //should find players provided they are named in the fashion: "Player 1" or "Player 42"
