@@ -34,8 +34,11 @@ public class MenusController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (Settings.OnScreen && SettingsController.Settings.activeInHierarchy || LevelSelect1.OnScreen))
+		if((CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) || CustomInput.BoolFreshPress(CustomInput.UserInput.Pause))  && Settings == null)
+			FindObjectOfType<UILevelSwitch>().BackToMenu();
+		else if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (Settings.OnScreen && SettingsController.Settings.activeInHierarchy || LevelSelect1.OnScreen))
 			GoToMainMenu();
+
 		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) navigateAccept();
 
 		
