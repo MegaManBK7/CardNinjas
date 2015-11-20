@@ -100,6 +100,7 @@ public class MenusController : MonoBehaviour {
 	private void navigateAccept()
 	{
 		GameObject next = EventSystem.current.currentSelectedGameObject;
+        if (next == null) return;
 		var pointer = new PointerEventData(EventSystem.current);
 		Toggle tempTog = next.GetComponent<Toggle>();
 		bool isNew = true;

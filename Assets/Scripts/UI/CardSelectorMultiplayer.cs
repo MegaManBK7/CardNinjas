@@ -224,37 +224,18 @@ namespace Assets.Scripts.UI
             {
                 if (selectionOptions != null && i < selectionOptions.Count)
                 {
-                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = GetElementDisplay(selectionOptions[i].Element);
+                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = CustomColor.ColorFromElement(selectionOptions[i].Element);
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.white;
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = selectionOptions[i].Image;
                 }
                 else
                 {
-                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = GetElementDisplay(Enums.Element.None);
+                    selectionButtons[i].transform.GetChild(ELEMENT_INDEX).GetComponent<Image>().color = CustomColor.ColorFromElement(Enums.Element.None);
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
                     selectionButtons[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
                 }
             }
         }
         #endregion
-        
-        public Color GetElementDisplay(Enums.Element element)
-        {
-            switch (element)
-            {
-                case Enums.Element.Fire:
-                    return CustomColor.Convert255(175.0f, 30.0f, 30.0f);
-                case Enums.Element.Water:
-                    return CustomColor.Convert255(30.0f, 30.0f, 175.0f);
-                case Enums.Element.Thunder:
-                    return CustomColor.Convert255(225.0f, 225.0f, 30.0f);
-                case Enums.Element.Earth:
-                    return CustomColor.Convert255(85.0f, 50.0f, 15.0f);
-                case Enums.Element.Wood:
-                    return CustomColor.Convert255(30.0f, 175.0f, 30.0f);
-                default:
-                    return CustomColor.Convert255(128.0f, 128.0f, 128.0f);
-            }
-        }
     }
 }

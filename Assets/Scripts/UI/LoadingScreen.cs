@@ -25,8 +25,10 @@ namespace Assets.Scripts.UI
         private Image image = null, cardBase = null;
         [SerializeField]
         private SoundPlayer music;
+        [SerializeField]
+        Camera loadingCamera;
 
-        private float vel, counter, turnStep = 0.75f;
+        private float vel, counter, turnStep = 1.5f;
 
         private List<Card> allCards;
 
@@ -42,6 +44,7 @@ namespace Assets.Scripts.UI
 			{
 				instance = this;
 				DontDestroyOnLoad(this.gameObject);
+                DontDestroyOnLoad(loadingCamera.gameObject);
 			}
 			else if(instance != this)
 			{
@@ -64,8 +67,8 @@ namespace Assets.Scripts.UI
         private void Init()
         {
             activeCard = loadingCard;
-            activeCard.eulerAngles = new Vector3(0, 0, 0);
-            counter = TURN_AMOUNT / 2;
+            activeCard.eulerAngles = new Vector3(0, -START_Y_ROT, 0);
+            counter = 0;
         }
 
         void Update()
@@ -117,9 +120,35 @@ namespace Assets.Scripts.UI
             activeCard.eulerAngles = new Vector3(0, -START_Y_ROT, 0);
         }
 
+        public void LoadLevel(int level)
+        {
+            win.enabled = true;
+            if (Camera.main != null) Camera.main.enabled = false;
+            loadingCamera.enabled = true;
+            timer = 0;
+            if (BeginLoadLevel != null) BeginLoadLevel();
+            async = Application.LoadLevelAsync(level);
+            async.allowSceneActivation = false;
+            SoundPlayer[] bgms = FindObjectsOfType<SoundPlayer>();
+            soundsInScene = new SoundPlayer[bgms.Length - 1];
+            int i = 0;
+            foreach (SoundPlayer s in bgms)
+            {
+                if (s != music)
+                {
+                    s.Stop();
+                    soundsInScene[i] = s;
+                    i++;
+                }
+            }
+            music.PlaySong(0);
+        }
+
         public void LoadLevel(string level)
 		{
 			win.enabled = true;
+            if (Camera.main != null) Camera.main.enabled = false;
+            loadingCamera.enabled = true;
 			timer = 0;
             LevelToLoad = level;
             if (BeginLoadLevel != null) BeginLoadLevel();
@@ -149,6 +178,7 @@ namespace Assets.Scripts.UI
 
         void OnLevelWasLoaded(int level)
         {
+            loadingCamera.enabled = false;
             music.Stop();
             win.enabled = false;
         }

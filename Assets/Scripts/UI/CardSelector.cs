@@ -37,10 +37,12 @@ namespace Assets.Scripts.UI
         void OnEnable()
         {
             SelectionTimer.TimerFinish += EnableCanvas;
+            LoadingScreen.BeginLoadLevel += HideCanvas;
         }
         void OnDisable()
         {
             SelectionTimer.TimerFinish -= EnableCanvas;
+            LoadingScreen.BeginLoadLevel -= HideCanvas;
         }
 
         void Start()
@@ -323,5 +325,10 @@ namespace Assets.Scripts.UI
             displayingDescription.text = nextDescription.text;
         }
         #endregion
+
+        private void HideCanvas()
+        {
+            this.GetComponent<Canvas>().enabled = false;
+        }
     }
 }

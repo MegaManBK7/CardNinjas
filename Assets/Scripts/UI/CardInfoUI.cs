@@ -92,7 +92,7 @@ namespace Assets.Scripts.UI
                     cards[i] = player.Hand.PlayerHand[i].Name;
                     hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.white;
                     hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = player.Hand.PlayerHand[i].Image;
-                    hand[i].color = GetElementDisplay(player.Hand.PlayerHand[i].Element);
+                    hand[i].color = CustomColor.ColorFromElement(player.Hand.PlayerHand[i].Element);
                 }
                 else
                 {
@@ -113,25 +113,6 @@ namespace Assets.Scripts.UI
             }
             currentCardName.text = "None";
             cardToUse = 0;
-        }
-
-        public Color GetElementDisplay(Enums.Element element)
-        {
-            switch (element)
-            {
-                case Enums.Element.Fire:
-                    return new Color(175.0f / 255, 30.0f / 255, 30.0f / 255);
-                case Enums.Element.Water:
-                    return new Color(30.0f / 255, 30.0f / 255, 175.0f / 255);
-                case Enums.Element.Thunder:
-                    return new Color(225.0f / 255, 225.0f / 255, 30.0f / 255);
-                case Enums.Element.Earth:
-                    return new Color(85.0f / 255, 50.0f / 255, 15.0f / 255);
-                case Enums.Element.Wood:
-                    return new Color(30.0f / 255, 175.0f / 255, 30.0f / 255);
-                default:
-                    return new Color(128.0f / 255, 128.0f / 255, 128.0f / 255);
-            }
         }
     }
 }
