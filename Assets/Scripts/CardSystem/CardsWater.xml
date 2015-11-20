@@ -166,4 +166,11 @@
     <action range= "4" damage= "1" prefab= "Prefabs/Oil">Oil</action>
     <description>Cover half the enemy's field with oil.</description>
   </card>
+  <card name= "Tsunami">
+    <element>Water</element>
+    <image>Cards/TidalWave</image>
+    <type>ChiAttack</type>
+    <action range= "3" damage= "6" prefab= "Prefabs/Tidalwave">TidalWave</action>
+    <description>Summons a giant tidal wave that rushes to the enemy on all rows.</description>
+  </card>
 </library>
