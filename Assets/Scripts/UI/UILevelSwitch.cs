@@ -24,13 +24,15 @@ public class UILevelSwitch : MonoBehaviour {
 
 	public void LevelSwitchForPackSelection() {
 		GameManager.CardSelect = true;
-		Application.LoadLevel(3);
-	}
+		//Application.LoadLevel(3);
+        LoadingScreen.instance.LoadLevel(3);
+    }
 
 	public void LevelSwitchForMultiplayerPackSelection() {
 		GameManager.CardSelect = true;
 		Application.LoadLevel(10);
-	}
+        LoadingScreen.instance.LoadLevel(10);
+    }
 
 	public void ReloadLevel() {
 		LevelSwitch(Application.loadedLevelName);
