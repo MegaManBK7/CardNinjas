@@ -20,24 +20,24 @@ namespace Assets.Scripts.Util
         {
             if (rawSign == null)
                 throw new System.AccessViolationException(UnitializedMessage);
-            rawSign[(int)UserInput.Up]          = 1;
-            rawSign[(int)UserInput.Down]        = -1;
-            rawSign[(int)UserInput.Left]        = -1;
-            rawSign[(int)UserInput.Right]       = 1;
-            rawSign[(int)UserInput.Pause]       = 1;
-            rawSign[(int)UserInput.Accept]      = 1;
-            rawSign[(int)UserInput.Cancel]      = 1;
-            rawSign[(int)UserInput.Attack]      = 1;
-            rawSign[(int)UserInput.UseCard]     = 1;
-            rawSign[(int)UserInput.Taunt]       = 1;
-            rawSign[(int)UserInput.PickCard0]   = 1;
-            rawSign[(int)UserInput.PickCard1]   = 1;
-            rawSign[(int)UserInput.PickCard2]   = 1;
-            rawSign[(int)UserInput.PickCard3]   = 1;
-            rawSign[(int)UserInput.PickCard4]   = 1;
-            rawSign[(int)UserInput.PickCard5]   = 1;
-            rawSign[(int)UserInput.PickCard6]   = 1;
-            rawSign[(int)UserInput.PickCard7]   = 1;
+            rawSign[(int)UserInput.Up] = 1;
+            rawSign[(int)UserInput.Down] = -1;
+            rawSign[(int)UserInput.Left] = -1;
+            rawSign[(int)UserInput.Right] = 1;
+            rawSign[(int)UserInput.Pause] = 1;
+            rawSign[(int)UserInput.Accept] = 1;
+            rawSign[(int)UserInput.Cancel] = 1;
+            rawSign[(int)UserInput.Attack] = 1;
+            rawSign[(int)UserInput.UseCard] = 1;
+            rawSign[(int)UserInput.Taunt] = 1;
+            rawSign[(int)UserInput.PickCard0] = 1;
+            rawSign[(int)UserInput.PickCard1] = 1;
+            rawSign[(int)UserInput.PickCard2] = 1;
+            rawSign[(int)UserInput.PickCard3] = 1;
+            rawSign[(int)UserInput.PickCard4] = 1;
+            rawSign[(int)UserInput.PickCard5] = 1;
+            rawSign[(int)UserInput.PickCard6] = 1;
+            rawSign[(int)UserInput.PickCard7] = 1;
         }
 
         /// <summary> 
@@ -50,31 +50,31 @@ namespace Assets.Scripts.Util
             if (keyBoard == null)
                 throw new System.AccessViolationException(UnitializedMessage);
 
-            keyBoard[(int)UserInput.Up,         0] = KeyCode.W;
-            keyBoard[(int)UserInput.Down,       0] = KeyCode.S;
-            keyBoard[(int)UserInput.Left,       0] = KeyCode.A;
-            keyBoard[(int)UserInput.Right,      0] = KeyCode.D;
-            keyBoard[(int)UserInput.Pause,      0] = KeyCode.Escape;
-            keyBoard[(int)UserInput.Accept,     0] = KeyCode.K;
-            keyBoard[(int)UserInput.Cancel,     0] = KeyCode.J;
+            keyBoard[(int)UserInput.Up, 0] = KeyCode.W;
+            keyBoard[(int)UserInput.Down, 0] = KeyCode.S;
+            keyBoard[(int)UserInput.Left, 0] = KeyCode.A;
+            keyBoard[(int)UserInput.Right, 0] = KeyCode.D;
+            keyBoard[(int)UserInput.Pause, 0] = KeyCode.Escape;
+            keyBoard[(int)UserInput.Accept, 0] = KeyCode.K;
+            keyBoard[(int)UserInput.Cancel, 0] = KeyCode.J;
 
-            keyBoard[(int)UserInput.Up,         1] = KeyCode.W;
-            keyBoard[(int)UserInput.Down,       1] = KeyCode.S;
-            keyBoard[(int)UserInput.Left,       1] = KeyCode.A;
-            keyBoard[(int)UserInput.Right,      1] = KeyCode.D;
-            keyBoard[(int)UserInput.Accept,     1] = KeyCode.K;
-            keyBoard[(int)UserInput.Cancel,     1] = KeyCode.J;
-            keyBoard[(int)UserInput.Attack,     1] = KeyCode.K;
-            keyBoard[(int)UserInput.UseCard,    1] = KeyCode.J;
-            keyBoard[(int)UserInput.Taunt,      1] = KeyCode.L;
-            keyBoard[(int)UserInput.PickCard0,  1] = KeyCode.Alpha1;
-            keyBoard[(int)UserInput.PickCard1,  1] = KeyCode.Alpha2;
-            keyBoard[(int)UserInput.PickCard2,  1] = KeyCode.Alpha3;
-            keyBoard[(int)UserInput.PickCard3,  1] = KeyCode.Alpha4;
-            keyBoard[(int)UserInput.PickCard4,  1] = KeyCode.Alpha5;
-            keyBoard[(int)UserInput.PickCard5,  1] = KeyCode.Alpha6;
-            keyBoard[(int)UserInput.PickCard6,  1] = KeyCode.Alpha7;
-            keyBoard[(int)UserInput.PickCard7,  1] = KeyCode.Alpha8;
+            keyBoard[(int)UserInput.Up, 1] = KeyCode.W;
+            keyBoard[(int)UserInput.Down, 1] = KeyCode.S;
+            keyBoard[(int)UserInput.Left, 1] = KeyCode.A;
+            keyBoard[(int)UserInput.Right, 1] = KeyCode.D;
+            keyBoard[(int)UserInput.Accept, 1] = KeyCode.K;
+            keyBoard[(int)UserInput.Cancel, 1] = KeyCode.J;
+            keyBoard[(int)UserInput.Attack, 1] = KeyCode.K;
+            keyBoard[(int)UserInput.UseCard, 1] = KeyCode.J;
+            keyBoard[(int)UserInput.Taunt, 1] = KeyCode.L;
+            keyBoard[(int)UserInput.PickCard0, 1] = KeyCode.Alpha1;
+            keyBoard[(int)UserInput.PickCard1, 1] = KeyCode.Alpha2;
+            keyBoard[(int)UserInput.PickCard2, 1] = KeyCode.Alpha3;
+            keyBoard[(int)UserInput.PickCard3, 1] = KeyCode.Alpha4;
+            keyBoard[(int)UserInput.PickCard4, 1] = KeyCode.Alpha5;
+            keyBoard[(int)UserInput.PickCard5, 1] = KeyCode.Alpha6;
+            keyBoard[(int)UserInput.PickCard6, 1] = KeyCode.Alpha7;
+            keyBoard[(int)UserInput.PickCard7, 1] = KeyCode.Alpha8;
         }
 
         /// <summary> 
@@ -87,103 +87,139 @@ namespace Assets.Scripts.Util
             if (gamePad == null)
                 throw new System.AccessViolationException(UnitializedMessage);
 
-            gamePad[(int)UserInput.Up,          0] = DPAD_UP;
-            gamePad[(int)UserInput.Down,        0] = DPAD_DOWN;
-            gamePad[(int)UserInput.Left,        0] = DPAD_LEFT;
-            gamePad[(int)UserInput.Right,       0] = DPAD_RIGHT;
-            gamePad[(int)UserInput.Pause,       0] = START;
-            gamePad[(int)UserInput.Accept,      0] = A;
-            gamePad[(int)UserInput.Cancel,      0] = B;
+            gamePad[(int)UserInput.Up, 0] = DPAD_UP;
+            gamePad[(int)UserInput.Down, 0] = DPAD_DOWN;
+            gamePad[(int)UserInput.Left, 0] = DPAD_LEFT;
+            gamePad[(int)UserInput.Right, 0] = DPAD_RIGHT;
+            gamePad[(int)UserInput.Pause, 0] = START;
+            gamePad[(int)UserInput.Accept, 0] = A;
+            gamePad[(int)UserInput.Cancel, 0] = B;
 
-            gamePad[(int)UserInput.Up,          1] = DPAD_UP;
-            gamePad[(int)UserInput.Down,        1] = DPAD_DOWN;
-            gamePad[(int)UserInput.Left,        1] = DPAD_LEFT;
-            gamePad[(int)UserInput.Right,       1] = DPAD_RIGHT;
-            gamePad[(int)UserInput.Accept,      1] = A;
-            gamePad[(int)UserInput.Cancel,      1] = B;
-            gamePad[(int)UserInput.Attack,      1] = A;
-            gamePad[(int)UserInput.UseCard,     1] = B;
-            gamePad[(int)UserInput.Taunt,       1] = X;
-            gamePad[(int)UserInput.PickCard0,   1] = LB;
-            gamePad[(int)UserInput.PickCard1,   1] = RB;
-            gamePad[(int)UserInput.PickCard2,   1] = LEFT_TRIGGER;
-            gamePad[(int)UserInput.PickCard3,   1] = RIGHT_TRIGGER;
-            gamePad[(int)UserInput.PickCard4,   1] = A;
-            gamePad[(int)UserInput.PickCard5,   1] = LEFT_STICK;
-            gamePad[(int)UserInput.PickCard6,   1] = X;
-            gamePad[(int)UserInput.PickCard7,   1] = Y;
+            gamePad[(int)UserInput.Up, 1] = DPAD_UP;
+            gamePad[(int)UserInput.Down, 1] = DPAD_DOWN;
+            gamePad[(int)UserInput.Left, 1] = DPAD_LEFT;
+            gamePad[(int)UserInput.Right, 1] = DPAD_RIGHT;
+            gamePad[(int)UserInput.Accept, 1] = A;
+            gamePad[(int)UserInput.Cancel, 1] = B;
+            gamePad[(int)UserInput.Attack, 1] = A;
+            gamePad[(int)UserInput.UseCard, 1] = B;
+            gamePad[(int)UserInput.Taunt, 1] = X;
+            gamePad[(int)UserInput.PickCard0, 1] = LB;
+            gamePad[(int)UserInput.PickCard1, 1] = RB;
+            gamePad[(int)UserInput.PickCard2, 1] = LEFT_TRIGGER;
+            gamePad[(int)UserInput.PickCard3, 1] = RIGHT_TRIGGER;
+            gamePad[(int)UserInput.PickCard4, 1] = A;
+            gamePad[(int)UserInput.PickCard5, 1] = LEFT_STICK;
+            gamePad[(int)UserInput.PickCard6, 1] = X;
+            gamePad[(int)UserInput.PickCard7, 1] = Y;
 
-            gamePad[(int)UserInput.Up,          2] = DPAD_UP;
-            gamePad[(int)UserInput.Down,        2] = DPAD_DOWN;
-            gamePad[(int)UserInput.Left,        2] = DPAD_LEFT;
-            gamePad[(int)UserInput.Right,       2] = DPAD_RIGHT;
-            gamePad[(int)UserInput.Accept,      2] = A;
-            gamePad[(int)UserInput.Cancel,      2] = B;
-            gamePad[(int)UserInput.Attack,      2] = A;
-            gamePad[(int)UserInput.UseCard,     2] = B;
-            gamePad[(int)UserInput.Taunt,       2] = X;
-            gamePad[(int)UserInput.PickCard0,   2] = LB;
-            gamePad[(int)UserInput.PickCard1,   2] = RB;
-            gamePad[(int)UserInput.PickCard2,   2] = LEFT_TRIGGER;
-            gamePad[(int)UserInput.PickCard3,   2] = RIGHT_TRIGGER;
-            gamePad[(int)UserInput.PickCard4,   2] = A;
-            gamePad[(int)UserInput.PickCard5,   2] = LEFT_STICK;
-            gamePad[(int)UserInput.PickCard6,   2] = X;
-            gamePad[(int)UserInput.PickCard7,   2] = Y;
+            gamePad[(int)UserInput.Up, 2] = DPAD_UP;
+            gamePad[(int)UserInput.Down, 2] = DPAD_DOWN;
+            gamePad[(int)UserInput.Left, 2] = DPAD_LEFT;
+            gamePad[(int)UserInput.Right, 2] = DPAD_RIGHT;
+            gamePad[(int)UserInput.Accept, 2] = A;
+            gamePad[(int)UserInput.Cancel, 2] = B;
+            gamePad[(int)UserInput.Attack, 2] = A;
+            gamePad[(int)UserInput.UseCard, 2] = B;
+            gamePad[(int)UserInput.Taunt, 2] = X;
+            gamePad[(int)UserInput.PickCard0, 2] = LB;
+            gamePad[(int)UserInput.PickCard1, 2] = RB;
+            gamePad[(int)UserInput.PickCard2, 2] = LEFT_TRIGGER;
+            gamePad[(int)UserInput.PickCard3, 2] = RIGHT_TRIGGER;
+            gamePad[(int)UserInput.PickCard4, 2] = A;
+            gamePad[(int)UserInput.PickCard5, 2] = LEFT_STICK;
+            gamePad[(int)UserInput.PickCard6, 2] = X;
+            gamePad[(int)UserInput.PickCard7, 2] = Y;
         }
 
+        /// <summary> Bool for whether or not Keyboard is disabled. </summary>
         private bool keyboardDisabled = false;
 
+        /// <summary> Disables Keyboard input. </summary>
         public bool KeyboardDisabled
         {
             get { return keyboardDisabled; }
             set { keyboardDisabled = value; }
         }
 
-        // Modification of the code below this should be unecessary.
+        // NOTE: Modification of the code below this should be unecessary.
 
-        // Constants used to define the possible controller buttons.
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LEFT_STICK_RIGHT = "Left Stick Right";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LEFT_STICK_LEFT = "Left Stick Left";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LEFT_STICK_UP = "Left Stick Up";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LEFT_STICK_DOWN = "Left Stick Down";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RIGHT_STICK_RIGHT = "Right Stick Right";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RIGHT_STICK_LEFT = "Right Stick Left";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RIGHT_STICK_UP = "Right Stick Up";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RIGHT_STICK_DOWN = "Right Stick Down";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string DPAD_RIGHT = "Dpad Right";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string DPAD_LEFT = "Dpad Left";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string DPAD_UP = "Dpad Up";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string DPAD_DOWN = "Dpad Down";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LEFT_TRIGGER = "Left Trigger";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RIGHT_TRIGGER = "Right Trigger";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string A = "A";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string B = "B";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string X = "X";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string Y = "Y";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LB = "LB";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RB = "RB";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string BACK = "Back";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string START = "Start";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string LEFT_STICK = "Left Stick Click";
+        /// <summary> Constant used to define a possible controller button. </summary>
         public const string RIGHT_STICK = "Right Stick Click";
 
-        private const string UnitializedMessage = "Input has not been initialized.Make sure it is in the scene.";
+        /// <summary> Error message showed when the Input GameObject isn't in the scene. </summary>
+        private const string UnitializedMessage = "Input has not been initialized. Make sure it is in the scene.";
 
-        // Arrays used to store input booleans.
+        /// <summary> Array used to store input booleans. </summary>
         private static bool[,] bools;
+        /// <summary> Array used to store input booleans. </summary>
         private static bool[,] boolsUp;
+        /// <summary> Array used to store input booleans. </summary>
         private static bool[,] boolsHeld;
+        /// <summary> Array used to store input booleans. </summary>
         private static bool[,] boolsFreshPress;
+        /// <summary> Array used to store input booleans. </summary>
         private static bool[,] boolsFreshPressAccessed;
+        /// <summary> Array used to store input booleans. </summary>
         private static bool[,] boolsFreshPressDeleteOnRead;
 
-        // Arrays used to store raw input data for analog input.
+        /// <summary> Array used to store raw input data for analog input. </summary>
         private static float[,] raws;
+        /// <summary> Array used to store raw input data for analog input. </summary>
         private static float[,] rawsUp;
+        /// <summary> Array used to store raw input data for analog input. </summary>
         private static float[,] rawsHeld;
+        /// <summary> Array used to store raw input data for analog input. </summary>
         private static float[,] rawsFreshPress;
+        /// <summary> Array used to store raw input data for analog input. </summary>
         private static bool[,] rawsFreshPressAccessed;
+        /// <summary> Array used to store raw input data for analog input. </summary>
         private static float[,] rawsFreshPressDeleteOnRead;
 
         /// <summary> Getter for if a button is pressed. </summary>
@@ -292,7 +328,7 @@ namespace Assets.Scripts.Util
             return temp;
         }
 
-        // Array to hold which keys correspond to which inputs.
+        /// <summary> Array to hold which keys correspond to which inputs. </summary>
         private static KeyCode[,] keyBoard;
 
         /// <summary> Getter for the keys attached to inputs. </summary>
@@ -315,7 +351,7 @@ namespace Assets.Scripts.Util
             keyBoard[(int)input, playerNumber] = key;
         }
 
-        // Array to hold which buttons correspond to which inputs.
+        /// <summary> Array to hold which buttons correspond to which inputs. </summary>
         private static string[,] gamePad;
 
         /// <summary> Getter for the buttons attached to inputs. </summary>
@@ -327,6 +363,7 @@ namespace Assets.Scripts.Util
                 throw new System.AccessViolationException(UnitializedMessage);
             return gamePad[(int)input, playerNumber];
         }
+
         /// <summary> Setter used to define which buttons correspond to which inputs. </summary>
         /// <param name="input"> The button to define. </param>
         /// <param name="button"> The button to attach to it. </param>
@@ -337,10 +374,10 @@ namespace Assets.Scripts.Util
             gamePad[(int)input, playerNumber] = button;
         }
 
-        // Array to for the user to specify the sign of the number they want from raw data
+        /// <summary> Array to for the user to specify the sign of the number they want from raw data </summary>
         private static int[] rawSign;
 
-        // Boolean as to whether or not a controller is being used.
+        /// <summary> Boolean as to whether or not a controller is being used. </summary>
         private static bool usingPad = false;
 
         /// <summary> Is the player using a controller. </summary>
@@ -349,9 +386,10 @@ namespace Assets.Scripts.Util
             get { return usingPad; }
         }
 
-        //Array for holding which controller name to reference
+        /// <summary> Array for holding which controller name to reference </summary>
         private static ControllerInputHandler.Controller[] gamePadMapping;
 
+        /// <summary> Used to make this class a singleton. </summary>
         private static CustomInput instance;
 
         void Awake()
@@ -407,14 +445,18 @@ namespace Assets.Scripts.Util
             DefaultPad();
         }
 
+        /// <summary> Determines if the Input bindings file exists. </summary>
+        /// <returns> True if the file exists. </returns>
         public static bool FileExists()
         {
             return System.IO.File.Exists(filename);
         }
 
+        /// <summary> Loads the input bindings file from disk.  Assumes the file exists.  Any errors encounterd simply cause it to remake the file. </summary>
         public static void Load()
         {
-            try {
+            try
+            {
                 using (XmlReader reader = XmlReader.Create(filename))
                 {
                     for (int p = 0; p < 7; p++)
@@ -434,13 +476,14 @@ namespace Assets.Scripts.Util
                     reader.Close();
                 }
             }
-            catch(System.Exception e)
+            catch (System.Exception e)
             {
                 Default();
                 Store();
             }
         }
 
+        /// <summary> Writes the current input bindings to a file on disk. </summary>
         public static void Store()
         {
             XmlDocument bindings = new XmlDocument();
@@ -541,9 +584,9 @@ namespace Assets.Scripts.Util
                 gamePadMapping[controller].joysticNum = -1;
             }
             int max = Mathf.Max(ps3, ps4, xbox);
-            if(max == ps3)
+            if (max == ps3)
                 gamePadMapping[0].type = ControllerInputHandler.ControlType.PS3;
-            else if(max == ps4)
+            else if (max == ps4)
                 gamePadMapping[0].type = ControllerInputHandler.ControlType.PS4;
             else
                 gamePadMapping[0].type = ControllerInputHandler.ControlType.Xbox;
