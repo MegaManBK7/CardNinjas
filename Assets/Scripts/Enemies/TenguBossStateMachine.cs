@@ -51,11 +51,11 @@ namespace Assets.Scripts.Enemies
             {
                 hold = 0;
                 float r = Random.Range(0f, 1f);
-                if (r < .15f && !full)
+                if (r < .20f && !full)
                     return State.Summon;
                 if (r < .40f)
                     return State.Tornado;
-                if (r < .65f || moveFailed)
+                if (r < .60f || moveFailed)
                     return State.TeleportPrep;
                 return State.Move;
             }

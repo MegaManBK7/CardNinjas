@@ -47,13 +47,6 @@ namespace Assets.Scripts.Enemies
 
         protected override void RunAI()
         {
-            if (state != prevState)
-            {
-                doOnce = false;
-                prevState = state;
-                waitTime = Random.Range(0, 2);
-                anim.SetInteger("state", state);
-            }
             if (animDone)
             {
                 if (moveToHold)
@@ -74,10 +67,17 @@ namespace Assets.Scripts.Enemies
             }
             bool full = true;
             foreach (Enemy e in summmoned)
-                if (e != null)
+                if (e == null)
                     full = false;
             state = machine.Run(animDone, waitTime < 0, moveFailed, full);
 
+            if (state != prevState)
+            {
+                doOnce = false;
+                prevState = state;
+                waitTime = Random.Range(0, 2);
+                anim.SetInteger("state", state);
+            }
             switch (state)
             {
                 case (int)TenguBossStateMachine.State.Intro: Intro(); break;
@@ -192,7 +192,6 @@ namespace Assets.Scripts.Enemies
             if (!doOnce)
             {
                 doOnce = true;
-                doOnce = true;
                 GameObject[] tiles = GameObject.FindGameObjectsWithTag("Blue");
                 List<Grid.GridNode> usableTiles = new List<Grid.GridNode>();
                 Grid.GridNode n;
@@ -207,15 +206,17 @@ namespace Assets.Scripts.Enemies
                     moveFailed = true;
                 else
                 {
-                    Enemy minion = Instantiate(minions[Random.Range(0, 3)]).GetComponent<Enemy>();
-                    minion.CurrentNode = usableTiles[tile];
-                    minion.transform.position = minion.CurrentNode.transform.position;
-                    if (minions[0] == null)
-                        minions[0] = minion;
-                    else if (minions[1] == null)
-                        minions[1] = minion;
-                    else if (minions[2] == null)
-                        minions[2] = minion;
+                    Enemy minion = Instantiate(minions[Random.Range(0, minions.Length)]).GetComponent<Enemy>();
+                    minion.RowStart = (int)usableTiles[tile].Position.x;
+                    minion.ColStart = (int)usableTiles[tile].Position.y;
+                    for (int i =0; i < summmoned.Length; i++)
+                    {
+                        if(summmoned[i] == null)
+                        {
+                            summmoned[i] = minion;
+                            break;
+                        }
+                    }
                     sfx.PlaySong(2);
                 }
             }

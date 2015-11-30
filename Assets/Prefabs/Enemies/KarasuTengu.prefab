@@ -4359,10 +4359,9 @@ MonoBehaviour:
   holdPos: {x: 0, y: 0, z: 21.5100002}
   minions:
   - {fileID: 11452832, guid: 9b0cc05f5da26794eaf1c109079e9e9f, type: 2}
-  - {fileID: 11486848, guid: b57b12feb33cd7c4492c6b836ca8d49a, type: 2}
+  - {fileID: 11433400, guid: 2b0f09f11df9d2e4096ab7e8874bc225, type: 2}
   - {fileID: 11495296, guid: 72d0d158b9ad7f5419b51d211addfe41, type: 2}
   - {fileID: 11486848, guid: ec0f71c95225bde458b92af57805a573, type: 2}
-  - {fileID: 11433400, guid: 2b0f09f11df9d2e4096ab7e8874bc225, type: 2}
   meleeHitbox: {fileID: 11400000, guid: ee1e34cc0f4207642875a22e586a2615, type: 2}
   meleeEffect: {fileID: 170866, guid: 26cd10ac777fa4741b3e6e52d3f42eb6, type: 2}
   sfx: {fileID: 11481452}
@@ -5085,6 +5084,10 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: minions.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: anim
       value: 
       objectReference: {fileID: 9575436}
@@ -5104,6 +5107,16 @@ Prefab:
       propertyPath: health
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11433400, guid: 2b0f09f11df9d2e4096ab7e8874bc225,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: minions.Array.data[4]
+      value: 
+      objectReference: {fileID: 11433400, guid: 2b0f09f11df9d2e4096ab7e8874bc225,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 195066}
