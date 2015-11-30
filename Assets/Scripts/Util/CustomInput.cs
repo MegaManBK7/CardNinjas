@@ -352,8 +352,21 @@ namespace Assets.Scripts.Util
         //Array for holding which controller name to reference
         private static ControllerInputHandler.Controller[] gamePadMapping;
 
+        private static CustomInput instance;
+
         void Awake()
         {
+            if (instance == null)
+            {
+                DontDestroyOnLoad(this.gameObject);
+                instance = this;
+            }
+            else if (this != instance)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
             bools = new bool[System.Enum.GetNames(typeof(UserInput)).Length, 7];
             boolsUp = new bool[System.Enum.GetNames(typeof(UserInput)).Length, 7];
             boolsHeld = new bool[System.Enum.GetNames(typeof(UserInput)).Length, 7];
@@ -378,7 +391,13 @@ namespace Assets.Scripts.Util
 
             RawSign();
 
-			Default();
+            if (FileExists())
+                Load();
+            else
+            {
+                Default();
+                Store();
+            }
         }
 
         /// <summary> Resets all the bindings to default. </summary>
@@ -395,23 +414,30 @@ namespace Assets.Scripts.Util
 
         public static void Load()
         {
-            using (XmlReader reader = XmlReader.Create(filename))
-            {
-                for (int p = 0; p < 7; p++)
+            try {
+                using (XmlReader reader = XmlReader.Create(filename))
                 {
-                    reader.ReadToFollowing("Player" + p);
-                    for (int i = 0; i < System.Enum.GetNames(typeof(UserInput)).Length; i++)
+                    for (int p = 0; p < 7; p++)
                     {
-                        reader.ReadToFollowing("Keyboard_" + System.Enum.GetNames(typeof(UserInput))[i]);
-                        keyBoard[i, p] = (KeyCode)System.Enum.Parse(typeof(KeyCode), reader.ReadElementContentAsString());
+                        reader.ReadToFollowing("Player" + p);
+                        for (int i = 0; i < System.Enum.GetNames(typeof(UserInput)).Length; i++)
+                        {
+                            reader.ReadToFollowing("Keyboard_" + System.Enum.GetNames(typeof(UserInput))[i]);
+                            keyBoard[i, p] = (KeyCode)System.Enum.Parse(typeof(KeyCode), reader.ReadElementContentAsString());
+                        }
+                        for (int i = 0; i < System.Enum.GetNames(typeof(UserInput)).Length; i++)
+                        {
+                            reader.ReadToFollowing("Gamepad_" + System.Enum.GetNames(typeof(UserInput))[i]);
+                            gamePad[i, p] = reader.ReadElementContentAsString();
+                        }
                     }
-                    for (int i = 0; i < System.Enum.GetNames(typeof(UserInput)).Length; i++)
-                    {
-                        reader.ReadToFollowing("Gamepad_" + System.Enum.GetNames(typeof(UserInput))[i]);
-                        gamePad[i, p] = reader.ReadElementContentAsString();
-                    }
+                    reader.Close();
                 }
-                reader.Close();
+            }
+            catch(System.Exception e)
+            {
+                Default();
+                Store();
             }
         }
 
