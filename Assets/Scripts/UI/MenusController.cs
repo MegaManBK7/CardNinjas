@@ -21,6 +21,9 @@ public class MenusController : MonoBehaviour {
 	public UIHideBehaviour LevelSelect2;
 	public GameObject LevelSelected;
 
+	public UIHideBehaviour Tutorial;
+	public GameObject TutorialSelected;
+
 	public GameObject CurrentDefault;
 
 	public GameObject No;
@@ -66,6 +69,8 @@ public class MenusController : MonoBehaviour {
 		
 		LevelSelect1.OnScreen = false;
 		LevelSelect2.OnScreen = false;
+		
+		Tutorial.OnScreen = false;
 
 		Settings.OnScreen = true;
 		CurrentDefault = SettingsSelected;
@@ -78,6 +83,8 @@ public class MenusController : MonoBehaviour {
 
 		LevelSelect1.OnScreen = false;
 		LevelSelect2.OnScreen = false;
+		
+		Tutorial.OnScreen = false;
 		
 		MainMenu1.OnScreen = true;
 		MainMenu2.OnScreen = true;
@@ -92,10 +99,28 @@ public class MenusController : MonoBehaviour {
 		MainMenu1.OnScreen = false;
 		MainMenu2.OnScreen = false;
 
+		Tutorial.OnScreen = false;
+
 		LevelSelect1.OnScreen = true;
 		LevelSelect2.OnScreen = true;
 		CurrentDefault = LevelSelected;
 		EventSystem.current.SetSelectedGameObject(LevelSelected);
+	}
+
+	public void GoToTutorial() {
+		if (MainMenu1.OnScreen) MenuSelected = EventSystem.current.currentSelectedGameObject;
+		Settings.OnScreen = false;
+		
+		MainMenu1.OnScreen = false;
+		MainMenu2.OnScreen = false;
+		
+		LevelSelect1.OnScreen = false;
+		LevelSelect2.OnScreen = false;
+
+		Tutorial.OnScreen = true;
+
+		CurrentDefault = TutorialSelected;
+		EventSystem.current.SetSelectedGameObject(TutorialSelected);
 	}
 
 	#region NAVIGATION
