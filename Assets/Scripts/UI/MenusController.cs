@@ -43,22 +43,22 @@ public class MenusController : MonoBehaviour {
             return;
         }
 
-        if ((CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) || CustomInput.BoolFreshPress(CustomInput.UserInput.Pause))  && Settings == null)
+		if ((CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Cancel) || CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Pause))  && Settings == null)
 			FindObjectOfType<UILevelSwitch>().BackToMenu();
-		else if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (Settings.OnScreen && SettingsController.Settings.activeInHierarchy || LevelSelect1.OnScreen))
+		else if(CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Cancel) && (Settings.OnScreen && SettingsController.Settings.activeInHierarchy || LevelSelect1.OnScreen))
 			GoToMainMenu();
 
-		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) navigateAccept();
+		if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Accept)) navigateAccept();
 
 		
 		
 		if ((MainMenu1.OnScreen || LevelSelect1.OnScreen) && EventSystem.current.currentSelectedGameObject != null)
 			CurrentDefault = EventSystem.current.currentSelectedGameObject;
 
-		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) Navigator.Navigate(CustomInput.UserInput.Up, CurrentDefault);
-		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) Navigator.Navigate(CustomInput.UserInput.Down, CurrentDefault);
-		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) Navigator.Navigate(CustomInput.UserInput.Right, CurrentDefault);
-		if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) Navigator.Navigate(CustomInput.UserInput.Left, CurrentDefault);
+		if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Up)) Navigator.Navigate(CustomInput.UserInput.Up, CurrentDefault);
+		if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Down)) Navigator.Navigate(CustomInput.UserInput.Down, CurrentDefault);
+		if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Right)) Navigator.Navigate(CustomInput.UserInput.Right, CurrentDefault);
+		if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Left)) Navigator.Navigate(CustomInput.UserInput.Left, CurrentDefault);
 	}
 
 

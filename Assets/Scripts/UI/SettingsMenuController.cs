@@ -22,7 +22,7 @@ public class SettingsMenuController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (!Settings.activeInHierarchy))
+		if(CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Cancel) && (!Settings.activeInHierarchy))
 			ChangeToSettings();
 	}
 
