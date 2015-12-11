@@ -77,23 +77,23 @@ namespace Assets.Scripts.UI
                     xboxButtons[i] = gos[i].GetComponent<Image>();
                 }
 
-                xboxButtons[0].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard0, thisPlayerIndex)));
-                xboxButtons[1].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard1, thisPlayerIndex)));
-                xboxButtons[2].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard2, thisPlayerIndex)));
-                xboxButtons[3].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard3, thisPlayerIndex)));
-                xboxButtons[4].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard4, thisPlayerIndex)));
-                xboxButtons[5].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard5, thisPlayerIndex)));
-                xboxButtons[6].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard6, thisPlayerIndex)));
-                xboxButtons[7].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard7, thisPlayerIndex)));
+                xboxButtons[0].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard0, thisPlayerIndex)));
+                xboxButtons[1].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard1, thisPlayerIndex)));
+                xboxButtons[2].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard2, thisPlayerIndex)));
+                xboxButtons[3].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard3, thisPlayerIndex)));
+                xboxButtons[4].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard4, thisPlayerIndex)));
+                xboxButtons[5].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard5, thisPlayerIndex)));
+                xboxButtons[6].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard6, thisPlayerIndex)));
+                xboxButtons[7].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard7, thisPlayerIndex)));
                 
-                xboxButtons[8].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard0, thisPlayerIndex)));
-                xboxButtons[9].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard1, thisPlayerIndex)));
-                xboxButtons[10].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard2, thisPlayerIndex)));
-                xboxButtons[11].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard3, thisPlayerIndex)));
-                xboxButtons[12].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard4, thisPlayerIndex)));
-                xboxButtons[13].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard5, thisPlayerIndex)));
-                xboxButtons[14].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard6, thisPlayerIndex)));
-                xboxButtons[15].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard7, thisPlayerIndex)));
+                xboxButtons[8].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard0, thisPlayerIndex)));
+                xboxButtons[9].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard1, thisPlayerIndex)));
+                xboxButtons[10].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard2, thisPlayerIndex)));
+                xboxButtons[11].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard3, thisPlayerIndex)));
+                xboxButtons[12].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard4, thisPlayerIndex)));
+                xboxButtons[13].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard5, thisPlayerIndex)));
+                xboxButtons[14].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard6, thisPlayerIndex)));
+                xboxButtons[15].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard7, thisPlayerIndex)));
             }
 
             DrawPossibleSelections();
