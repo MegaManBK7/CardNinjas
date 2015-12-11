@@ -328,6 +328,8 @@ GameObject:
   - 54: {fileID: 5486036}
   - 114: {fileID: 11415580}
   - 136: {fileID: 13649492}
+  - 114: {fileID: 11452976}
+  - 82: {fileID: 8275562}
   m_Layer: 0
   m_Name: BasicNinja
   m_TagString: Player 1
@@ -4202,6 +4204,76 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!82 &8275562
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118040}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9546624
 Animator:
   serializedVersion: 3
@@ -4252,7 +4324,9 @@ MonoBehaviour:
   - {fileID: 13776782}
   - {fileID: 13724326}
   bullet: {fileID: 11490780, guid: c17618ea2789c0943a2977d03acf5990, type: 2}
+  sfx: {fileID: 11452976}
   Katana: {fileID: 115850, guid: a89935a83db070c4bbc8a6e2bfce347f, type: 2}
+  WideSword: {fileID: 175798, guid: 453c6295a7ef5ff4c8a47cedd3476015, type: 2}
   Naginata: {fileID: 118990, guid: 450858e208396b846a87294d3bdc0087, type: 2}
   Hammer: {fileID: 118704, guid: e11ebf88e37711641bc4c3518ba81c50, type: 2}
   Fan: {fileID: 187306, guid: 428c1232b0f06a6468089f2acd24ec97, type: 2}
@@ -4264,6 +4338,29 @@ MonoBehaviour:
   barrel: {fileID: 443406}
   playerNumber: 1
   weaponPoint: {fileID: 421640}
+--- !u!114 &11452976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0ee834234a6cb4eaa2e5377e395ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  song:
+  - {fileID: 8300000, guid: a910ed78a656c5d44848f4813898e0f0, type: 3}
+  - {fileID: 8300000, guid: c43ea60ab760bb94d975ebf966a86150, type: 3}
+  - {fileID: 8300000, guid: 5ebe1a07a395d5c44a13bd45fc79e8b8, type: 3}
+  - {fileID: 8300000, guid: b17727dd37b01d74ca861bf63c700ece, type: 3}
+  audio: {fileID: 8275562}
+  SFX: 1
+  playOnLoad: 0
+  loop: 0
+  intro: 0
+  loopSong: 0
+  dontDestroy: 0
 --- !u!136 &13649492
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4853,6 +4950,10 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: WideSword
+      value: 
+      objectReference: {fileID: 175798, guid: 453c6295a7ef5ff4c8a47cedd3476015, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118040}

@@ -80,8 +80,10 @@ namespace Assets.Scripts.Enemies
             animDone = true;
         }
 
-        void OnTriggerEnter(Collider col)
+        public virtual void OnTriggerEnter(Collider col)
         {
+            if (col.tag == "Enemy")
+                Physics.IgnoreCollision(this.GetComponent<Collider>(), col);
             Weapons.Hitbox hitbox = col.gameObject.GetComponent<Weapons.Hitbox>();
             if (hitbox != null)
             {
@@ -95,6 +97,12 @@ namespace Assets.Scripts.Enemies
             Weapons.Projectiles.Stun s = col.gameObject.GetComponent<Weapons.Projectiles.Stun>();
             if (s != null)
                 Stun = true;
+            OnTriggerEnterAI(col);
+        }
+
+        protected virtual void OnTriggerEnterAI(Collider col)
+        {
+
         }
     }
 }

@@ -40,9 +40,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 11414750, guid: a222ea7a5d2b0d84aa267f5673c4d03b, type: 2}
+  - {fileID: 11486848, guid: b57b12feb33cd7c4492c6b836ca8d49a, type: 2}
   spawnPositions:
-  - {x: 1, y: 2}
+  - {x: 1, y: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -53,8 +53,12 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 11414750, guid: a222ea7a5d2b0d84aa267f5673c4d03b,
+      objectReference: {fileID: 11486848, guid: b57b12feb33cd7c4492c6b836ca8d49a,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: spawnPositions.Array.data[0].y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170580}

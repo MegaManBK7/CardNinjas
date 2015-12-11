@@ -8,7 +8,7 @@ namespace Assets.Scripts.UI
 {
     public class CardInfoUI : MonoBehaviour
     {
-        private static int playerIndex;
+        private static int playerIndex = 0;
         private int thisPlayerIndex;
 
         private const int MAX_HAND = 4;
@@ -20,6 +20,9 @@ namespace Assets.Scripts.UI
         private Text currentCardName;
         private Canvas canvas;
         private Player.Player player;
+
+		[SerializeField]
+		private Sprite defaultImage;
 
         void OnEnable()
         {
@@ -38,23 +41,31 @@ namespace Assets.Scripts.UI
 
         void Awake()
         {
-            hand = new Image[MAX_HAND];
-            cards = new string[MAX_HAND];
-
-            thisPlayerIndex = ++playerIndex;
-            player = GameObject.Find("Player " + playerIndex).GetComponent<Player.Player>();
-            GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
-            for (int i = 0; i < MAX_HAND; i++)
-            {
-                gos[i].tag = "Hand " + thisPlayerIndex.ToString();
-                hand[i] = gos[i].GetComponent<Image>();
-            }
-            currentCardName = GameObject.Find("Current Hand Card " + thisPlayerIndex.ToString()).GetComponent<Text>();
-
-            canvas = this.GetComponent<Canvas>();
-            Hide();
+            
         }
 
+		void Start()
+		{
+			thisPlayerIndex = ++playerIndex;
+			player = GameObject.Find("Player " + playerIndex).GetComponent<Player.Player>();
+
+			hand = new Image[MAX_HAND];
+			cards = new string[MAX_HAND];
+			
+			
+			
+			GameObject[] gos = GameObject.FindGameObjectsWithTag("Hand").OrderBy(go => go.name).ToArray();
+			for (int i = 0; i < MAX_HAND; i++)
+			{
+				Debug.Log(this.thisPlayerIndex);
+				gos[i].tag = "Hand " + thisPlayerIndex.ToString();
+				hand[i] = gos[i].GetComponent<Image>();
+			}
+			currentCardName = GameObject.Find("Current Hand Card " + thisPlayerIndex.ToString()).GetComponent<Text>();
+			
+			canvas = this.GetComponent<Canvas>();
+			Hide();
+			}
         private void UpdateCardInfo(CardSystem.Card card, int playerIndex)
         {
             if (playerIndex != thisPlayerIndex) return;
@@ -65,7 +76,7 @@ namespace Assets.Scripts.UI
             else
             {
                 currentCardName.text = cardToUse+1 >= MAX_HAND ? "None" : cards[cardToUse+1];
-                hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
+                hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = defaultImage;
                 hand[cardToUse].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
                 hand[cardToUse].color = CustomColor.Convert255(128.0f, 128.0f, 128.0f);
             }
@@ -89,7 +100,7 @@ namespace Assets.Scripts.UI
                     cards[i] = "";
                 }
             }
-            currentCardName.text = cards[0] == null ?  "" : cards[0];
+            currentCardName.text = cards[0] == null ?  "None" : cards[0];
         }
 
         private void Hide()
@@ -97,7 +108,7 @@ namespace Assets.Scripts.UI
             canvas.enabled = false;
             for(int i = 0; i < hand.Length; i++)
             {
-                hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = null;
+                hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().sprite = defaultImage;
                 hand[i].transform.GetChild(CHILD_IMAGE_INDEX).GetComponent<Image>().color = Color.black;
                 hand[i].color = new Color(128.0f / 255, 128.0f / 255, 128.0f / 255);
             }

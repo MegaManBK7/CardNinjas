@@ -6,6 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Loading.unity
+  - enabled: 1
     path: Assets/Scenes/MenuTest.unity
   - enabled: 1
     path: Assets/Scenes/Testing.unity
+  - enabled: 1
+    path: Assets/Scenes/BoosterPackSelection.unity
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4.unity
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level5.unity
+  - enabled: 1
+    path: Assets/Scenes/BoosterPackSelectionMultiplayer.unity
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerBattle.unity

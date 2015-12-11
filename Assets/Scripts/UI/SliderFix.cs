@@ -3,21 +3,22 @@ using System.Collections;
 using UnityEngine.UI;
 using Assets.Scripts.Util;
 using UnityEngine.EventSystems;
+using Assets.Scripts.Managers;
 
 public class SliderFix : MonoBehaviour {
 
 	public Slider slider;
-	public SoundPlayer sp;
+	public bool isSfx;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.RightArrow)) Navigate(CustomInput.UserInput.Right);
-		if (Input.GetKey(KeyCode.LeftArrow)) Navigate(CustomInput.UserInput.Left);
+		if (CustomInput.BoolHeld(CustomInput.UserInput.Right)) Navigate(CustomInput.UserInput.Right);
+		if (CustomInput.BoolHeld(CustomInput.UserInput.Left)) Navigate(CustomInput.UserInput.Left);
 	}
 
 	#region NAVIGATION
@@ -33,8 +34,12 @@ public class SliderFix : MonoBehaviour {
 				slider.value += .01f;
 				break;
 			}
-			if (sp) sp.SetVolume(slider.value);
 		}
+
+		if (isSfx)
+			GameManager.SFXVol = slider.value;
+		else
+			GameManager.MusicVol = slider.value;
 	}
 	#endregion
 }

@@ -20,25 +20,28 @@ namespace Assets.Scripts.Enemies
 
         void Update()
         {
-            done = true;
-            foreach (GameObject g in enemies)
-                if (g != null)
-                    done = false;
-            if (done && wait < 0)
-                wait = 0;
-            if(wait > -1)
-                wait += Time.deltaTime;
-            if(wait > 1f)
+            if (Managers.GameManager.State == Util.Enums.GameStates.Battle)
             {
-                if (currWave >= waves.Length)
-                    Application.Quit();
-                enemies = waves[currWave].SpawnWave();
-                wait = -1;
-                currWave++;
+                done = true;
+                foreach (GameObject g in enemies)
+                    if (g != null)
+                        done = false;
+                if (done && wait < 0)
+                    wait = 0;
+                if (wait > -1)
+                    wait += Time.deltaTime;
+                if (wait > 1f)
+                {
+                    if (currWave >= waves.Length)
+                        Managers.GameManager.Player1Win = true;
+                    else
+                    {
+                        enemies = waves[currWave].SpawnWave();
+                        wait = -1;
+                        currWave++;
+                    }
+                }
             }
-
-            //if (currWave >= waves.Length)
-            //    Destroy(this.gameObject);
         }
     }
 }

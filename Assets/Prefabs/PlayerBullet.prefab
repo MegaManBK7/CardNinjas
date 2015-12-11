@@ -101,7 +101,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 3}
+  m_Size: {x: 1, y: 2, z: 2}
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!95 &9598700
 Animator:
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f85ad6f6cb90cf479087b75d7cd4b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 5
   distance: 500
   deathTime: 3
   piercing: 0
@@ -150,6 +150,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: damage
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
