@@ -3,6 +3,7 @@ using System.Xml;
 
 namespace Assets.Scripts.Util
 {
+    /// <summary> Wraps Keyboard and Gamepad inputs into one set of booleans and raw float data. </summary>
     public class CustomInput : MonoBehaviour
     {
         /// <summary> This is used to define user inputs, changed to add or remove buttons. </summary>
