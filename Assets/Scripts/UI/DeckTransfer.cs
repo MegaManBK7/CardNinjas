@@ -10,15 +10,29 @@ namespace Assets.Scripts.UI
 
         private Enums.Element element;
 
+        private bool accessedDeck = false, accessedElement = false;
+
         public Deck Deck
         {
-            get { return deck; }
+            get
+            {
+                accessedDeck = true;
+                if (accessedElement)
+                    Destroy(this.gameObject);
+                return deck;
+            }
             set { deck = value; }
         }
 
         public Enums.Element Element
         {
-            get { return element; }
+            get
+            {
+                accessedElement = true;
+                if (accessedDeck)
+                    Destroy(this.gameObject);
+                return element;
+            }
             set { element = value; }
         }
     }

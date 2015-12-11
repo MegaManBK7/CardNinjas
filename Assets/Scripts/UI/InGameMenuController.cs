@@ -31,6 +31,8 @@ public class InGameMenuController : MonoBehaviour {
 	public EventSystem es;
 	public UIHideBehaviour hideBehaviour;
 
+	public GameObject CurrentDefault;
+
 	public bool IsMultiplayer;
 	#endregion
 
@@ -46,7 +48,6 @@ public class InGameMenuController : MonoBehaviour {
 		}
 
 		if (hideBehaviour.OnScreenPos.position == hideBehaviour.transform.position && hideBehaviour.OnScreen) {
-			GameManager.Pause = true;
 			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel)) this.DismissDialog();
 		}
 
@@ -72,16 +73,15 @@ public class InGameMenuController : MonoBehaviour {
 		}
 
 		if (GameManager.State == Enums.GameStates.Paused) {
-			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Accept)) Navigate(CustomInput.UserInput.Accept);
-			
-			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) Navigate(CustomInput.UserInput.Up);
-			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) Navigate(CustomInput.UserInput.Down);
-			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) Navigate(CustomInput.UserInput.Right);
-			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) Navigate(CustomInput.UserInput.Left);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Up)) Navigator.Navigate(CustomInput.UserInput.Up, CurrentDefault);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Down)) Navigator.Navigate(CustomInput.UserInput.Down, CurrentDefault);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Right)) Navigator.Navigate(CustomInput.UserInput.Right, CurrentDefault);
+			if (CustomInput.BoolFreshPress(CustomInput.UserInput.Left)) Navigator.Navigate(CustomInput.UserInput.Left, CurrentDefault);
+			if (CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Accept)) Navigator.CallSubmit();
 		}
 	}
 	#endregion
-
+	
 	#region MenuControls
 	/// <summary>
 	/// Brings up p2 wins window.
@@ -94,9 +94,11 @@ public class InGameMenuController : MonoBehaviour {
 		P2Win.SetActive(true);
 		
 		hideBehaviour.OnScreen = true;
-		
+
+		CurrentDefault = P2WinSelect;
 		es.SetSelectedGameObject(P2WinSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up p1 wins window.
@@ -111,7 +113,8 @@ public class InGameMenuController : MonoBehaviour {
 		hideBehaviour.OnScreen = true;
 		
 		es.SetSelectedGameObject(P1WinSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up Single Player lose window.
@@ -124,9 +127,11 @@ public class InGameMenuController : MonoBehaviour {
 		Lose.SetActive(true);
 		
 		hideBehaviour.OnScreen = true;
-		
+
+		CurrentDefault = LoseSelect;
 		es.SetSelectedGameObject(LoseSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up Single Player win window.
@@ -139,9 +144,11 @@ public class InGameMenuController : MonoBehaviour {
 		Win.SetActive(true);
 		
 		hideBehaviour.OnScreen = true;
-		
+
+		CurrentDefault = WinSelect;
 		es.SetSelectedGameObject(WinSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Brings up pause window.
@@ -154,9 +161,11 @@ public class InGameMenuController : MonoBehaviour {
 		Pause.SetActive(true);
 
 		hideBehaviour.OnScreen = true;
-		
+
+		CurrentDefault = PauseSelect;
 		es.SetSelectedGameObject(PauseSelect);
-	}
+        GameManager.Pause = true;
+    }
 
 	/// <summary>
 	/// Dismisses the current in game dialog.
@@ -164,37 +173,7 @@ public class InGameMenuController : MonoBehaviour {
 	public void DismissDialog() {
 		hideBehaviour.OnScreen = false;
 		GameManager.Pause = false;
-	}
-	#endregion
-
-	#region NAVIGATION
-	private void Navigate(CustomInput.UserInput direction)
-	{
-		GameObject next = EventSystem.current.currentSelectedGameObject;
-		
-		// Prevent the edge case of selecting a dropdown element
-		
-		
-		switch(direction)
-		{
-		case CustomInput.UserInput.Up:
-			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp().gameObject;
-			break;
-		case CustomInput.UserInput.Down:
-			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown().gameObject;
-			break;
-		case CustomInput.UserInput.Left:
-			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnLeft().gameObject;
-			break;
-		case CustomInput.UserInput.Right:
-			next = EventSystem.current.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight().gameObject;
-			break;
-		case CustomInput.UserInput.Accept:
-			var pointer = new PointerEventData(EventSystem.current);
-			ExecuteEvents.Execute(EventSystem.current.currentSelectedGameObject, pointer, ExecuteEvents.submitHandler);
-			return;
-		}
-		EventSystem.current.SetSelectedGameObject(next);
+        es.SetSelectedGameObject(null);
 	}
 	#endregion
 }

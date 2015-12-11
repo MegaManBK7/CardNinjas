@@ -4310,6 +4310,22 @@ MonoBehaviour:
   element: 0
   stunTime: 1
   anim: {fileID: 9546624}
+  fireClothes:
+  - {fileID: 2100000, guid: 67c8e6355064d0d4fbb21d76b1794411, type: 2}
+  - {fileID: 2100000, guid: c05d9a65138ef6c47b3405afadf92c80, type: 2}
+  - {fileID: 2100000, guid: b104f2300bce7074d934fbd48f7e3503, type: 2}
+  earthClothes:
+  - {fileID: 2100000, guid: 1df136c02ff4d554ab44700964499cab, type: 2}
+  - {fileID: 2100000, guid: e153a4373a97f6f46a5433156a53f0ce, type: 2}
+  - {fileID: 2100000, guid: f01f7defc57a2f346b6bbcd11f0e5baf, type: 2}
+  thunderClothes:
+  - {fileID: 2100000, guid: ca7eddf6af54e6b469f56461cb57c8f1, type: 2}
+  - {fileID: 2100000, guid: e4866dc548c016446b1edf7890fb44b0, type: 2}
+  - {fileID: 2100000, guid: 59f8af8980df88c4d8b9247e0672d5f4, type: 2}
+  woodClothes:
+  - {fileID: 2100000, guid: bbeabf9ccc9639243b9ac01b382398e9, type: 2}
+  - {fileID: 2100000, guid: 3a3b32a9b863eff42b1b01cc216564b2, type: 2}
+  - {fileID: 2100000, guid: 59ff7edc9ccd7d4459946e9521b0df74, type: 2}
   body:
   - {fileID: 13737014}
   - {fileID: 13715364}

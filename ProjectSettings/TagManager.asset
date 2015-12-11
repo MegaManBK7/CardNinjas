@@ -40,7 +40,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Loading Screen
   - 
   - 
   - 
@@ -67,4 +67,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Loading Screen
+    uniqueID: 3960599313
     locked: 0

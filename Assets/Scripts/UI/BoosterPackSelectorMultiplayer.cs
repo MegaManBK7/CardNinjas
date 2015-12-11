@@ -41,6 +41,11 @@ namespace Assets.Scripts.UI
         private static Enums.Element[] elementMap = {Enums.Element.Fire, Enums.Element.Water, Enums.Element.Thunder,
                                               Enums.Element.Earth, Enums.Element.Wood, Enums.Element.None, Enums.Element.None};
 
+        void OnLevelWasLoaded(int i)
+        {
+            playerIndex = 0;
+        }
+
         void Start()
         {
             thisPlayerIndex = ++playerIndex;
@@ -54,13 +59,13 @@ namespace Assets.Scripts.UI
                     xboxButtons[i] = gos[i].GetComponent<Image>();
                 }
 
-                xboxButtons[0].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard0, thisPlayerIndex)));
-                xboxButtons[1].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard1, thisPlayerIndex)));
-                xboxButtons[2].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard2, thisPlayerIndex)));
-                xboxButtons[3].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard3, thisPlayerIndex)));
-                xboxButtons[4].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard4, thisPlayerIndex)));
-                xboxButtons[5].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard5, thisPlayerIndex)));
-                xboxButtons[6].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamePadButton(CustomInput.UserInput.PickCard6, thisPlayerIndex)));
+                xboxButtons[0].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard0, thisPlayerIndex)));
+                xboxButtons[1].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard1, thisPlayerIndex)));
+                xboxButtons[2].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard2, thisPlayerIndex)));
+                xboxButtons[3].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard3, thisPlayerIndex)));
+                xboxButtons[4].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard4, thisPlayerIndex)));
+                xboxButtons[5].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard5, thisPlayerIndex)));
+                xboxButtons[6].sprite = xboxButtonSprites.Find(x => x.name.Contains(CustomInput.gamepadButton(CustomInput.UserInput.PickCard6, thisPlayerIndex)));
             }
 
             if (keyboardButtons == null)
@@ -72,13 +77,13 @@ namespace Assets.Scripts.UI
                     keyboardButtons[i] = gos[i].GetComponent<Text>();
                 }
 
-                keyboardButtons[0].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard0, thisPlayerIndex).ToString();
-                keyboardButtons[1].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard1, thisPlayerIndex).ToString();
-                keyboardButtons[2].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard2, thisPlayerIndex).ToString();
-                keyboardButtons[3].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard3, thisPlayerIndex).ToString();
-                keyboardButtons[4].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard4, thisPlayerIndex).ToString();
-                keyboardButtons[5].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard5, thisPlayerIndex).ToString();
-                keyboardButtons[6].text = CustomInput.keyBoardKey(CustomInput.UserInput.PickCard6, thisPlayerIndex).ToString();
+                keyboardButtons[0].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard0, thisPlayerIndex).ToString();
+                keyboardButtons[1].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard1, thisPlayerIndex).ToString();
+                keyboardButtons[2].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard2, thisPlayerIndex).ToString();
+                keyboardButtons[3].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard3, thisPlayerIndex).ToString();
+                keyboardButtons[4].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard4, thisPlayerIndex).ToString();
+                keyboardButtons[5].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard5, thisPlayerIndex).ToString();
+                keyboardButtons[6].text = CustomInput.keyboardKey(CustomInput.UserInput.PickCard6, thisPlayerIndex).ToString();
             }
 
             selectedIcons = new Image[MAX_SELECTIONS];
@@ -169,9 +174,7 @@ namespace Assets.Scripts.UI
             t.Element = playerType;
 
             DontDestroyOnLoad(newDeck);
-			Application.LoadLevel("MultiplayerBattle");
-			//LoadingScreen.LevelToLoad = "MultiplayerBattle";
-			//LoadingScreen.instance.LoadLevel("MultiplayerBattle");
+			LoadingScreen.instance.LoadLevel("MultiplayerBattle");
         }
     }
 }

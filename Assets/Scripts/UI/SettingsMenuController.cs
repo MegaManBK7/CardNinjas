@@ -19,16 +19,11 @@ public class SettingsMenuController : MonoBehaviour {
 	public GameObject SettingsSelect;
 
 	public EventSystem es;
-
-	// Use this for initialization
-	void Start () {
-		if(CustomInput.BoolFreshPress(CustomInput.UserInput.Cancel) && (!Settings.activeInHierarchy))
-		   ChangeToSettings();
-	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(CustomInput.BoolFreshPressDeleteOnRead(CustomInput.UserInput.Cancel) && (!Settings.activeInHierarchy))
+			ChangeToSettings();
 	}
 
 	public void ChangeToVideo() {

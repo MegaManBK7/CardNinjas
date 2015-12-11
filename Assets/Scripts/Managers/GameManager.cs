@@ -65,7 +65,7 @@ namespace Assets.Scripts.Managers
             get { return state == Enums.GameStates.Paused; }
             set
             {
-                if (value)
+                if (value && state != Enums.GameStates.Paused)
                 {
                     prevState = state;
                     state = Enums.GameStates.Paused;
@@ -74,6 +74,21 @@ namespace Assets.Scripts.Managers
                     state = prevState;
             }
         }
+
+		public static bool CardSelect
+		{
+			get { return state == Enums.GameStates.CardSelection; }
+			set
+			{
+				if (value)
+				{
+					prevState = state;
+					state = Enums.GameStates.CardSelection;
+				}
+				else
+					state = prevState;
+			}
+		}
 
         public static float MusicVol
         {

@@ -15,7 +15,6 @@ namespace Assets.Scripts.Util
 
         void Start()
 		{
-            audio = GetComponent<AudioSource>();
             if (playOnLoad)
                 PlaySong(0);
             if (dontDestroy)
@@ -46,6 +45,12 @@ namespace Assets.Scripts.Util
         public void Pause()
         {
             audio.Pause();
+        }
+
+        public void Stop()
+        {
+            audio.loop = false;
+            audio.Stop();
         }
 
         public void SetVolume(float vol)

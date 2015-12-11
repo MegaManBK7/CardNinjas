@@ -20,7 +20,6 @@ namespace Assets.Scripts.Util
 		/// <param name="obj">Object which needs element effects added.</param>
 		/// <param name="element">Element added to the game object.</param>
 		public static void AddElementByEnum(GameObject obj, Enums.Element element, bool replaceMat) {
-			Debug.Log("Elements/" + element + "ParticleSys");
             if (element == Enums.Element.None)
                 return;
 			GameObject particle = GameObject.Instantiate(Resources.Load("Elements/" + element + "ParticleSys"), obj.transform.position, obj.transform.rotation) as GameObject;

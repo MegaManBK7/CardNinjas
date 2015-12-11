@@ -10,7 +10,6 @@ namespace Assets.Scripts.CardSystem
         public Deck(List<Card> deck)
         {
             this.deck = deck;
-            //Random.seed = System.DateTime.Today.Millisecond;
             Card temp;
             for (int i = 0; i < this.deck.Count; i++)
             {
@@ -36,6 +35,11 @@ namespace Assets.Scripts.CardSystem
         public void ReturnUsedCards(List<Card> cards)
         {
             deck.InsertRange(0, cards);
+        }
+
+        public void AddUsedCard(Card card)
+        {
+            deck.Add(card);
         }
 
         public List<Card> GetDeck
