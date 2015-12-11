@@ -1,5 +1,4 @@
-﻿//Proceed: Jonathan Hunter, Larry Smith, Justin Coates, Chris Tansey
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Assets.Scripts.Menu
@@ -26,19 +25,19 @@ namespace Assets.Scripts.Menu
 		
 		void Update()
 		{
-			if(EventSystem.current.currentSelectedGameObject == null)
-				EventSystem.current.SetSelectedGameObject(button);
-			
-			if (currentImage > 0 && Util.CustomInput.BoolFreshPressDeleteOnRead(Util.CustomInput.UserInput.Left))
-				RightShift();
-			if (currentImage < images.Length - 1 && Util.CustomInput.BoolFreshPressDeleteOnRead(Util.CustomInput.UserInput.Right))
-				LeftShift();
+            if (EventSystem.current.currentSelectedGameObject == button)
+            {
+                if (currentImage > 0 && Util.CustomInput.BoolFreshPress(Util.CustomInput.UserInput.Left))
+                    RightShift();
+                if (currentImage < images.Length - 1 && Util.CustomInput.BoolFreshPress(Util.CustomInput.UserInput.Right))
+                    LeftShift();
 
-			if (Util.CustomInput.BoolFreshPressDeleteOnRead(Util.CustomInput.UserInput.Cancel))
-			{
-				Init();
-				Navigator.CallSubmit();
-			}
+                if (Util.CustomInput.BoolFreshPress(Util.CustomInput.UserInput.Cancel))
+                {
+                    Init();
+                    Navigator.CallSubmit();
+                }
+            }
 		}
 		
 		private void Init()
